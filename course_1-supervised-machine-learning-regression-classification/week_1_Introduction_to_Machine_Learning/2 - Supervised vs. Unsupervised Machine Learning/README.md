@@ -59,5 +59,38 @@ Machine learning is creating tremendous economic value today. I think 99 percent
 - That includes the right answers, whereby right answer, I mean, the correct label y for a given input x, and is by seeing correct pairs of input x and desired output label y that the learning algorithm eventually learns to take just the input alone without the output label and gives a reasonably accurate prediction or guess of the output
 
 #### Some applications of Supervised Learning:
-![alt text](some_supervised_learning_applications.png)
+![alt text](image1.png)
+
+## 1.1 Regression
+
+- It is a particular type of Supervised Learning in which we try to predict a number from infinitely many possible numbers, such as house prices for example.
+- It is about learning input, output, or x to y mappings.
+
+## 1.2 Classification
+- In this type of SL, we are trying to predict only a small number of possible outputs or categories. Example: We could try to classify as a benign or malignant tumor in case we are dealing with Breast Cancer
+- Terms *class* and *category* are used interchangeably when referring to output
+- So, to summarize classification algorithms predict categories. Categories don't have to be numbers. It could be non numeric: 
+    - For example:
+        - It can predict whether a picture is that of a cat or a dog
+        - It can predict if a tumor is benign or malignant. 
+        - Categories can also be numbers like 0, 1 or 0, 1, 2.
+- What makes classification different from regression when you're interpreting the numbers is that classification predicts a small finite limited set of possible output categories such as 0, 1 and 2 but not all possible numbers in between like 0.5 or 1.7.
+-  You can also use more than one input value to predict an output: For example, instead of just knowing the tumor size, say you also have each patient's age in years, thickness of the tumor clump, uniformity of the cell size, uniformity of the cell shape and so on.
+
+## Recap
+- Supervised Learning maps input x to output y, where the learning algorithm learns from the quote right answers. 
+- The two major types of supervised learning are regression and classification. 
+
+    - In a **Regression** application like predicting prices of houses, the learning algorithm has to predict numbers from infinitely many possible output numbers.
+    - Whereas in **Classification** the learning algorithm has to make a prediction of a category, all of a small set of possible outputs.
+
+Question:
+
+Supervised learning is when we give our learning algorithm the right answer y  for each example to learn from.  Which is an example of supervised learning?
+
+Answer: Spam filtering.
+
+For instance, emails labeled as "spam" or "not spam" are examples used for training a supervised learning algorithm. The trained algorithm will then be able to predict with some degree of accuracy whether an unseen email is spam or not.
+
+## 2. Unsupervised Learning
 
