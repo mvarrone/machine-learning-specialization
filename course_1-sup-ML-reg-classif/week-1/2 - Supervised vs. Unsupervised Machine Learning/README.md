@@ -88,9 +88,77 @@ Question:
 
 Supervised learning is when we give our learning algorithm the right answer y  for each example to learn from.  Which is an example of supervised learning?
 
-Answer: Spam filtering.
+Answer: Spam filtering
 
 For instance, emails labeled as "spam" or "not spam" are examples used for training a supervised learning algorithm. The trained algorithm will then be able to predict with some degree of accuracy whether an unseen email is spam or not.
 
 ## 2. Unsupervised Learning
+- After Supervised Learning, the most widely used form of Machine Learning is Unsupervised Learning
+- We call it unsupervised because we are not trying to supervise the algorithm to give some right answer for every input.
+- Considering the previous Breast Cancer example, now we are not asked to diagnose whether the tumor is benign or malignant, because we are not given any labels *y* in the dataset. Instead, the task is to find some structure/pattern or just find something interesting in the unlabeled data.
+- We ask our algorithm to figure out all by itself what is interesting, or what patterns/structures that might be in this data
 
+## 2.1 Clustering Algorithm
+- This is a particular type of Unsupervised Learning called a Clustering Algorithm. Because it places the unlabeled data into different clusters and this turns out to be used in many applications. It groups similar data points together.
+
+    ![alt text](image2.png)
+
+ - With this particular data set shown in the image, an Unsupervised Learning algorithm might decide that the data can be assigned to two different groups/clusters
+
+## Real-world applications of the Clustering Algorithm
+
+- Example 1: Clustering news: 
+
+    Every day, Google News looks at hundreds of thousands of news articles on the Internet and groups related stories together into clusters by finding articles that mention similar words, for example. Clustering algorithm figures out on his own which word suggest that certain articles are in the same group.
+        
+    ![alt text](image3.png)
+
+    There is not an employee at Google News who is telling the algorithm to find articles that the word panda, twins and zoo to put them in the same cluster. It is not feasible to people doing this every single day for all the topics that news covers.
+
+    Instea, the algorithm has to figure out on his own without supervision, what are the clusters of news articles every day.
+
+- Example 2: Clustering Genetic or DNA data:
+
+    ![alt text](image4.png)
+
+    Based on an example like this one, clustering algorithm has to find some structure to group individuals into different categories.
+
+    We are not telling the algorithm in advance, that there is a type one person with certain characteristics or a type two person with certain characteristics. 
+    Instead, what we are saying is here is a bunch of data. I don't know what the different types of people are but can you automatically find structure into data and automatically figure out whether the major types of individuals are since we are not giving the algorithm the right answer for the examples in advance.
+    
+- Example 3: Clustering customers
+
+    ![alt text](image5.png)
+
+    Many companies have huge databases of customer information.
+    
+    Given this data, we could try to perform an algorithm able to automatically group  customers into different market segments so that a company can serve more efficiently its customers.
+
+    Concretely, DeepLearning.AI team did some research to better understand its community and why different individuals take these classes, subscribe to the batch weekly newsletter or attend AI events. 
+
+    Market segmentation found a few distinct groups of individuals: 
+    
+    - One group's primary motivation is seeking knowledge to grow their skills.
+    - A second group's primary motivation is looking for a way to develop their career (maybe people want to get a promotion, a new job or make some career progression)
+    - Another group wants to stay updated on how AI impacts their field of work.
+    - Another small group wants something totally different than the other three categories.
+
+
+## Supervised vs Unsupervised Learning comparison:
+    Supervised Learning:
+        - Data comes with both inputs x and output labels y
+
+    Unsupervised Learning: 
+        - Data comes with only inputs x but no output labels y.
+        - Algorithm has to find streucture/pattern/something interesting in the data
+
+## 2.2 Anomaly detection
+- Used to detect unusual events/data points.
+- It turns out to be really important for fraud detection in the financial system where unusual events/unusual transactions could be signs of fraud for many other applications.
+
+## 2.3 Dimensionality reduction
+- It lets you take a big dataset and almost magically compress it to a much smaller dataset while losing as little information as possible.
+
+## Instructor explains what Jupyter Notebooks are and how to use them
+
+#### Next, we are invited to try the first optional lab called "Python and Jupyter Notebooks" which corresponds to the *C1_W1_Lab01_Python_Jupyter_Soln.ipynb* file in the *Optional Lab 1 - Python and Jupyter Notebooks* folder
