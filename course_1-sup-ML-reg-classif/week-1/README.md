@@ -6,11 +6,11 @@ You're joining millions of others who have taken either this or the original cou
 
 ## Learning Objectives
 
-* Define machine learning
-* Define supervised learning
-* Define unsupervised learning
-* Write and run Python code in Jupyter Notebooks
-* Define a regression model
+* Define machine learning (1)
+* Define supervised learning (2)
+* Define unsupervised learning (2)
+* Write and run Python code in Jupyter Notebooks (2)
+* Define a regression model (4)
 * Implement and visualize a cost function
 * Implement gradient descent
 * Optimize a regression model using gradient descent
