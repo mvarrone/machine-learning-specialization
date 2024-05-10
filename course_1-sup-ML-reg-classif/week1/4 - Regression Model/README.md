@@ -43,5 +43,41 @@ Just a little reminder:
 - An alternative to write this function could be: $y = f(x) = wx + b$ because of simplicity
 - This is called "Linear regression with one variable". Also called "Univariate linear regression"
 
-- Cost function: 
-    - One of the most important things you have to do is construct a cost function. The idea of a cost function is one of the most universal and important ideas in machine learning and is used in both linear regression and in training many of the most advanced AI models in the world
+## Cost function
+
+- One of the most important things you have to do is construct a cost function.
+- The idea of a cost function is one of the most universal and important ideas in machine learning and is used in both linear regression and in training many of the most advanced AI models in the world.
+- Cost function tells us how well the model is doing so that we can try to get it to do better.
+
+## Cost function J formula
+
+Terminology (again):
+- Given $y = f_{w,b}(x) = wx + b$, w and b are called the parameters of the model. In Machine Learning, parameters of the model are the variables you can adjust during training in order to improve the model.
+- Sometimes, we can hear the parameters w and b referred to as coefficients or as weights.
+- The question is how do you find values for w and b so that the prediction $yhat^{(i)}$ is close to the true target $y^{(i)}$ for many or maybe all training examples $(x^{(i)}$, $y^{(i)})$. To answer that question, let's first take a look at how to measure how well a line fits the training data. To do that, we're going to construct a cost function.
+- The cost function takes the prediction $\hat{y}^{(i)}$ and compares it to the target y by taking $\hat{y}$ minus y. This difference is called the error. Here, we are measuring how far off to prediction is from the target.
+- Next, let's compute the square of this error.
+- Also, we are going to want to compute this term for all of the different training examples *(i)* in the training set.
+- Finally, we want to measure the error across the entire training set. In particular, let's sum up the squared errors like this: We will sum from i=1 up to m, where m = number of training examples.
+- Also, we compute the average squared error (instead of the total squared error) by dividing by m
+- By convention, the cost function that ML people use actually divides by 2 times m. This extra division is just meant to make some of our later calculations look neater but the cost function still works whether you include this division by 2 or not.
+- Letter J is assigned to the cost function which is also called the "Squared error cost function"
+- Eventually, we are going to want to find values of w and b that make the cost function small.
+
+    ![alt text](image2.png)
+
+- So, the equation for the cost function with one variable is:
+$$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 $$ 
+or
+$$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$ 
+
+where 
+  $$\hat{y}^{(i)} = f_{w,b}(x^{(i)}) = wx^{(i)} + b $$
+
+- m = number of training examples
+- $f_{w,b}(x^{(i)})$ is our prediction $\hat{y}^{(i)}$ for example $i$ using parameters $w,b$.  
+- $(f_{w,b}(x^{(i)}) -y^{(i)})^2$ is the squared difference between the target value and the prediction.   
+- These differences are summed over all the $m$ examples and divided by `2m` to produce the cost, $J(w,b)$.  
+
+## Cost function intuition
+
