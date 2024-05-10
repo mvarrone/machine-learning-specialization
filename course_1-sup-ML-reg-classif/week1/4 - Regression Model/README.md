@@ -65,7 +65,7 @@ Terminology (again):
 - Letter J is assigned to the cost function which is also called the "Squared error cost function"
 - Eventually, we are going to want to find values of w and b that make the cost function small.
 
-    ![alt text](image2.png)
+![alt text](image2.png)
 
 - So, the equation for the cost function with one variable is:
 $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 $$ 
@@ -98,7 +98,7 @@ where
 
     We are taking *b=0* in order to do some simplifications and taking *w=0*, *w=1* and *w=0.5* in order to plot *J(w)
 
-    ![alt text](image3.png)
+![alt text](image3.png)
 
     In the image shown above, we are plotting $$f_{w}(x^{(i)}) = wx^{(i)} \tag{left}$$
 
@@ -116,11 +116,11 @@ where
 
     In this case, our 2D *J(w,b)* plot turns into a 3D surface plot as the one shown below:
 
-    ![alt text](image4.png)
+![alt text](image4.png)
 
     Instead of using 3D surface plots, we can also use 2D contour plots to graph *J(w,b)* where we have some ellipses representing horizontal slices of this 3D surface and get all the points that they are at same height. We can find the minimum value at the center of the smallest concentric ellipse/oval.
 
-    ![alt text](image5.png)
+![alt text](image5.png)
 
 ## Gradient descent
 
