@@ -48,6 +48,7 @@ Just a little reminder:
 - One of the most important things you have to do is construct a cost function.
 - The idea of a cost function is one of the most universal and important ideas in machine learning and is used in both linear regression and in training many of the most advanced AI models in the world.
 - Cost function tells us how well the model is doing so that we can try to get it to do better.
+- Cost is a measure of how well our model is predicting the target price of the house
 
 ## Cost function J formula
 
@@ -56,7 +57,7 @@ Terminology (again):
 - Sometimes, we can hear the parameters w and b referred to as coefficients or as weights.
 - The question is how do you find values for w and b so that the prediction $yhat^{(i)}$ is close to the true target $y^{(i)}$ for many or maybe all training examples $(x^{(i)}$, $y^{(i)})$. To answer that question, let's first take a look at how to measure how well a line fits the training data. To do that, we're going to construct a cost function.
 - The cost function takes the prediction $\hat{y}^{(i)}$ and compares it to the target y by taking $\hat{y}$ minus y. This difference is called the error. Here, we are measuring how far off to prediction is from the target.
-- Next, let's compute the square of this error.
+- Next, let's compute the square of this error. The fact that the cost function squares the loss ensures that the 'error surface' is convex like a soup bowl. It will always have a minimum that can be reached by following the gradient in all dimensions.
 - Also, we are going to want to compute this term for all of the different training examples *(i)* in the training set.
 - Finally, we want to measure the error across the entire training set. In particular, let's sum up the squared errors like this: We will sum from i=1 up to m, where m = number of training examples.
 - Also, we compute the average squared error (instead of the total squared error) by dividing by m
@@ -81,3 +82,50 @@ where
 
 ## Cost function intuition
 
+- The goal of Linear Regression is to find the parameters *w* and *b* that results in the smallest possible value for the cost function *J*.
+- We can say that when the cost function *J* is relatively small or closer to zero. It means the model fits the data better compared to other choices for *w* and *b*.
+- The goal is to find a model 𝑓𝑤,𝑏(𝑥)=𝑤𝑥+𝑏 with parameters 𝑤,𝑏 which will accurately predict house values given an input 𝑥. The cost is a measure of how accurate the model is on the training data.
+- The cost equation
+
+    $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$ 
+
+    shows that if 𝑤 and 𝑏 can be selected such that the predictions 𝑓𝑤,𝑏(𝑥) match the target data 𝑦, then the $(f_{w,b}(x^{(i)}) - y^{(i)})^2 $
+    term will be zero and the cost J minimized.
+
+## Visualizing the cost function: J(w) and J(w,b)
+
+* For b = 0
+
+    We are taking *b=0* in order to do some simplifications and taking *w=0*, *w=1* and *w=0.5* in order to plot *J(w)
+
+    ![alt text](image3.png)
+
+    In the image shown above, we are plotting $$f_{w}(x^{(i)}) = wx^{(i)} \tag{left}$$
+
+    and 
+
+    $$J(w) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w}(x^{(i)}) - y^{(i)})^2 \tag{right}$$ 
+
+* For *b!=0*
+    
+    $$f_{w,b}(x^{(i)}) = wx^{(i)}+b$$
+
+    and 
+
+    $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 \tag{below}$$ 
+
+    In this case, our 2D *J(w,b)* plot turns into a 3D surface plot as the one shown below:
+
+    ![alt text](image4.png)
+
+    Instead of using 3D surface plots, we can also use 2D contour plots to graph *J(w,b)* where we have some ellipses representing horizontal slices of this 3D surface and get all the points that they are at same height. We can find the minimum value at the center of the smallest concentric ellipse/oval.
+
+    ![alt text](image5.png)
+
+## Gradient descent
+
+- In Linear Regression, rather than having to manually try to read a contour plot for the best value for w and b, which isn't really a good procedure and also won't work once we get to more complex machine learning models, what we really want is an efficient algorithm that you can write in code for automatically finding the values of parameters w and b they give you the best fit line that minimizes the cost function J. 
+- There is an algorithm for doing this called **Gradient Descent** which is one of the most important algorithms in Machine Learning. 
+- Gradient descent and variations on gradient descent are used to train, not just linear regression, but some of the biggest and most complex models in all of AI.
+
+## Optional Lab 3: Cost function
