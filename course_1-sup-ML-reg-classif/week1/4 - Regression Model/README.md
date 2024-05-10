@@ -100,11 +100,11 @@ where
 
 ![alt text](image3.png)
 
-    In the image shown above, we are plotting $$f_{w}(x^{(i)}) = wx^{(i)} \tag{left}$$
+In the image shown above, we are plotting $$f_{w}(x^{(i)}) = wx^{(i)} \tag{left}$$
 
-    and 
+and 
 
-    $$J(w) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w}(x^{(i)}) - y^{(i)})^2 \tag{right}$$ 
+$$J(w) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w}(x^{(i)}) - y^{(i)})^2 \tag{right}$$ 
 
 * For *b!=0*
     
@@ -114,11 +114,11 @@ where
 
     $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 \tag{below}$$ 
 
-    In this case, our 2D *J(w,b)* plot turns into a 3D surface plot as the one shown below:
+In this case, our 2D *J(w,b)* plot turns into a 3D surface plot as the one shown below:
 
 ![alt text](image4.png)
 
-    Instead of using 3D surface plots, we can also use 2D contour plots to graph *J(w,b)* where we have some ellipses representing horizontal slices of this 3D surface and get all the points that they are at same height. We can find the minimum value at the center of the smallest concentric ellipse/oval.
+Instead of using 3D surface plots, we can also use 2D contour plots to graph *J(w,b)* where we have some ellipses representing horizontal slices of this 3D surface and get all the points that they are at same height. We can find the minimum value at the center of the smallest concentric ellipse/oval.
 
 ![alt text](image5.png)
 
