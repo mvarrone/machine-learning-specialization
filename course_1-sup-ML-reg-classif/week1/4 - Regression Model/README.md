@@ -23,7 +23,7 @@ Just a little reminder:
             $(x^{(1)}$, $y^{(1)}) = (2104, 400)$
 
 
-    ![alt text](image1.png)
+![alt text](image1.png)
 
 ## Overview
 
