@@ -45,5 +45,3 @@ Just a little reminder:
 
 - Cost function: 
     - One of the most important things you have to do is construct a cost function. The idea of a cost function is one of the most universal and important ideas in machine learning and is used in both linear regression and in training many of the most advanced AI models in the world
-
-## Optional Lab n°2: Model representation
