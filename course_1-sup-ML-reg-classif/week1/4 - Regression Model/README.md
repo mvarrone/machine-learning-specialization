@@ -18,9 +18,9 @@ Just a little reminder:
     - Training example: Each row in a dataset
     - m: Total number of training examples
     - (x, y): A single training example
-    - (x^(i), y^(i)): ith training example. ^ denotes superscript (This is not exponentiation)
+    - $(x^{(i)}$, $y^{(i)})$: $i_{th}$ training example. ^ denotes superscript (This is not exponentiation)
         - Example: The 1st example has i = 1, so:
-            (x^(1), y^(1)) = (2104, 400)
+            $(x^{(1)}$, $y^{(1)}) = (2104, 400)$
 
 
     ![alt text](image1.png)
@@ -38,9 +38,9 @@ Just a little reminder:
 ## How to represent the function f? What is the math formula used to compute f?
 
 - f is a straight line
-- It can be written as: $y = fw,b(x) = wx + b$
-- w and b are numbers and the values chosen for w and b will determine the prediction y-hat based on the input feature x
-- An alternative to write this function could be: $y = f(x) = wx + b$
+- It can be written as: $y = f_{w,b}(x) = wx + b$
+- w and b are numbers they will determine the prediction, y-hat, based on the input feature x
+- An alternative to write this function could be: $y = f(x) = wx + b$ because of simplicity
 - This is called "Linear regression with one variable". Also called "Univariate linear regression"
 
 - Cost function: 
