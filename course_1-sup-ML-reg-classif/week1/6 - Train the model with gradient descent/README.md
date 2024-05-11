@@ -59,7 +59,7 @@ where parameters $w$, $b$ are updated simultaneously.
     2) Then simultaneously at the same time update w and b to the new values by assigning those temporary variables to w and b variables.
 
     This correct way of updating both parameters looks like the following image:
-        ![alt text](image1.png)
+        ![alt text](./images_for_6/image1.png)
 
 
 ## Gradient descent intuition
@@ -72,13 +72,13 @@ where parameters $w$, $b$ are updated simultaneously.
 
 - In order to do this let's use a slightly simpler example where we work on minimizing just one parameter. Let's say that you have a cost function J of just one parameter w where w is a number. This means the gradient descent now looks like this: w is updated to w minus the learning rate Alpha times d over dw of J(w). You're trying to minimize the cost J by adjusting the parameter w.
 
-    ![alt text](image2.png)
+    ![alt text](./images_for_6/image2.png)
 
 - So, this is like our previous example where we had temporarily set *b=0*. With one parameter w instead of two (w and b) you can look at two-dimensional graphs of the cost function j, instead of three dimensional graphs. 
 
 - Let's look at what gradient descent does on just the function J(w) that looks like this:
 
-    ![alt text](image3.png)
+    ![alt text](./images_for_6/image3.png)
 
     Note here on the horizontal axis we have the parameter w and on the vertical axis we have the cost J(w).
     Now let's initialize Gradient descent with some starting values for w. 
@@ -86,7 +86,7 @@ where parameters $w$, $b$ are updated simultaneously.
 
 - Case 1:
 
-    ![alt text](image4.png)
+    ![alt text](./images_for_6/image4.png)
 
     Lets take a point like the shown in the image above.
 
@@ -94,11 +94,11 @@ where parameters $w$, $b$ are updated simultaneously.
 
     > Quick overview (1st case): Set a value for w -> Tangent line at that point has a positive slope -> Derivative term is positive  -> **w decreases** -> On the graph, it means the point moves to the left (w is on the horizontal axis) -> **Function cost J(w) decreases**
 
-    ![alt text](image5.png)
+    ![alt text](./images_for_6/image5.png)
 
 - Case 2:
 
-    ![alt text](image6.png)
+    ![alt text](./images_for_6/image6.png)
 
     Now, let's assume a point on the left.
 
@@ -106,7 +106,7 @@ where parameters $w$, $b$ are updated simultaneously.
 
     > Quick overview (2nd case): Set a value for w -> Tangent line at that point has a negative slope -> Derivative term is negative  -> **w increases** -> On the graph, it means the point moves to the right (w is on the horizontal axis) -> **Function cost J(w) decreases as well**
 
-    ![alt text](image7.png)
+    ![alt text](./images_for_6/image7.png)
 
 In both cases, Gradient descent is doing what expected: getting closer to the minimum.
 
@@ -121,7 +121,7 @@ In both cases, Gradient descent is doing what expected: getting closer to the mi
     - Overshoot: Never reach the minimum
     - Fail to converge: Diverge
 
-![alt text](image8.png)
+![alt text](./images_for_6/image8.png)
 
 ## Gradient descent and a local minimum
 
@@ -129,12 +129,12 @@ In both cases, Gradient descent is doing what expected: getting closer to the mi
 
     So, w is not being updated anymore. In that case, w is equal to w minus alpha times 0. So, we have w equals w.
 
-    ![alt text](image9.png)
+    ![alt text](./images_for_6/image9.png)
     In the image shown above, cost function J is not a squared error function cost but it worths show it here because we have more than one minimum to analyze
 
     This also explains why Gradient descent can reach a local minimum even with a fixed learning rate alpha
 
-    ![alt text](image10.png)
+    ![alt text](./images_for_6/image10.png)
 
 ## To recap:
 
@@ -156,21 +156,21 @@ So, this is the Gradient descent algorithm:
 
 - We need to calculate both partial derivatives (one for w and one for b)
 
-    ![alt text](image11.png)
+    ![alt text](./images_for_6/image11.png)
 
 ## About the derivative term for w:
 
-![alt text](image12.png)
+![alt text](./images_for_6/image12.png)
 
 - We can see that this is why we had to find the cost function J with the (1/2m) earlier this week is because it makes the partial derivative neater. It cancels out the two that appears from computing the derivative.
 
 ## About the derivative term for b:
 
-![alt text](image13.png)
+![alt text](./images_for_6/image13.png)
 
 ## Completing Gradient descent algorithm
 
-![alt text](image14.png)
+![alt text](./images_for_6/image14.png)
 
 ## Gradient descent when facing more than one local minimum
 
@@ -178,7 +178,7 @@ So, this is the Gradient descent algorithm:
 
 - In the next image we can recall a previous surface plot that looks like an outdoor park with a few hills. This cost function has more than one local minimum. Depending on where you initialize the parameters w and b, you can end up at different local minima.
 
-![alt text](image15.png)
+![alt text](./images_for_6/image15.png)
 
 ## Gradient descent when facing a convex cost function J
 
@@ -186,4 +186,4 @@ So, this is the Gradient descent algorithm:
 
 - Informally, a convex function is a bowl shaped function and it cannot have any local minima other than the single global minimum. So, when we implement Gradient descent on a convex function, one nice property is that so as long as your learning rate alpha is chosen properly it will always converge to the global minimum.
 
-![alt text](image16.png)
+![alt text](./images_for_6/image16.png)

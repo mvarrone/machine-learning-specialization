@@ -59,7 +59,7 @@ Machine learning is creating tremendous economic value today. I think 99 percent
 - That includes the right answers, whereby right answer, I mean, the correct label y for a given input x, and is by seeing correct pairs of input x and desired output label y that the learning algorithm eventually learns to take just the input alone without the output label and gives a reasonably accurate prediction or guess of the output
 
 #### Some applications of Supervised Learning:
-![alt text](image1.png)
+![alt text](./images_for_2/image1.png)
 
 ## 1.1 Regression
 
@@ -101,7 +101,7 @@ For instance, emails labeled as "spam" or "not spam" are examples used for train
 ## 2.1 Clustering Algorithm
 - This is a particular type of Unsupervised Learning called a Clustering Algorithm. Because it places the unlabeled data into different clusters and this turns out to be used in many applications. It groups similar data points together.
 
-    ![alt text](image2.png)
+    ![alt text](./images_for_2/image2.png)
 
  - With this particular data set shown in the image, an Unsupervised Learning algorithm might decide that the data can be assigned to two different groups/clusters
 
@@ -111,7 +111,7 @@ For instance, emails labeled as "spam" or "not spam" are examples used for train
 
     Every day, Google News looks at hundreds of thousands of news articles on the Internet and groups related stories together into clusters by finding articles that mention similar words, for example. Clustering algorithm figures out on his own which word suggest that certain articles are in the same group.
         
-    ![alt text](image3.png)
+    ![alt text](./images_for_2/image3.png)
 
     There is not an employee at Google News who is telling the algorithm to find articles that the word panda, twins and zoo to put them in the same cluster. It is not feasible to people doing this every single day for all the topics that news covers.
 
@@ -119,7 +119,7 @@ For instance, emails labeled as "spam" or "not spam" are examples used for train
 
 - Example 2: Clustering Genetic or DNA data:
 
-    ![alt text](image4.png)
+    ![alt text](./images_for_2/image4.png)
 
     Based on an example like this one, clustering algorithm has to find some structure to group individuals into different categories.
 
@@ -128,7 +128,7 @@ For instance, emails labeled as "spam" or "not spam" are examples used for train
     
 - Example 3: Clustering customers
 
-    ![alt text](image5.png)
+    ![alt text](./images_for_2/image5.png)
 
     Many companies have huge databases of customer information.
     
