@@ -121,7 +121,7 @@ In both cases, Gradient descent is doing what expected: getting closer to the mi
     - Overshoot: Never reach the minimum
     - Fail to converge: Diverge
 
-    ![alt text](image8.png)
+![alt text](image8.png)
 
 ## Gradient descent and a local minimum
 
