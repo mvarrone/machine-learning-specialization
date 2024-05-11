@@ -57,7 +57,7 @@ Terminology (again):
 - Sometimes, we can hear the parameters w and b referred to as coefficients or as weights.
 - The question is how do you find values for w and b so that the prediction $yhat^{(i)}$ is close to the true target $y^{(i)}$ for many or maybe all training examples $(x^{(i)}$, $y^{(i)})$. To answer that question, let's first take a look at how to measure how well a line fits the training data. To do that, we're going to construct a cost function.
 - The cost function takes the prediction $\hat{y}^{(i)}$ and compares it to the target y by taking $\hat{y}$ minus y. This difference is called the error. Here, we are measuring how far off to prediction is from the target.
-- Next, let's compute the square of this error. The fact that the cost function squares the loss ensures that the 'error surface' is convex like a soup bowl. It will always have a minimum that can be reached by following the gradient in all dimensions.
+- Next, let's compute the square of this error. The fact that the cost function J squares the loss ensures that the 'error surface' is convex like a soup bowl. It will always have a minimum that can be reached by following the gradient in all dimensions. Cost function J, in this case, is a convex function.
 - Also, we are going to want to compute this term for all of the different training examples *(i)* in the training set.
 - Finally, we want to measure the error across the entire training set. In particular, let's sum up the squared errors like this: We will sum from i=1 up to m, where m = number of training examples.
 - Also, we compute the average squared error (instead of the total squared error) by dividing by m
