@@ -187,3 +187,19 @@ So, this is the Gradient descent algorithm:
 - Informally, a convex function is a bowl shaped function and it cannot have any local minima other than the single global minimum. So, when we implement Gradient descent on a convex function, one nice property is that so as long as your learning rate alpha is chosen properly it will always converge to the global minimum.
 
 ![alt text](./images_for_6/image16.png)
+
+## Running gradient descent for Linear Regression
+
+![alt text](./images_for_6/image17.png)
+
+- This is how Gradient descent looks like when running it using multiple steps. 
+- We can see how the straight line changes as we parameters w and b are being updated> Through every step, cost function J(w,b) is being minimized until it gets its smallest possible value. That is the minimum global for this model.
+- Once the model is well trained, we can make some predictions in order to obtain, in this case, the price of a house.
+
+## Batch gradient descent
+
+- To be more precise, this Gradient descent process is called **Batch gradient descent**: The term batch gradient descent refers to the fact that on every step of the gradient descent we are looking at **all of the training examples**, instead of just a subset of the training data.
+
+- There are other implementations of Gradient descent, but we are going to use the batch one for Linear Regression
+
+## Optional Lab 4: Gradient descent
