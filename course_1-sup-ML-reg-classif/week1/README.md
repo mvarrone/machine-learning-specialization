@@ -11,6 +11,6 @@ You're joining millions of others who have taken either this or the original cou
 * Define unsupervised learning (2)
 * Write and run Python code in Jupyter Notebooks (2)
 * Define a regression model (4)
-* Implement and visualize a cost function
-* Implement gradient descent
-* Optimize a regression model using gradient descent
+* Implement and visualize a cost function (4)
+* Implement gradient descent (4 and 6)
+* Optimize a regression model using gradient descent (6)
