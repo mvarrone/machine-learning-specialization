@@ -76,7 +76,7 @@ $$ f = np.dot(w,x) + b $$
 
 ![alt text](./images_for_1/image7.png)
 
-## An alternative way for finding w and b for Linear Regression: Normal Equation
+## An alternative way for finding w and b for Linear Regression: The Normal Equation
 
 -  Whereas it turns out gradient descent is a great method for minimizing the cost function J to find w and b, there is one other algorithm that works only for Linear Regression and pretty much none of the other algorithms you see in this specialization for solving for w and b and this other method does not need an iterative gradient descent algorithm.
 
