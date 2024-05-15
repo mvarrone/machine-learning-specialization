@@ -84,7 +84,10 @@ $$ f = np.dot(w,x) + b $$
 
 ## Disadvantages of using the Normal Equation method
 
-1) Unlike Gradient Descent, this **is not generalized to other learning algorithms**, such as the logistic regression algorithm, the neural networks or other algorithms.
+1) Unlike Gradient Descent, it **is not generalized to other learning algorithms**, such as the Logistic regression algorithm, the neural networks or other algorithms.
 
-2) The normal equation method is also **quite slow if the number of features is too large (>10 000)**: Almost no Machine Learning practitioners should implement the Normal Equation method themselves but if you're using a mature Machine Learning library and call Linear Regression, there is a chance that on the backend, it will be using it to solve for w and b. 
-Just be aware that some machine learning libraries may use this complicated method in the back-end to solve for w and b. But for most learning algorithms, including how you implement linear regression yourself, gradient descents offer a better way to get the job done.
+2) It is also **quite slow if the number of features is too large (>10 000)**: 
+
+    Almost no Machine Learning practitioners should implement the Normal Equation method themselves but if you are using a mature Machine Learning library and call Linear Regression, there is a chance that on the backend, it will be using it to solve for w and b. 
+
+    Some Machine Learning libraries may use this complicated method in the backeend to solve for *w* and *b*. But for most learning algorithms, including how you implement Linear Regression yourself, Gradient Descents offers a better way to get the job done.
