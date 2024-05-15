@@ -2,7 +2,7 @@
 
 ## Multiple linear regression
 
-- If we would like to add more inputs to the Linear Regression model, then our function f(x) would follow this next expression:
+If we would like to add more inputs to the Linear Regression model, then our function f(x) would follow this next expression:
 
 $$ f_{\vec{w},b}(\vec{x}) = \vec{w} . \vec{x} + b = w_{1}x_{1} + w_{2}x_{2} + ... + w_{n}x_{n} + b$$
 
