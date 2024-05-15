@@ -90,4 +90,4 @@ $$ f = np.dot(w,x) + b $$
 
     Almost no Machine Learning practitioners should implement the Normal Equation method themselves but if you are using a mature Machine Learning library and call Linear Regression, there is a chance that on the backend, it will be using it to solve for w and b. 
 
-    Some Machine Learning libraries may use this complicated method in the backeend to solve for *w* and *b*. But for most learning algorithms, including how you implement Linear Regression yourself, Gradient Descents offers a better way to get the job done.
+    Some Machine Learning libraries may use this complicated method in the backeend to solve for *w* and *b*. But for most learning algorithms, including how you implement Linear Regression yourself, Gradient Descent offers a better way to get the job done.
