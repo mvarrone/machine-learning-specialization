@@ -8,11 +8,11 @@ $$ f_{\vec{w},b}(\vec{x}) = \vec{w} . \vec{x} + b = w_{1}x_{1} + w_{2}x_{2} + ..
 
 where
 
-- $ {\vec{w}} = [w_{1} w_{2} ... w_{n}] $ with w as a vector
+$ {\vec{w}} = [w_{1} w_{2} ... w_{n}] $ with *w* as a vector
 
-- $ {\vec{x}} = [x_{1} x_{2} ... x_{n}] $ with x as a vector
+$ {\vec{x}} = [x_{1} x_{2} ... x_{n}] $ with *x* as a vector
 
-- and b still a number
+and *b* still a number
 
 ## Notation
 ![alt text](./images_for_1/image1.png)
