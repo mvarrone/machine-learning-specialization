@@ -217,3 +217,53 @@ With this little technique, you'll often be able to get gradient descent to run 
 ## Next video
 
 With or without Feature Scaling, when you run Gradient Descent, how can you check if Gradient Descent is really working? If it is finding you the global minimum or something close to it. In the next video, let's take a look at how to recognize if Gradient Descent is converging, and then in the video after that, this will lead to discussion of how to choose a good learning rate $\alpha$ for Gradient Descent.
+
+## Checking Gradient Descent for convergence
+
+When running Gradient Descent, how can you tell if it is converging? That is, whether it's helping you to find parameters close to the global minimum of the cost function J(w, b).
+
+As a reminder, here's the Gradient Descent rule. One of the key choices is the choice of the learning rate alpha $\alpha$. Let's see 2 options to make sure that Gradient Descent is working well.
+
+![alt text](./images_for_3/image11.png)
+
+## Option 1: Analyze the Learning curve: A plot of J(w, b) vs number of iterations
+
+- Recall that the job of Gradient Descent is to find parameters *w* and *b* that hopefully minimize the cost function J(w, b).
+
+What I'll often do is plot the cost function J, which is calculated on the training set, and I plot the value of J(w, b) at each iteration of Gradient Descent. Remember that each iteration means after each simultaneous update of the parameters w and b. 
+
+This curve is also called a learning curve. Note that there are a few different types of learning curves used in machine learning, and you see some of the types later in this course as well. 
+
+![alt text](./images_for_3/image12.png)
+
+From the image shown above, (a, pink color) if you look at the 1st point (pink color) on the curve, this means that after you have run Gradient Descent for 100 iterations meaning 100 simultaneous updates of the parameters, you have some learned values for w and b. If you compute the cost J(w, b) for those values of w and b, the ones you got after 100 iterations, you get a certain value for the cost function J(w, b). 
+
+Also, we have this point (b, purple color) that corresponds to the value of J for the parameters that you got after 200 iterations of gradient descent. 
+
+Looking at this graph helps you to see how your cost J changes after each iteration of gradient descent. We can see that the value for the cost function J(w, b) is decreasing more and more as we continue iterating this algorithm.
+
+- If gradient descent is working properly, then the cost J(w, b) should **decrease after every single iteration**
+- If the cost function J(w, b) ever increases after one iteration, that means either 
+    - alpha $\alpha$ is chosen poorly (and it usually means alpha is too large)
+    - Or there could be a bug in the code. 
+    
+Another useful thing that this part can tell you is that if you look at this curve, by the time you reach maybe 300 iterations also the cost function J(w, b) is leveling off and is no longer decreasing much. By 400 iterations, it looks like the curve has flattened out. This means that Gradient Descent has more or less **converged** because the curve is no longer decreasing. Looking at this learning curve, you can try to spot whether or not gradient descent is converging. 
+
+Note: The number of iterations that Gradient Descent takes a conversion can vary a lot between different applications: In one application, it may converge after just 30 iterations. For a different application, it could take 1,000 or 100,000 iterations. It turns out to be very difficult to tell in advance how many iterations gradient descent needs to converge, which is why you can create a graph like this, a learning curve. Try to find out when you can start training your particular model. 
+
+## Option 2: Automatic convergence test
+
+Another way to decide when your model is done training is with an *automatic convergence test*.
+
+Let's set epsilon $\epsilon$ to be a variable representing a small number, such as 0.001 or 10^-3. 
+
+If the cost function J(w, b) decreases by less than this number epsilon $\epsilon$ on one iteration, then you're likely on this flattened part of the curve that you see on the previuos plot and you can declare **convergence**. 
+
+![alt text](./images_for_3/image13.png)
+
+Remember, convergence, hopefully in the case that you found parameters w and b that are close to the minimum possible value of J. 
+
+I usually find that choosing the right threshold epsilon is pretty difficult. So, I actually tend to look at graphs like the one shown in the Option 1 rather than rely on automatic convergence tests (Option 2)
+
+## Choosing the learning rate alpha $\alpha$
+
