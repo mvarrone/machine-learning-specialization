@@ -50,13 +50,13 @@ In contrast, it takes a much larger change in $w_{2}$ in order to change the pre
 
 ![alt text](./images_for_3/image3.png)
     
-    So, where does this leave us? This is what might end up happening if you were to run Gradient Descent, if you were to use your training data as is. Because the contours are so tall and skinny, Gradient Descent may end up **bouncing back and forth** for a long time before it can finally find **its way to the global minimum**. 
+So, where does this leave us? This is what might end up happening if you were to run Gradient Descent, if you were to use your training data as is. Because the contours are so tall and skinny, Gradient Descent may end up **bouncing back and forth** for a long time before it can finally find **its way to the global minimum**. 
     
 ![alt text](./images_for_3/image4.png) 
 
-    ## Scaling the features
+## Scaling the features
 
-    In situations like this, a useful thing to do is to **scale the features**: This means performing some transformation of your training data so that $x_{1}$ say might now range from 0 to 1 and $x_{2}$ might also range from 0 to 1. So, the data points now look more like the next image shown below and you might notice that the scale of the plot on the bottom is now quite different than the one on top. 
+In situations like this, a useful thing to do is to **scale the features**: This means performing some transformation of your training data so that $x_{1}$ say might now range from 0 to 1 and $x_{2}$ might also range from 0 to 1. So, the data points now look more like the next image shown below and you might notice that the scale of the plot on the bottom is now quite different than the one on top. 
 
 ![alt text](./images_for_3/image5.png) 
     
@@ -86,33 +86,33 @@ $$
 
 ## Example
 
-* If a feature $x_{1}$ ranges from 3 to 2000
+- If a feature $x_{1}$ ranges from 3 to 2000
 
-    $$
-    3 \leq x_{1} \leq 2000
-    $$
+$$
+3 \leq x_{1} \leq 2000
+$$
 
-    One way to get a scaled version of $x_{1}$ is to take each original $x_{1}$ value and divide by 2000, the **maximum of the range**.
+One way to get a scaled version of $x_{1}$ is to take each original $x_{1}$ value and divide by 2000, the **maximum of the range**.
 
-    So, the scaled $x_{1, scaled}$ will range, in this case, from 0.15 up to 1
+So, the scaled $x_{1, scaled}$ will range, in this case, from 0.15 up to 1
 
-    $$
-    0.15 \leq x_{1, scaled} \leq 1
-    $$
+$$
+0.15 \leq x_{1, scaled} \leq 1
+$$
 
 - Similarly, for another feature $x_{2}$, since $x_{2}$ ranges from 0 to 5
 
-    $$
-    0 \leq x_{2} \leq 5
-    $$
+$$
+0 \leq x_{2} \leq 5
+$$
 
-    You can calculate a scaled version of $x_{2}$, denoted as $x_{2, scaled}$, by taking each original $x_{2}$ and dividing by 5, which is again the maximum value of this feature. 
-    
-    So, the scaled feature $x_{2, scaled}$ will now range from 0 to 1. 
+You can calculate a scaled version of $x_{2}$, denoted as $x_{2, scaled}$, by taking each original $x_{2}$ and dividing by 5, which is again the maximum value of this feature. 
 
-    $$
-    0 \leq x_{2, scaled} \leq 1
-    $$
+So, the scaled feature $x_{2, scaled}$ will now range from 0 to 1. 
+
+$$
+0 \leq x_{2, scaled} \leq 1
+$$
 
 Now, if you plot the scaled versions, $x_{1, scaled}$ and $x_{2, scaled}$, on a graph it might look like the following image:
 
