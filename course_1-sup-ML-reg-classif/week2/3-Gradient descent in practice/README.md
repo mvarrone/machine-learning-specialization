@@ -1,4 +1,4 @@
-## Feature scaling (Part 1)
+## Feature scaling (Part 1/2)
 
 - Let's take a look at some techniques that make Gradient Descent work much better:
 
@@ -70,24 +70,149 @@
 
 - So, to recap, when you have different features that take on very different ranges of values, it can cause Gradient Descent to run slowly but re scaling the different features so they all take on comparable range of values because speed up Gradient Descent significantly. How do you actually do this? Let's take a look at that in the next Part.
 
-## Feature scaling (Part 2): How to implement it
+## Feature scaling (Part 2/2): 3 possible implementations
 
-- Let's look at how you can implement Feature Scaling to take features that take on very different ranges of values and how to skill them to have comparable ranges of values to each other.
+- Let's look at how you can implement Feature Scaling to take features that take on very different ranges of values and skill them to have comparable ranges of values to each other.
 
-## Implementing Feature Scaling: 1. Dividing by the maximum value of the range
+## 1. Using the maximum value of the range
 
-* Well, if $x_{1}$ ranges from 3 to 2000, one way to get a scale version of $x_{1}$ is to take each original $x_{1}$ value and divide by 2000, the **maximum of the range**. The scaled $x_{1}$ will range from 0.15 up to 1. Similarly, since $x_{2}$ ranges from 0 to 5, you can calculate a scaled version of $x_{2}$ by taking each original $x_{2}$ and dividing by five, which is again the maximum. So the scaled is $x_{2}$ will now range from 0 to 1. If you plot the scale to $x_{1}$ and $x_{2}$ on a graph, it might look like the following image:
+- Basically, this implementation divides every value of a feature by the maximum value of the range
 
-# INSERTAR FOTO
+- It can be calculated applying the following formula:
 
-## Implementing Feature Scaling: 2. Using the mean normalization
+$$
+x_{1, scaled} = \frac{x_{1}}{max(x_{1})}
+$$
 
-* You can also do what is called **mean normalization**: 
+## Example
 
-What this looks like is, you start with the original features and then you re-scale them so that both of them are **centered around zero**. 
+* If a feature $x_{1}$ ranges from 3 to 2000
 
-Whereas before they only had values greater than zero, now they have both negative and positive values that may be usually between -1 and +1. 
+    $$
+    3 \leq x_{1} \leq 2000
+    $$
 
-To calculate the mean normalization of $x_{1}$, first find the average, also called the mean of $x_{1}$ on your training set, and let's call this mean Mu_1, with this being the Greek alphabets Mu. For example, you may find that the average of feature 1, Mu_1 is 600 square feet. Let's take each x_1, subtract the mean Mu_1, and then let's divide by the difference 2,000 minus 300, where 2,000 is the maximum and 300 the minimum, and if you do this, you get the normalized x_1 to range from negative 0.18-0.82. Similarly, to mean normalized x_2, you can calculate the average of feature 2. For instance, Mu_2 may be 2.3. Then you can take each x_2, subtract Mu_2 and divide by 5 minus 0. Again, the max 5 minus the mean, which is 0. The mean normalized x_2 now ranges from negative 0.46-0 54. If you plot the training data using the mean normalized x_1 and x_2, it might look like this. There's one last common re-scaling method call Z-score normalization. To implement Z-score normalization, you need to calculate something called the standard deviation of each feature. If you don't know what the standard deviation is, don't worry about it, you won't need to know it for this course. Or if you've heard of the normal distribution or the bell-shaped curve, sometimes also called the Gaussian distribution, this is what the standard deviation for the normal distribution looks like. But if you haven't heard of this, you don't need to worry about that either. But if you do know what is the standard deviation, then to implement a Z-score normalization, you first calculate the mean Mu, as well as the standard deviation, which is often denoted by the lowercase Greek alphabet Sigma of each feature. For instance, maybe feature 1 has a standard deviation of 450 and mean 600, then to Z-score normalize x_1, take each x_1, subtract Mu_1, and then divide by the standard deviation, which I'm going to denote as Sigma 1. What you may find is that the Z-score normalized x_1 now ranges from negative 0.67-3.1.
+    One way to get a scaled version of $x_{1}$ is to take each original $x_{1}$ value and divide by 2000, the **maximum of the range**.
 
-- Similarly, if you calculate the second features standard deviation to be 1.4 and mean to be 2.3, then you can compute x_2 minus Mu_2 divided by Sigma_2, and in this case, the Z-score normalized by x_2 might now range from negative 1.6-1.9. If you plot the training data on the normalized x_1 and x_2 on a graph, it might look like this. As a rule of thumb, when performing feature scaling, you might want to aim for getting the features to range from maybe anywhere around negative one to somewhere around plus one for each feature x. But these values, negative one and plus one can be a little bit loose. If the features range from negative three to plus three or negative 0.3 to plus 0.3, all of these are completely okay. If you have a feature x_1 that winds up being between zero and three, that's not a problem. You can re-scale it if you want, but if you don't re-scale it, it should work okay too. Or if you have a different feature, x_2, whose values are between negative 2 and plus 0.5, again, that's okay, no harm re-scaling it, but it might be okay if you leave it alone as well. But if another feature, like x_3 here, ranges from negative 100 to plus 100, then this takes on a very different range of values, say something from around negative one to plus one. You're probably better off re-scaling this feature x_3 so that it ranges from something closer to negative one to plus one. Similarly, if you have a feature x_4 that takes on really small values, say between negative 0.001 and plus 0.001, then these values are so small. That means you may want to re-scale it as well. Finally, what if your feature x_5, such as measurements of a hospital patients by the temperature ranges from 98.6-105 degrees Fahrenheit? In this case, these values are around 100, which is actually pretty large compared to other scale features, and this will actually cause gradient descent to run more slowly. In this case, feature re-scaling will likely help. There's almost never any harm to carrying out feature re-scaling. When in doubt, I encourage you to just carry it out. That's it for feature scaling. With this little technique, you'll often be able to get gradient descent to run much faster. That's features scaling. With or without feature scaling, when you run gradient descent, how can you know, how can you check if gradient descent is really working? If it is finding you the global minimum or something close to it. In the next video, let's take a look at how to recognize if gradient descent is converging, and then in the video after that, this will lead to discussion of how to choose a good learning rate for gradient descent.
+    So, the scaled $x_{1, scaled}$ will range, in this case, from 0.15 up to 1
+
+    $$
+    0.15 \leq x_{1, scaled} \leq 1
+    $$
+
+- Similarly, for another feature $x_{2}$, since $x_{2}$ ranges from 0 to 5
+
+    $$
+    0 \leq x_{2} \leq 5
+    $$
+
+    You can calculate a scaled version of $x_{2}$, denoted as $x_{2, scaled}$, by taking each original $x_{2}$ and dividing by 5, which is again the maximum value of this feature. 
+    
+    So, the scaled feature $x_{2, scaled}$ will now range from 0 to 1. 
+
+    $$
+    0 \leq x_{2, scaled} \leq 1
+    $$
+
+Now, if you plot the scaled versions, $x_{1, scaled}$ and $x_{2, scaled}$, on a graph it might look like the following image:
+
+![alt text](./images_for_3/image7.png) 
+
+## 2. Using the mean normalization
+
+- What this implementation means is to perform a re-scale of all of the features so that all of them are **centered around zero**
+
+So, whereas in the previous implementation (dividing by the maximium value) they only had values greater than 0, now they have both negative and positive values that may be usually between -1 and +1. 
+
+- So, to calculate the mean normalization of a feature $x_{1}$ we must find the average of it, also called the mean of $x_{1}$, on the training set. This is denoted as $\mu_{1}$, with this being the Greek alphabets $\mu$. 
+
+## Example
+
+You may find that the average of feature 1, $\mu_{1} = 600$ square feet. 
+
+So, let's take each $x_{1}$, subtract the mean $\mu_{1}$, and then let's divide by the difference **maximum** minus **minimum**, which is 2000 minus 300, in this case. 
+
+By doing this, you get the normalized $x_{1}$ to range from -0.18 to 0.82
+
+$$
+-0.18 \leq x_{1} \leq 0.82
+$$
+
+Similarly, to mean normalized $x_{2}$, you can calculate the average of feature 2. 
+
+For instance, let say $\mu_{2} = 2.3$. Then, you can take each $x_{2}$, subtract $\mu_{2}$ and divide by 5 minus 0. Again, the max is 5 and 0 is the min. The mean normalized $x_{2}$ now ranges from -0.46 to 0.54
+
+$$
+-0.46 \leq x_{2} \leq 0.54
+$$
+
+If you plot the training data using the mean normalized $x_{1}$ and $x_{2}$, it might look like the image shown below:
+
+![alt text](./images_for_3/image8.png) 
+
+## 3. Using the Z-score normalization
+
+- To implement a Z-score normalization, you first need to calculate the mean $\mu$ as well as the standard deviation $\sigma$ of each feature.
+
+- Then, to Z-score normalize a feature $x_{1}$, we can apply the next formula:
+
+$$
+x_{1} = \frac{x_{1} - \mu_{1}}{\sigma_{1}}
+$$
+
+## Example
+
+### Calculating Z-score normalization for feature 1
+
+For instance, maybe feature 1 $x_{1}$ has a standard deviation $\sigma_{1} = 450$ and mean $\mu_{1} = 600$
+
+What you may find is that the Z-score normalized $x_{1}$ now ranges from -0.67 to 3.1
+
+$$
+-0.67 \leq x_{1} \leq 3.1
+$$
+
+### Calculating Z-score normalization for feature 2
+
+Similarly, if you calculate the second feature's standard deviation $\sigma_{2} = 1.4$ and $\mu_{2} = 2.3$, then the Z-score normalized by $x_{2}$ might now range from -1.6 to 1.9
+
+$$
+-1.6 \leq x_{2} \leq 1.9
+$$
+
+If you plot the training data on the normalized $x_{1}$ and $x_{2}$ on a graph, it might look like the following image:
+
+![alt text](./images_for_3/image9.png) 
+
+## Aim for Feature Scaling
+
+As a rule of thumb, when performing Feature Scaling, you might want to aim for getting the features to range from maybe anywhere around -1 to somewhere around +1 for each feature x but these values, -1 and +1, can be a little bit loose. 
+
+$$
+-1 \leq x_{j} \leq 1 \; \text{for each feature}\; x_{j}
+$$
+
+## When to re-scale and when not
+
+### No need for re-scaling
+
+- If the features range from -3 to +3 or -0.3 to +0.3, all of these are completely OK.
+- If you have a feature $x_{1}$ that winds up being between 0 and 3, that's not a problem: You can re-scale it if you want, but if you don't want to re-scale it, it should work okay too. 
+- If you have a different feature, $x_{2}$, whose values are between -2 and +0.5: again, that's okay, no harm re-scaling it, but it might be okay if you leave it alone as well. 
+
+### Re-scale needed
+
+- If another feature, like $x_{3}$, ranges from -100 and +100, then this takes on a very different range of **too large values**, say something from around -1 to +1, you are probably better off re-scaling this feature $x_{3}$ so that it ranges from something closer to -1 to +1.
+- Similarly, if you have a feature $x_{4}$ that takes on really small values, say between -0.001 and +0.001, then these **values are so small** which means you may want to re-scale it as well. 
+
+- Finally, what if your feature $x_{5}$, such as measurements of a hospital patients by the temperature ranges from 98.6 to 105 degrees Fahrenheit? In this case, these values are around 100, which is actually **pretty large compared to other scale features**, and this will actually cause gradient descent to run more slowly. In this case, feature re-scaling will likely help. 
+
+## Some advice on rescaling
+
+There's almost never any harm to carrying out feature Re-scaling: When in doubt, I encourage you to just carry it out. 
+
+With this little technique, you'll often be able to get gradient descent to run much faster.
+
+## Next video
+
+With or without Feature Scaling, when you run Gradient Descent, how can you check if Gradient Descent is really working? If it is finding you the global minimum or something close to it. In the next video, let's take a look at how to recognize if Gradient Descent is converging, and then in the video after that, this will lead to discussion of how to choose a good learning rate $\alpha$ for Gradient Descent.
