@@ -266,3 +266,80 @@ Remember, convergence, hopefully in the case that you found parameters w and b t
 I usually find that choosing the right threshold epsilon is pretty difficult. So, I actually tend to look at graphs like the one shown in the Option 1 rather than rely on automatic convergence tests (Option 2)
 
 ## Choosing the learning rate alpha $\alpha$
+
+- Your learning algorithm will run much better with an appropriate choice of a learning rate alpha $\alpha$
+- If it is too small: it will run very slowly and if it is too large: it may not even converge
+
+Let's take a look at how you can choose a good learning rate alpha $\alpha$ for your model.
+
+## Situation 1:
+
+Concretely, if you plot the cost function J(w, b) for a number of iterations and notice that the costs sometimes goes up and sometimes goes down, you should take that as a clear sign that gradient descent is not working properly: This could mean that (a) there is a bug in the code or (a) sometimes it could mean that your learning rate alpha is too large.
+
+So, here is an illustration of what might be happening: 
+
+![alt text](./images_for_3/image14.png)
+
+The vertical axis is a cost function J(w, b) and the horizontal axis represents a parameter like maybe $w_{1}$. If **the learning rate alpha $\alpha$ is too big**, then if you start off here, your update step may overshoot the minimum and end up here, and in the next update step here, your gain overshooting so you end up here and so on. That's why the cost can sometimes go up instead of decreasing. 
+
+## How to fix it
+
+To fix this, you can use a smaller learning rate. Then your updates may start here and go down a little bit and down a bit, and we will hopefully consistently decrease until it reaches the global minimum. 
+
+![alt text](./images_for_3/image15.png)
+
+## Situation 2:
+
+- Sometimes you may see that the cost function J(w, b) consistently increases after each iteration, like the curve shown in the image below: 
+
+![alt text](./images_for_3/image16.png)
+
+This is also likely due to a **learning rate alpha $\alpha$ that is too large**
+
+## How to fix it
+
+It could be addressed by choosing a smaller learning rate alpha $\alpha$. But learning rates like this could also be a sign of a possible broken code:
+
+For example, if I wrote my code so that $w_{1}$ gets updated as:
+
+$$ w_{1} = w_{1} + \alpha * d_{1} $$
+
+This could result in the cost consistently increasing at each iteration because having the derivative term moves your cost J further from the global minimum instead of closer. 
+
+So remember, you want to use a minus sign, so the code should be updated as:
+
+$$ w_{1} = w_{1} - \alpha * d_{1} $$
+
+## Debugging tip for a correct implementation of Gradient Descent
+
+One debugging tip for a correct implementation of gradient descent is that with a small enough learning rate $\alpha$, the cost function J(w, b) should decrease on every single iteration. 
+
+So, if gradient descent isn't working, one thing I often do and I hope you find this tip useful too is just set $\alpha$ to be a very small number and see if that causes the cost to decrease on every iteration.
+
+If even with $\alpha$ set to a very small number, the cost function J(w, b) does not decrease on every single iteration, but instead sometimes increases, then that usually means there is a bug somewhere in the code.
+
+Note that setting alpha $\alpha$ to be really small is meant here as a debugging step and a very small value of alpha is not going to be the most efficient choice for actually training your learning algorithm. 
+
+Note: One important trade-off is that if your learning rate is too small, then gradient descent can take a lot of iterations to converge. 
+
+## Some values for $\alpha$ to try
+
+So when I am running gradient descent, I will usually try a range of values for the learning rate alpha $\alpha$
+
+So, I may start by trying a learning rate of 0.001 and I may also try learning rate as 10 times as large say 0.01 and 0.1 and so on. 
+
+For each choice of Alpha, you might run gradient descent just for a handful of iterations and plot the cost function J as a function of the number of iterations and after trying a few different values, you might then pick the value of Alpha that seems to decrease the learning rate rapidly, but also consistently. 
+
+In fact, what I actually do is try a range of values like this: After trying 0.001, I will then increase the learning rate 3 times to 0.003 and after that, I'll try 0.01, which is again about 3 times as large as 0.003. 
+
+So, these are roughly trying out gradient descents with each value of Alpha being roughly three 3 bigger than the previous value. 
+
+What I'll do is try a range of values until I found the value of that's too small and then also make sure I've found a value that's too large. I'll slowly try to pick the largest possible learning rate, or just something slightly smaller than the largest reasonable value that I found. 
+
+When I do that, it usually gives me a good learning rate for my model. 
+
+![alt text](./images_for_3/image17.png)
+
+## Next video
+
+Now, there are couple more ideas that you can use to make multiple linear regression much more powerful. That is choosing custom features, which will also allow you to fit curves, not just a straight line to your data. Let's take a look at that in the next video.
