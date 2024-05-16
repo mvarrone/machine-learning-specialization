@@ -114,7 +114,7 @@ $$
 0 \leq x_{2, scaled} \leq 1
 $$
 
-Now, if you plot the scaled versions, $x_{1, scaled}$ and $x_{2, scaled}$, on a graph it might look like the following image:
+Now, if you plot the scaled versions, $x_{1, scaled}$ and $x_{2, scaled}$ on a graph it might look like the following image:
 
 ![alt text](./images_for_3/image7.png) 
 
@@ -207,10 +207,11 @@ $$
 
 - Finally, what if your feature $x_{5}$, such as measurements of a hospital patients by the temperature ranges from 98.6 to 105 degrees Fahrenheit? In this case, these values are around 100, which is actually **pretty large compared to other scale features**, and this will actually cause gradient descent to run more slowly. In this case, feature re-scaling will likely help. 
 
+![alt text](./images_for_3/image10.png)
+
 ## Some advice on rescaling
 
 There's almost never any harm to carrying out feature Re-scaling: When in doubt, I encourage you to just carry it out. 
-
 With this little technique, you'll often be able to get gradient descent to run much faster.
 
 ## Next video
