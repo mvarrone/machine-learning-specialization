@@ -343,3 +343,7 @@ When I do that, it usually gives me a good learning rate for my model.
 ## Next video
 
 Now, there are couple more ideas that you can use to make multiple linear regression much more powerful. That is choosing custom features, which will also allow you to fit curves, not just a straight line to your data. Let's take a look at that in the next video.
+
+## Optional Lab 7: Feature scaling and Learning Rate
+
+## Feature engineering
