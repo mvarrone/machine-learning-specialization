@@ -266,5 +266,3 @@ Remember, convergence, hopefully in the case that you found parameters w and b t
 I usually find that choosing the right threshold epsilon is pretty difficult. So, I actually tend to look at graphs like the one shown in the Option 1 rather than rely on automatic convergence tests (Option 2)
 
 ## Choosing the learning rate alpha $\alpha$
-
-## To-Do
