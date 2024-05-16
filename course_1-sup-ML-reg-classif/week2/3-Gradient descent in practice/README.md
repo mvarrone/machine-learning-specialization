@@ -267,3 +267,4 @@ I usually find that choosing the right threshold epsilon is pretty difficult. So
 
 ## Choosing the learning rate alpha $\alpha$
 
+## To-Do
