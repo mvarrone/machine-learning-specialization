@@ -348,6 +348,8 @@ Now, there are couple more ideas that you can use to make multiple linear regres
 
 ## Feature engineering
 
+**Definition**: Using domain knowledge to design new features by transforming a feature or combining features
+
 The choice of features can have a huge impact on your learning algorithm's performance. In fact, for many practical applications, choosing or entering the right features is a critical step to making the algorithm work well. 
 
 So, let's take a look at how you can choose or engineer the most appropriate features for your learning algorithm. 
