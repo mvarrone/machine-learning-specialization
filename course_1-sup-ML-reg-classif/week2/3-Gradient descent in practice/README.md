@@ -347,3 +347,51 @@ Now, there are couple more ideas that you can use to make multiple linear regres
 ## Optional Lab 7: Feature scaling and Learning Rate
 
 ## Feature engineering
+
+The choice of features can have a huge impact on your learning algorithm's performance. In fact, for many practical applications, choosing or entering the right features is a critical step to making the algorithm work well. 
+
+So, let's take a look at how you can choose or engineer the most appropriate features for your learning algorithm. 
+
+Let's take a look at feature engineering by revisiting the example of predicting the price of a house: 
+
+Say you have 2 features for each house:
+- $x_{1}$ is the width of the lot size of the plots of land that the house is built on. This, in real state, is also called the frontage of the lot
+- And the second feature, $x_{2}$, is the depth of the lot size
+
+Let's assume the rectangular plot of land that the house was built on. 
+
+Given these 2 features, $x_{1}$ and $x_{2}$, you might build a model like this:  
+
+$$ f_{\vec{w}, b}(\vec{x}) = w_{1}x_{1} + w_{2}x_{2} + b $$
+
+This model might work okay but here is another option for how you might choose a different way to use these features in the model that could be even more effective. 
+
+## Engineering features
+
+You might notice that the **area** of the land can be calculated as:
+
+$$ area = frontage * depth $$
+
+- You may have an intuition that the area of the land is more predictive of the price than the frontage and depth as separate features. 
+
+- So, you might define a new feature $x_{3}$ as:
+$$ x_{3} = x_{1} * x_{2} $$
+
+This new feature $x_{3}$ is equal to the area of the plot of land. 
+
+With this feature, you can then have a model defined as 
+
+$$ f_{\vec{w}, b}(\vec{x}) = w_{1}x_{1} + w_{2}x_{2} + w_{3}x_{3} + b $$
+
+so that the model can now choose parameters $w_{1}$, $w_{2}$ and $w_{3}$ depending on whether the data shows that the frontage or the depth or the area $x_{3}$ of the lot that turns out to be the most important thing for predicting the price of the house. 
+
+What we just did, **creating a new feature** is an example of what is called Feature Engineering, in which you might use your **knowledge or intuition** about the problem to design new features usually by **transforming or combining the original features** of the problem in order to make it easier for the learning algorithm to make accurate predictions. 
+
+So, depending on what insights you may have into the application, rather than just taking the features that you happen to have started off with, sometimes by defining new features you might be able to get a much better model. 
+
+That's Feature Engineering. It turns out that this one flavor of feature engineering, that allow you to fit not just straight lines, but curves, non-linear functions to your data.
+
+![alt text](./images_for_3/image18.png)
+
+## Polynomial regression
+
