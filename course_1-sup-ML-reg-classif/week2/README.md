@@ -1,9 +1,9 @@
-## Week 2
+## Week 2: Regression with multiple input variables
 
-This week
+This week you will
 
-- You will extend linear regression to handle multiple input features. 
-- You will also learn some methods for improving your model's training and performance, such as:
+- Extend Linear Regression to handle multiple input features. 
+- Learn some methods for improving your model's training and performance, such as:
     - Vectorization
     - Feature scaling
     - Feature engineering
@@ -13,6 +13,6 @@ At the end of the week, you'll get to practice implementing linear regression in
 
 ## Learning Objectives
 
-* Use vectorization to implement multiple linear regression
-* Use feature scaling, feature engineering, and polynomial regression to improve model training
-* Implement linear regression in code
+* Use vectorization to implement Multiple Linear Regression
+* Use Feature Scaling, Feature Engineering, and Polynomial Regression to improve model training
+* Implement Linear Regression in code

@@ -1,4 +1,4 @@
-## Week 1
+## Week 1: Introduction to Machine Learning
 
 Welcome to the Machine Learning Specialization! 
 
