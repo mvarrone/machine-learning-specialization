@@ -452,3 +452,7 @@ This would be another choice of features that might work well for this data-set 
 By using Feature Engineering and Polynomial functions you can potentially get a much better model for your data.
 
 ![alt text](./images_for_3/image23.png)
+
+## Optional lab 8: Feature engineering and Polynomial regression
+
+## Optional lab 9: Linear regression with scikit-learn
