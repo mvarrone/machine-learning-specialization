@@ -395,3 +395,60 @@ That's Feature Engineering. It turns out that this one flavor of feature enginee
 
 ## Polynomial regression
 
+So far we have just been fitting straight lines to our data. Let's take the ideas of Multiple Linear Regression and Feature Engineering to come up with a new algorithm called **Polynomial Regression** which will let you fit curves, non-linear functions, to your data. 
+
+## Example 1
+
+Let's say you have a housing data-set that looks like this 
+
+![alt text](./images_for_3/image19.png)
+
+where feature x is the size in square feet. It doesn't look like a straight line fits this data-set very well. So, maybe you want to fit a curve, maybe a quadratic function to the data like the following function:
+
+$$ f_{\vec{w}, b}(\vec{x}) = w_{1}x + w_{2}x^2 + b $$
+
+which includes a size $x$ and also $x^2$, which is the size raised to the power of 2. Maybe that will give you a better fit to the data. 
+
+But then you may decide that your quadratic model doesn't really make sense because a quadratic function eventually comes back down: We wouldn't really expect housing prices to go down when the size increases. Big houses seem like they should usually cost more. 
+
+![alt text](./images_for_3/image20.png)
+
+## Example 2
+
+Then you may choose a cubic function 
+
+$$ f_{\vec{w}, b}(\vec{x}) = w_{1}x + w_{2}x^2 + w_{3}x^3 + b $$
+
+where we now have not only $x^2$ but $x^3$. Maybe this model produces this curve here
+
+![alt text](./images_for_3/image21.png)
+
+which is a somewhat better fit to the data because the size does eventually come back up as the size increases. 
+
+These are both examples of Polynomial Regression because you took your optional feature x, and raised it to the power of 2 or 3 or any other power. 
+
+## Polynomial Regression and Feature Scaling
+
+In the case of the cubic function, the first feature is the size, the second feature is the size squared and the third feature is the size cubed. 
+
+I just want to point out one more thing, which is that if you create features that are these powers like the square of the original features like this, then Feature Scaling becomes increasingly important. 
+
+If the size of the house ranges from 1 to 1000 square feet, then the second feature, which is a size squared, will range from one to a million, and the third feature, which is size cubed, ranges from one to a billion: So, these two features, $x^2$ and $x^3$, take on very different ranges of values compared to the original feature x. 
+
+If you're using Gradient Descent, it's important to apply Feature Scaling to get your features into comparable ranges of values. 
+
+![alt text](./images_for_3/image22.png)
+
+## Example 3
+
+Finally, just one last example of how you really have a wide range of choices of features to use. Another reasonable alternative to taking the size squared and size cubed is to say use the square root of x. Your model may look 
+
+$$ f_{\vec{w}, b}(\vec{x}) = w_{1}x + w_{2}\sqrt{x} + b $$
+
+The square root function looks like this, and it becomes a bit less steep as x increases, but it doesn't ever completely flatten out, and it certainly never ever comes back down. 
+
+This would be another choice of features that might work well for this data-set as well.
+
+By using Feature Engineering and Polynomial functions you can potentially get a much better model for your data.
+
+![alt text](./images_for_3/image23.png)
