@@ -134,7 +134,10 @@ def plt_stationary(x_train, y_train):
 
     # get cost for w,b ranges for contour and 3D
     tmp_b, tmp_w = np.meshgrid(b_space, w_space)
-    z = np.zeros_like(tmp_b)
+    # z = np.zeros_like(tmp_b)
+    z = np.zeros_like(
+        tmp_b, dtype=np.float64
+    )  ## Fix for Windows. Do not forget to restart the kernel and run all
     for i in range(tmp_w.shape[0]):
         for j in range(tmp_w.shape[1]):
             z[i, j] = compute_cost(x_train, y_train, tmp_w[i][j], tmp_b[i][j])
@@ -373,7 +376,10 @@ def plt_divergence(p_hist, J_hist, x_train, y_train):
     # Print w vs cost to see minimum
     fix_b = 100
     w_array = np.arange(-70000, 70000, 1000)
-    cost = np.zeros_like(w_array)
+    ## cost = np.zeros_like(w_array)
+    cost = np.zeros_like(
+        w_array, dtype=np.float64
+    )  ## Fix for Windows. Do not forget to restart the kernel and run all. Source https://community.deeplearning.ai/t/c1-w1-optional-lab-4-error-when-running-the-lab-locally/542737/7
 
     for i in range(len(w_array)):
         tmp_w = w_array[i]
@@ -393,7 +399,10 @@ def plt_divergence(p_hist, J_hist, x_train, y_train):
     tmp_b, tmp_w = np.meshgrid(
         np.arange(-35000, 35000, 500), np.arange(-70000, 70000, 500)
     )
-    z = np.zeros_like(tmp_b)
+    # z = np.zeros_like(tmp_b)
+    z = np.zeros_like(
+        tmp_b, dtype=np.float64
+    )  ## Fix for Windows. Do not forget to restart the kernel and run all
     for i in range(tmp_w.shape[0]):
         for j in range(tmp_w.shape[1]):
             z[i][j] = compute_cost(x_train, y_train, tmp_w[i][j], tmp_b[i][j])
