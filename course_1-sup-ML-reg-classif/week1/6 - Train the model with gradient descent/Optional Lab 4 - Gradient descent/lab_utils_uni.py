@@ -366,6 +366,7 @@ def plt_divergence(p_hist, J_hist, x_train, y_train):
     plt.subplots_adjust(wspace=0)
     gs = fig.add_gridspec(1, 5)
     fig.suptitle(f"Cost escalates when learning rate is too large")
+
     # ===============
     #  First subplot
     # ===============
@@ -376,7 +377,7 @@ def plt_divergence(p_hist, J_hist, x_train, y_train):
     # Print w vs cost to see minimum
     fix_b = 100
     w_array = np.arange(-70000, 70000, 1000)
-    ## cost = np.zeros_like(w_array)
+    # cost = np.zeros_like(w_array)
     cost = np.zeros_like(
         w_array, dtype=np.float64
     )  ## Fix for Windows. Do not forget to restart the kernel and run all. Source https://community.deeplearning.ai/t/c1-w1-optional-lab-4-error-when-running-the-lab-locally/542737/7

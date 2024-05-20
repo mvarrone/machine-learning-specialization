@@ -91,6 +91,7 @@ def compute_cost(X, y, w, b):
     Returns
       cost (scalar)    : cost
     """
+
     m = X.shape[0]
     cost = 0.0
     for i in range(m):
