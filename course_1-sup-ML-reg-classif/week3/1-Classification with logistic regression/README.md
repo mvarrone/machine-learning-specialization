@@ -26,5 +26,3 @@ By the way, one thing confusing about the name Logistic Regression is that even 
 
 ## Logistic Regression
 
-
-
