@@ -1,13 +1,13 @@
 # Machine Learning Specialization
 This repository contains information about the Machine Learning [specialization](https://www.coursera.org/specializations/machine-learning-introduction) offered by Coursera.
 
-## Courses:
+## Courses
 
 1) Supervised Machine Learning: Regression and Classification
 2) Advanced Learning Algorithms
 3) Unsupervised Learning, Recommenders and Reinforcement Learning
 
-## About the Specialization
+## About the specialization
 
 The Machine Learning Specialization is a foundational online program created in collaboration between *DeepLearning.AI* and *Stanford Online*. 
 In this beginner-friendly program, you will learn the fundamentals of machine learning and how to use these techniques to build real-world AI applications. 
@@ -20,7 +20,7 @@ It provides a broad introduction to modern machine learning, including supervise
 
 By the end of this Specialization, you will have mastered key concepts and gained the practical know-how to quickly and powerfully apply machine learning to challenging real-world problems. If you’re looking to break into AI or build a career in machine learning, the new Machine Learning Specialization is the best place to start.
 
-## Professors:
+## Professors
 
 - Andrew Ng: Instructor, Founder, DeepLearning.AI & Co-founder, Coursera
 - Eddy Shyu: Curriculum Architect, Curriculum Product Manager, DeepLearning.AI
