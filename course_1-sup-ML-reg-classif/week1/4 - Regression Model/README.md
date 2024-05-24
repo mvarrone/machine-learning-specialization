@@ -99,7 +99,7 @@ $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (wx^{(i)} + b - y^{(i)})^2 $$
 
 * For b = 0
 
-    We are taking *b=0* in order to do some simplifications and taking *w=0*, *w=1* and *w=0.5* in order to plot *J(w)
+    We are taking *b=0* in order to do some simplifications and taking *w=0*, *w=1* and *w=0.5* in order to plot *J(w)*
 
 ![alt text](./images_for_4/image3.png)
 
