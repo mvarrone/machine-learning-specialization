@@ -73,3 +73,59 @@ We can read it as *"the probability that y is 1, given the input feature X with 
 ## Optional lab 11: Sigmoid function and logistic regression
 
 ## Decision boundary
+
+Given we know that
+
+$$ f_{\vec{w}, b}(\vec{x}) = P(y=1 | \vec{x}; \vec{w}, b) $$
+
+outputs a number like maybe a 0.7 or 0.3 we would like to the algorithm learn to predict if the value of *y* is going to be 0 or 1? 
+
+Well, one thing you might do is set a **threshold** above which you predict y is 1, or you set $ \hat{y} $ to prediction to be equal to 1 and below which you might say $ \hat{y} $, the prediction, is going to be equal to 0.
+
+A common choice would be to pick a **threshold of 0.5**  so that:
+
+a) If $ f_{\vec{w}, b}(\vec{x}) >= 0.5 $, then predict y is 1. We write that prediction as $ \hat{y} = 1 $
+
+b) If $ f_{\vec{w}, b}(\vec{x}) < 0.5 $, then predict y is 0, or in other words, the prediction $ \hat{y} = 0 $
+
+So, when is $ f_{\vec{w}, b}(\vec{x}) >= 0.5 ? $
+$$ g(z) >= 0.5 $$
+$$ z >= 0 $$
+$$ \vec{w}.\vec{x} + b >= 0 $$
+$$ \hat{y} = 1 $$
+
+Conversely, when is $ f_{\vec{w}, b}(\vec{x}) < 0.5 ? $
+$$ g(z) < 0.5 $$
+$$ z < 0 $$
+$$ \vec{w}.\vec{x} + b < 0 $$
+$$ \hat{y} = 0 $$
+
+![alt text](./images_for_01/image2.png)
+
+### Decision boundary
+
+It is represented as follows:
+
+$$ z = \vec{w}.\vec{x} + b = 0 $$
+
+It a situation where we it is neutral about whether $ y=0 $ or $ y=1 $
+
+### Linear decision boundary
+
+![alt text](./images_for_01/image3.png)
+
+### Non-linear decision boundary: Circle
+
+![alt text](./images_for_01/image4.png)
+
+### Non-linear decision boundary: Ellipse
+
+![alt text](./images_for_01/image5.png)
+
+### Non-linear decision boundary: A more complex decision boundary
+
+![alt text](./images_for_01/image6.png)
+
+ With polynomial features, you can get very complex decision boundaries. In other words, Logistic Regression can learn to fit pretty complex data
+
+ ## Optional lab 12: Decision boundary
