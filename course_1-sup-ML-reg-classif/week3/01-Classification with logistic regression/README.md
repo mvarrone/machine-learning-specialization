@@ -34,7 +34,7 @@ By the way, one thing confusing about the name Logistic Regression is that even 
 
 $$ g(z) = \frac{1}{1 + e^{-z}} $$
 
-where * 0<g(z)<1 *
+where 0 < g(z) < 1
 
 - In case *z* is a large positive number, then g(z) $\approx$ 1
 - In case *z* is a large negative number, then g(z) $\approx$ 0
