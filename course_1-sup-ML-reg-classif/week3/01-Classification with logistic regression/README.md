@@ -32,7 +32,8 @@ By the way, one thing confusing about the name Logistic Regression is that even 
 
 * We can use *g(z)* to define the Sigmoid function as follows:
 
-$$ g(z) = \frac{1}{1 + e^{-z}} 0<g(z)<1 $$
+$$ g(z) = \frac{1}{1 + e^{-z}} $$
+$$ 0<g(z)<1 $$
 
 - In case *z* is a large positive number, then $ g(z) \approx 1 $
 - In case *z* is a large negative number, then $ g(z) \approx 0 $
