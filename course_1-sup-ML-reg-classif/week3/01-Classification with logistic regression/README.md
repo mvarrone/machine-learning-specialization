@@ -32,7 +32,7 @@ By the way, one thing confusing about the name Logistic Regression is that even 
 
 * We can use *g(z)* to define the Sigmoid function as follows:
 
-$$ g(z) = \frac{1}{1 + e^{-z}} $$
+$$g(z) = \frac{1}{1 + e^{-z}}$$
 
 where 0 < g(z) < 1
 
@@ -46,13 +46,13 @@ where 0 < g(z) < 1
 
 We define *z* as follows:
 
-$$ z = \vec{w}.\vec{x} + b $$
+$$z = \vec{w}.\vec{x} + b$$
 
 The Logistic Regression model is defined as:
 
-$$ f_{\vec{w}, b}(\vec{x}) = g(z) = g(\vec{w}.\vec{x} + b) = \frac{1}{1 + e^{-(\vec{w}.\vec{x} + b)}} $$
+$$f_{\vec{w}, b}(\vec{x}) = g(z) = g(\vec{w}.\vec{x} + b) = \frac{1}{1 + e^{-(\vec{w}.\vec{x} + b)}}$$
 
-What the Logistic Regression model is it inputs inputs a set of features $ \vec{X} $ and outputs a number between 0 and 1
+What the Logistic Regression model is it inputs inputs a set of features $\vec{X}$ and outputs a number between 0 and 1
 
 ### Interpretation of Logistic Regression output
 
@@ -64,11 +64,11 @@ Considering *x* is the tumor size and *y* is either 0 or 1, if you have a patien
 
 So, in this case, what is the chance of *y* being equal to 0? Well, 30 % chance due to 
 
-$$ P(y=0) + P(y=1) = 1 $$
+$$P(y=0) + P(y=1) = 1$$
 
 ### Notation
 
-$$ f_{\vec{w}, b}(\vec{x}) = P(y=1 | \vec{x}; \vec{w}, b) $$
+$$f_{\vec{w}, b}(\vec{x}) = P(y=1 | \vec{x}; \vec{w}, b)$$
 
 We can read it as *"the probability that y is 1, given the input feature X with parameters w and b"*
 
@@ -78,7 +78,7 @@ We can read it as *"the probability that y is 1, given the input feature X with 
 
 Given we know that
 
-$$ f_{\vec{w}, b}(\vec{x}) = P(y=1 | \vec{x}; \vec{w}, b) $$
+$$f_{\vec{w}, b}(\vec{x}) = P(y=1 | \vec{x}; \vec{w}, b)$$
 
 outputs a number like maybe a 0.7 or 0.3 we would like to the algorithm learn to predict if the value of *y* is going to be 0 or 1? 
 
@@ -86,21 +86,21 @@ Well, one thing you might do is set a **threshold** above which you predict y is
 
 A common choice would be to pick a **threshold of 0.5**  so that:
 
-a) If $ f_{\vec{w}, b}(\vec{x}) >= 0.5 $, then predict y is 1. We write that prediction as $\hat{y} = 1$
+a) If $f_{\vec{w}, b}(\vec{x}) >= 0.5$, then predict y is 1. We write that prediction as $\hat{y} = 1$
 
-b) If $ f_{\vec{w}, b}(\vec{x}) < 0.5 $, then predict y is 0, or in other words, the prediction $\hat{y} = 0$
+b) If $f_{\vec{w}, b}(\vec{x}) < 0.5$, then predict y is 0, or in other words, the prediction $\hat{y} = 0$
 
-So, when is $ f_{\vec{w}, b}(\vec{x}) >= 0.5 ? $
-$$ g(z) >= 0.5 $$
-$$ z >= 0 $$
-$$ \vec{w}.\vec{x} + b >= 0 $$
-$$ \hat{y} = 1 $$
+So, when is $f_{\vec{w}, b}(\vec{x}) >= 0.5 ?$
+$$g(z) >= 0.5$$
+$$z >= 0$$
+$$\vec{w}.\vec{x} + b >= 0$$
+$$\hat{y} = 1$$
 
 Conversely, when is $ f_{\vec{w}, b}(\vec{x}) < 0.5 ? $
-$$ g(z) < 0.5 $$
-$$ z < 0 $$
-$$ \vec{w}.\vec{x} + b < 0 $$
-$$ \hat{y} = 0 $$
+$$g(z) < 0.5$$
+$$z < 0$$
+$$\vec{w}.\vec{x} + b < 0$$
+$$\hat{y} = 0$$
 
 ![alt text](./images_for_01/image2.png)
 
@@ -108,7 +108,7 @@ $$ \hat{y} = 0 $$
 
 It is represented as follows:
 
-$$ z = \vec{w}.\vec{x} + b = 0 $$
+$$z = \vec{w}.\vec{x} + b = 0$$
 
 It a situation where we it is neutral about whether $ y=0 $ or $ y=1 $
 
