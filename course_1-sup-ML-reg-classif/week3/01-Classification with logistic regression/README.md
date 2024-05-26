@@ -82,13 +82,13 @@ $$ f_{\vec{w}, b}(\vec{x}) = P(y=1 | \vec{x}; \vec{w}, b) $$
 
 outputs a number like maybe a 0.7 or 0.3 we would like to the algorithm learn to predict if the value of *y* is going to be 0 or 1? 
 
-Well, one thing you might do is set a **threshold** above which you predict y is 1, or you set $ \hat{y} $ to prediction to be equal to 1 and below which you might say $ \hat{y} $, the prediction, is going to be equal to 0.
+Well, one thing you might do is set a **threshold** above which you predict y is 1, or you set $\hat{y}$ to prediction to be equal to 1 and below which you might say $\hat{y}$, the prediction, is going to be equal to 0.
 
 A common choice would be to pick a **threshold of 0.5**  so that:
 
-a) If $ f_{\vec{w}, b}(\vec{x}) >= 0.5 $, then predict y is 1. We write that prediction as $ \hat{y} = 1 $
+a) If $ f_{\vec{w}, b}(\vec{x}) >= 0.5 $, then predict y is 1. We write that prediction as $\hat{y} = 1$
 
-b) If $ f_{\vec{w}, b}(\vec{x}) < 0.5 $, then predict y is 0, or in other words, the prediction $ \hat{y} = 0 $
+b) If $ f_{\vec{w}, b}(\vec{x}) < 0.5 $, then predict y is 0, or in other words, the prediction $\hat{y} = 0$
 
 So, when is $ f_{\vec{w}, b}(\vec{x}) >= 0.5 ? $
 $$ g(z) >= 0.5 $$
