@@ -52,7 +52,7 @@ The Logistic Regression model is defined as:
 
 $$f_{\vec{w}, b}(\vec{x}) = g(z) = g(\vec{w}.\vec{x} + b) = \frac{1}{1 + e^{-(\vec{w}.\vec{x} + b)}}$$
 
-What the Logistic Regression model is it inputs inputs a set of features $\vec{X}$ and outputs a number between 0 and 1
+What the Logistic Regression model is it inputs inputs a set of features $\vec{x}$ and outputs a number between 0 and 1
 
 ### Interpretation of Logistic Regression output
 
@@ -96,7 +96,7 @@ $$z >= 0$$
 $$\vec{w}.\vec{x} + b >= 0$$
 $$\hat{y} = 1$$
 
-Conversely, when is $ f_{\vec{w}, b}(\vec{x}) < 0.5 ? $
+Conversely, when is $f_{\vec{w}, b}(\vec{x}) < 0.5 ?$
 $$g(z) < 0.5$$
 $$z < 0$$
 $$\vec{w}.\vec{x} + b < 0$$
@@ -110,7 +110,7 @@ It is represented as follows:
 
 $$z = \vec{w}.\vec{x} + b = 0$$
 
-It a situation where we it is neutral about whether $ y=0 $ or $ y=1 $
+It a situation where we it is neutral about whether $y=0$ or $y=1$
 
 ### Linear decision boundary
 
