@@ -22,11 +22,11 @@ Underfitting, on the other hand, happens when a model is too simple to capture t
 
 Generalization refers to the ability of a model to perform well on new, unseen data that it hasn't been trained on. A model that generalizes well is able to make accurate predictions or classifications on examples it hasn't encountered before. Generalization is a desirable property in machine learning, as it indicates that the model has learned the underlying patterns in the data rather than just memorizing the training examples.
 
-## Underfitting, Generalization and Overfitting for Linear Regression 
+## Underfitting, Generalization and Overfitting for Regression
 
 ![alt text](./images_for_07/image1.png)
 
-## Underfitting, Generalization and Overfitting for Logistic Regression
+## Underfitting, Generalization and Overfitting for Classification
 
 ![alt text](./images_for_07/image2.png)
 
