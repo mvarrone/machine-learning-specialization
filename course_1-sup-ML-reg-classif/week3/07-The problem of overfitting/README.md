@@ -67,3 +67,6 @@ It turns out that even if you fit a higher order polynomial the shown in the ima
 ![alt text](./images_for_07/image3.png)
 
 ## Optional lab 17: Overfitting
+
+## Cost function with regularization
+
