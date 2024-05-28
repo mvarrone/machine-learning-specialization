@@ -246,4 +246,4 @@ where
 * $g(z) = \frac{1}{1+e^-z}$
 * $z = w.x+b$
 
-## Optional lab 18: Regularization
+## Optional Final lab 18: Regularization
