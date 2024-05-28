@@ -197,7 +197,7 @@ As can be seen above, after operating the expression for the $w_{j}$ parameters,
 This factor, when there is no regularization applied ($\lambda$=0), does not make any change on every $w_{j}$ parameter. 
 
 But instead, when the regularization is being applied through the lambda $\lambda$ parameter ($\lambda$!=0), it shrinks every $w_{j}$ parameter by making them smaller due to this factor is always a number minor than 1. It is minor than 1 because alpha $\alpha$, lambda $\lambda$ and *m* (the amount of training examples) are always positive numbers.
-What I mean is that, in this case, every $w_{j}$ parameter is going to be multiplied by factor which is a number greather than 0 and minor than 1. That makes every $w_{j}$ parameter smaller.
+What I mean is that, in this case, every $w_{j}$ parameter is going to be multiplied by factor which is a number greather than 0 and minor than 1 and that is what makes every $w_{j}$ parameter smaller.
 
 $$w_{j}=w_{j}(1-\alpha\frac{\lambda}{m}) - \alpha \frac{1}{m}\sum\limits_{i = 1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})x_{j}^{(i)} \text{ for j=1..n}$$
 
@@ -207,5 +207,43 @@ $$w_{j}=w_{j}(1-\alpha\frac{\lambda}{m}) - \alpha \frac{1}{m}\sum\limits_{i = 1}
 
 This is why this expression is used to compute the gradient in regularized linear regression
 
-## Regularized logistic regression
+## Regularized Logistic Regression
 
+![alt text](./images_for_07/image11.png)
+
+### Updated cost function J(w, b) for Logistic Regression using regularization
+
+$$J(\vec{w}, b) = -\frac{1}{m} \sum\limits_{i=1}^{m}[y^{(i)} \log\left(f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right) + \left( 1 - y^{(i)}\right)\log \left( 1 - f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right)] + \frac{\lambda}{2m}\sum\limits_{j = 1}^{n}w_{j}^2$$
+
+As can be seen, J(w, b) now incorporates the regularization term in this expression
+
+### Implementing gradient descent for Logistic Regression
+
+![alt text](./images_for_07/image12.png)
+
+Same as the Linear Regression procedure: We do not regularize the parameter *b* but only $w_{j}$ parameters.
+
+So, the final $w_{j}$ parameters for a regularized Logistic Regression model are defined as follows:
+
+$$w_{j}=w_{j} - \alpha [\frac{1}{m}\sum\limits_{i = 1}^{m}[(f_{w,b}(x^{(i)}) - y^{(i)})x_{j}^{(i)}]+\frac{\lambda}{m}w_{j}] \text{ for j=1..n}$$
+
+$$w_{j}=w_{j}(1-\alpha\frac{\lambda}{m}) - \alpha \frac{1}{m}\sum\limits_{i = 1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})x_{j}^{(i)} \text{ for j=1..n}$$
+
+Also, it is very important that we have in mind that the definition of $f_{w,b}(x^{(i)})$ is not the same as in the case of Linear Regression. 
+
+Here, in Logistic Regression, we have defined $f_{w,b}(x^{(i)})$=*g(z)* where *g(z)* is the sigmoid function.
+
+### Linear Regression definition of $f_{w,b}(x^{(i)})$:
+
+$$f_{w,b}(x^{(i)}) = w.x+b$$
+
+### Logistic Regression definition of $f_{w,b}(x^{(i)})$:
+
+$$f_{w,b}(x^{(i)}) = g(z)$$
+
+where 
+
+* $g(z) = \frac{1}{1+e^-z}$
+* $z = w.x+b$
+
+## Optional lab 18: Regularization
