@@ -70,3 +70,142 @@ It turns out that even if you fit a higher order polynomial the shown in the ima
 
 ## Cost function with regularization
 
+regularization tries to make the parameter values $w_{1}$ through $w_{n}$ small in order to reduce overfitting
+
+The idea behind regularization is that if there are smaller values for the parameters, then that's a bit like having a simpler model, maybe one with fewer features which is less prone to overfitting
+
+The way regularization tends to be implemented is to penalize all of the features, or more precisely, penalize all the $w_{j}$ parameters.
+
+It is possible to show that this will usually result in fitting a smoother, simpler, less wiggly function prone to overfit.
+
+So, we penalize all of the features a bit and shrink all of them by adding a new term to the cost function J(w, b). This new term includes the Greek alphabet lambda $\lambda$ resulting in the following expression:
+
+$$J(w,b) = \frac{1}{2m}\sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2+\frac{\lambda}{2m}\sum\limits_{j = 1}^{n}w_{j}^2$$ 
+
+where 
+
+* lambda $\lambda$: Greek alphabet. It is called a regularization parameter. $\lambda > 0$
+
+Similar to picking a learning rate $\alpha$, now we also have to choose a number for lambda $\lambda$
+
+By convention, we also divide lambda $\lambda$ by *2m*, so both the first and the second term in the cost function J(w, b) equation are scaled by $\frac{1}{2m}$.
+It turns out that by scaling both terms the same way, it becomes a little bit easier to choose a good value for lambda $\lambda$.
+
+In particular, you will find that even if your training set size growths (say you find more training examples), so m, the training set size is bigger, the same value of lambda $\lambda$ that you have previously picked is also more likely to continue to work if you have this extra scaling by *2m*
+
+Also, by the way, by convention we are not going to penalize the parameter *b* for being large. In practice, it makes very little difference whether you do or not
+
+And some machine learning engineers and actually some learning algorithm implementations will also include lambda over 2m times the b squared term but this makes very little difference in practice and the more common convention is to regularize only the parameters *w* rather than the parameter *b*.
+
+$$J(w,b) = \frac{1}{2m}[\sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 + \frac{\lambda}{2m}\sum\limits_{j = 1}^{n}w_{j}^2 + \frac{\lambda}{2m}b^2]$$ 
+
+>Note: Again, this cost function J(w, b) that also regularizes the parameter *b* is not commonly used in ML
+
+## Summary
+
+So, to summarize:
+
+In this modified cost function
+
+$$J(w,b) = \frac{1}{2m}\sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2+\frac{\lambda}{2m}\sum\limits_{j = 1}^{n}w_{j}^2$$ 
+
+we want to minimize the original cost, which is the mean squared error cost plus additionally, the second term which is called the regularization term. 
+
+$$min_{w, b} J(w,b) = min_{w, b}[\frac{1}{2m}\sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2+\frac{\lambda}{2m}\sum\limits_{j = 1}^{n}w_{j}^2]$$ 
+
+And so this new cost function trades off 2 goals that you might have. 
+
+1. Trying to minimize the first term encourages the algorithm to fit the training data well by minimizing the squared differences of the predictions and the actual values.
+
+2. And about to try to minimize the second term: The algorithm also tries to keep the parameters $w_{j}$ small, which will tend to reduce overfitting.
+
+>Note: The value of lambda $\lambda$ that you choose specifies the relative importance or the relative trade off or how you balance between these two goals.
+
+## Analyzing lambda $\lambda$ values 
+
+Let's take a look at what different values of lambda $\lambda$ will cause your learning algorithm to do. 
+
+For it, let's use the housing price prediction example using linear regression.
+So, $f(x)$ is the linear regression model. 
+
+### 1st case: $\lambda=0$
+
+If lambda was set to be 0, then you would not be using the regularization term at all because the regularization term is multiplied by 0. And so if lambda was 0, you end up fitting the overly wiggly, overly complex curve and it **overfits**. So that was one extreme of if lambda was 0. 
+
+![alt text](./images_for_07/image4.png)
+
+### 2nd case: $\lambda=\text{large number}$
+
+Let's now look at the other extreme. If you said lambda to be a really, really, really large number, say lambda equals 10 to the power of 10. In this case, you are placing a very heavy weight on the regularization term. And the only way to minimize this is to be sure that all the values of w are pretty much very close to 0. 
+So if lambda is very, very large, the learning algorithm will choose $w_{1}$, $w_{2}$, $w_{3}$ and $w_{4}$ to be extremely close to 0 and thus $f(x)$ is basically equal to *b* and so the learning algorithm fits a horizontal straight line and **underfits**. 
+
+![alt text](./images_for_07/image5.png)
+
+To recap:
+
+>Note: If lambda is 0, this model will **overfit** 
+
+>Note: If lambda is enormous like 10 to the power of 10, this model will **underfit**
+
+And so what you want is some value of lambda that is in between that more appropriately balances these first and second terms of trading off, minimizing the mean squared error and keeping the parameters small. 
+
+### 3rd case: $\lambda=\text{a not too small and not too large number}$
+
+And when the value of lambda is not too small and not too large, but just right, then hopefully you end up able to fit a 4th order polynomial, keeping all of these features, but with a function that looks like the image below:
+
+![alt text](./images_for_07/image6.png)
+
+For a model that includes the regularization parameter $\lambda$, increasing its value reduces overfitting by reducing the size of the parameters $w_{n}$. For some parameters that are near zero, this reduces the effect of the associated features.
+
+## Regularized linear regression
+
+So, let's implement Gradient Descent for Linear Regression using a regularization term:
+
+We need to remember that we are going to regularize only the $w_{j}$ parameters. 
+We are not going to regularize the parameter *b*. So, the only changes are applied to the derivative of the cost function J over $w_{j}$ as shown in the image below:
+
+![alt text](./images_for_07/image7.png)
+
+So, the final gradient descent implementation looks like the following image shown below:
+
+![alt text](./images_for_07/image8.png)
+
+Parameters $w_{j}$
+
+$$w_{j} = w_{j} -  \alpha \frac{\partial J(w,b)}{\partial w_{j}}$$
+
+Derivative term of the cost function J(w, b) over $w_{j}$ without regularization:
+
+$$\frac{\partial J(w,b)}{\partial w_{j}} = \frac{1}{m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})x_{j}^{(i)}$$
+
+Derivative term of the cost function J(w, b) over $w_{j}$ applying regularization:
+
+$$\frac{\partial J(w,b)}{\partial w_{j}} = \frac{1}{m}\sum\limits_{i = 1}^{m}[(f_{w,b}(x^{(i)}) - y^{(i)})x_{j}^{(i)}]+\frac{\lambda}{m}w_{j}$$
+
+So, the final $w_{j}$ parameters for a regularized Linear Regression model are defined as follows:
+
+$$w_{j}=w_{j} - \alpha [\frac{1}{m}\sum\limits_{i = 1}^{m}[(f_{w,b}(x^{(i)}) - y^{(i)})x_{j}^{(i)}]+\frac{\lambda}{m}w_{j}] \text{ for j=1..n}$$
+
+
+## (Optional) A deeper intuition on what this $w_{j}$ formula is actually doing
+### 1. Another view on why regularization has an effect of shrinking the parameters $w_{j}$
+
+![alt text](./images_for_07/image9.png)
+
+As can be seen above, after operating the expression for the $w_{j}$ parameters, we can observe that every $w_{j}$ parameter is being affected by a factor.
+
+This factor, when there is no regularization applied ($\lambda$=0), does not make any change on every $w_{j}$ parameter. 
+
+But instead, when the regularization is being applied through the lambda $\lambda$ parameter ($\lambda$!=0), it shrinks every $w_{j}$ parameter by making them smaller due to this factor is always a number minor than 1. It is minor than 1 because alpha $\alpha$, lambda $\lambda$ and *m* (the amount of training examples) are always positive numbers.
+What I mean is that, in this case, every $w_{j}$ parameter is going to be multiplied by factor which is a number greather than 0 and minor than 1. That makes every $w_{j}$ parameter smaller.
+
+$$w_{j}=w_{j}(1-\alpha\frac{\lambda}{m}) - \alpha \frac{1}{m}\sum\limits_{i = 1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})x_{j}^{(i)} \text{ for j=1..n}$$
+
+### 2. How these derivatives are derived
+
+![alt text](./images_for_07/image10.png)
+
+This is why this expression is used to compute the gradient in regularized linear regression
+
+## Regularized logistic regression
+
