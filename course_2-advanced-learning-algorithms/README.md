@@ -1,4 +1,4 @@
-## Course 2: Neural Networks
+## Course 2: Advanced Learning Algorithms
 
 ### About this Course
 
