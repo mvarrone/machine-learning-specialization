@@ -27,3 +27,19 @@ Then, in the final week of this course, you learn about decision trees. While de
 
 ## Neurons and the brain
 
+![alt text](./images_for_01/image2.png)
+
+![alt text](./images_for_01/image3.png)
+
+![alt text](./images_for_01/image4.png)
+
+![alt text](./images_for_01/image5.png)
+
+## Demand Prediction
+
+![alt text](./images_for_01/image6.png)
+
+![alt text](./images_for_01/image7.png)
+
+## Example: Recognizing Images
+
