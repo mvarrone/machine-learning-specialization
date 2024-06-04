@@ -1,10 +1,6 @@
 # Machine Learning Specialization
 [![alt text](title_head.png)](https://www.coursera.org/specializations/machine-learning-introduction)
 
-<a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank">
-    <img src="title_head.png" alt="alt text">
-</a>
-
 
 This repository contains information about the Machine Learning [specialization](https://www.coursera.org/specializations/machine-learning-introduction) offered by Coursera.
 
