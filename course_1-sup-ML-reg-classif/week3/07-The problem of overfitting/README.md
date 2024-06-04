@@ -145,7 +145,7 @@ To recap:
 
 >Note: If lambda is 0, this model will **overfit** 
 
->Note: If lambda is enormous like 10 to the power of 10, this model will **underfit**
+>Note: If lambda is enormous (like 10 to the power of 10), this model will **underfit**
 
 And so what you want is some value of lambda that is in between that more appropriately balances these first and second terms of trading off, minimizing the mean squared error and keeping the parameters small. 
 
@@ -155,7 +155,7 @@ And when the value of lambda is not too small and not too large, but just right,
 
 ![alt text](./images_for_07/image6.png)
 
-For a model that includes the regularization parameter $\lambda$, increasing its value reduces overfitting by reducing the size of the parameters $w_{n}$. For some parameters that are near zero, this reduces the effect of the associated features.
+For a model that includes the regularization parameter $\lambda$, increasing its value reduces overfitting by reducing the size of the parameters $w_{j}$. For some parameters that are near zero, this reduces the effect of the associated features.
 
 ## Regularized linear regression
 
@@ -192,14 +192,28 @@ $$w_{j}=w_{j} - \alpha [\frac{1}{m}\sum\limits_{i = 1}^{m}[(f_{w,b}(x^{(i)}) - y
 
 ![alt text](./images_for_07/image9.png)
 
-As can be seen above, after operating the expression for the $w_{j}$ parameters, we can observe that every $w_{j}$ parameter is being affected by a factor.
+As can be seen above, after operating the expression for the $w_{j}$ parameters, we can observe that every $w_{j}$ parameter is being affected by a factor (which later we will call *k*, shrink factor).
 
 This factor, when there is no regularization applied ($\lambda$=0), does not make any change on every $w_{j}$ parameter. 
 
-But instead, when the regularization is being applied through the lambda $\lambda$ parameter ($\lambda$!=0), it shrinks every $w_{j}$ parameter by making them smaller due to this factor is always a number minor than 1. It is minor than 1 because alpha $\alpha$, lambda $\lambda$ and *m* (the amount of training examples) are always positive numbers.
-What I mean is that, in this case, every $w_{j}$ parameter is going to be multiplied by factor which is a number greather than 0 and minor than 1 and that is what makes every $w_{j}$ parameter smaller.
+But instead, when the regularization is being applied through the lambda $\lambda$ parameter ($\lambda \neq$ 0), it shrinks every $w_{j}$ parameter by making them smaller due to this factor is always a number minor than 1. It is minor than 1 because alpha $\alpha$, lambda $\lambda$ and *m* (the amount of training examples) are always positive numbers.
+What I mean is that, in this case, every $w_{j}$ parameter is going to be multiplied by a factor which is a number greather than 0 and minor than 1 and that is what makes every $w_{j}$ parameter smaller.
 
 $$w_{j}=w_{j}(1-\alpha\frac{\lambda}{m}) - \alpha \frac{1}{m}\sum\limits_{i = 1}^{m}(f_{w,b}(x^{(i)}) - y^{(i)})x_{j}^{(i)} \text{ for j=1..n}$$
+
+Finally, we could define *k* as the shrinking factor as follows resulting in the following expression:
+
+$$k=1-\alpha\frac{\lambda}{m}$$
+
+$$0 < k \le 1$$
+
+$$w_{j}=w_{j}k - \alpha \frac{\partial J(w,b)}{\partial w_{j}}$$
+
+Considerations:
+
+* If $\lambda$ = 0, then *k* = 1, no regularization is applied: Each $w_{j}$ parameter keep its value
+
+* If $\lambda$ $\neq$ 0, then $0 < k < 1$, regularization is applied: Each $w_{j}$ parameter is shrinked by *k*
 
 ### 2. How these derivatives are derived
 
