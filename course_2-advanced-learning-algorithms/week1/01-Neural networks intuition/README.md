@@ -43,3 +43,13 @@ Then, in the final week of this course, you learn about decision trees. While de
 
 ## Example: Recognizing Images
 
+![alt text](./images_for_01/image8.png)
+
+![alt text](./images_for_01/image9.png)
+
+![alt text](./images_for_01/image10.png)
+
+## Forum
+
+[DeepLearning.AI Community](https://community.deeplearning.ai)
+
