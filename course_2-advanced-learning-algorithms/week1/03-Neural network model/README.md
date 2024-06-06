@@ -31,3 +31,31 @@ In the context of a neural network, g has another name which is also called the 
 The activation function is just that function that outputs these activation values.
 
 ## Inference: making predictions (forward propagation)
+
+Neural network inference using the forward propagation algorithm
+
+![alt text](./images_for_03/image7.png)
+
+### Computing $\vec{a}^{[1]}$
+
+![alt text](./images_for_03/image8.png)
+
+### Computing $\vec{a}^{[2]}$
+
+![alt text](./images_for_03/image9.png)
+
+### Computing $\vec{a}^{[3]}$
+
+![alt text](./images_for_03/image10.png)
+
+### Forward propagation algorithm
+
+It is called forward propagation because we are propagating the activations of the neurons (making computations) in the forward direction from left to right. 
+
+This is in contrast to a different algorithm called back/backward propagation which is used for learning
+
+This type of neural network architecture where you have more hidden units initially and then the number of hidden units decreases as you get closer to the output layer, it is also a pretty typical choice when choosing neural network architectures
+
+![alt text](./images_for_03/image11.png)
+
+## Optional Lab 1: Neurons and Layers
