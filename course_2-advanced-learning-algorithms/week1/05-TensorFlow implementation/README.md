@@ -119,13 +119,13 @@ layer_2 = Dense(units=15, activation="sigmoid")
 layer_3 = Dense(units=1, activation="sigmoid")
 
 model = Sequential([layer_1, layer_2, layer_3])
-model.compile(...)
 
 x = np.array([[0..., 245, ..., 17],
               [0..., 200, ..., 184]])
 
 y = np.array([1,0])
 
+model.compile(...)
 model.fit(x,y)
 
 #x_new = np.array(...)
