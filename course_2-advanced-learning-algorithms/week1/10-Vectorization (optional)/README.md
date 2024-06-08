@@ -33,3 +33,4 @@ This turns out to be a very efficient implementation of one step of forward prop
 This is code for a vectorized implementation of forward prop in a neural network
 
 ## 2. Matrix multiplication
+
