@@ -4,7 +4,7 @@ If you had to implement forward propagation yourself from scratch in python, how
 
 ### How to implement forward propagation in a single layer
 
-Let's look at how you would take an input feature vector $x$ and implement forward prop to get this output $\vec{a}^{[2]}$
+Let's look at how you would take an input feature vector $\vec{X}$ and implement forward prop to get this output vector $\vec{a}^{[2]}$
 
 ![alt text](./images_for_07/image1.png)
 
@@ -20,7 +20,7 @@ x = np.array([200, 17]) # Numpy 1D array
 
 3. $a^{[1]}_3$
 
-Start
+Let's start
 ---
 
 ### 1. $a^{[1]}_1$
@@ -53,7 +53,7 @@ z1_3 = np.dot(w1_3, x) + b1_3
 a1_3 = sigmoid(z1_3)
 ```
 
-Finally, we have $\vec{a}^{[1]}$ as follows:
+Finally, we can define $\vec{a}^{[1]}$ as follows:
 
 ```python
 a1 = np.array([a1_1, a1_2, a1_3])
@@ -63,7 +63,7 @@ a1 = np.array([a1_1, a1_2, a1_3])
 
 1. $a^{[2]}_1$: This is the 1st (and the only one) activation value of $\vec{a}^{[2]}$
 
-Start
+Let's start
 ---
 
 ### 1. $a^{[2]}_1$
@@ -78,7 +78,7 @@ a2_1 = sigmoid(z2_1)
 
 ## Check if this is correct
 
-Finally, we have $\vec{a}^{[2]}$ as follows:
+Finally, we can define $\vec{a}^{[2]}$ as follows:
 
 ```python
 a2 = np.array([a2_1])
