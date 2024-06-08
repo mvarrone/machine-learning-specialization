@@ -94,3 +94,65 @@ Now, there are a lot of expressions in this page of code that you just saw. Let'
 
 ## General implementation of forward propagation
 
+![alt text](./images_for_07/image3.png)
+
+> Note 1: Function g() is defined outside of dense() function
+
+> Note 2: Under the notational conventions from Linear Algebra is to use uppercase or capital alphabet when it is referring to a matrix and lowercase to referr to vectors and scalars. So, that is why we are using uppercase W to referr to the W matrix
+
+$$
+\vec{w}^{[1]}_{1} = \begin{bmatrix} 1  \\ 2 \end{bmatrix} \quad
+\vec{w}^{[1]}_{2} = \begin{bmatrix} -3 \\ 4 \end{bmatrix} \quad
+\vec{w}^{[1]}_{3} = \begin{bmatrix} 5  \\ -6 \end{bmatrix}
+$$
+
+$$
+b^{[1]}_{1} = -1 \quad
+b^{[1]}_{2} = 1  \quad
+b^{[1]}_{3} = 2
+$$
+
+$$
+\vec{a}^{[0]} = \vec{x}
+$$
+
+## Code
+
+```python
+W = np.array([
+    [1, -3, 5],
+    [2, 4, -6]])
+
+b = np.array([-1, 1, 2])
+a_in = np.array([-2, 4]) 
+```
+
+```python
+def g(z):
+    pass # To be implemented later
+```
+
+```python
+def dense(a_in, W, b):
+    units = W.shape[1] # W.shape[0] for row size, W.shape[1] for column size
+    a_out = np.zeros(units)
+    for j in range(units):
+        w = W[:, j]
+        z = np.dot(w, a_in) + b[j]
+        a_out[j] = g(z)
+    return a_out
+```
+
+```python
+def sequential(x):
+    a1 = dense(x, W1, b1)
+    a2 = dense(a1, W2, b2)
+    a3 = dense(a2, W3, b3)
+    a4 = dense(a3, W4, b4)
+    f_x = a4
+    return f_x
+```
+
+You now know how to implement forward prop yourself from scratch
+
+## Optional Lab 3: CoffeeRoastingNumPy
