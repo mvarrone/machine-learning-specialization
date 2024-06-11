@@ -109,7 +109,7 @@ where:
 \|\mathbf{b} \| \quad is the magnitude (length) of \vec{b}
 ```
 
-$$\theta$ is the angle between $\vec{a}$ and $\vec{b}$$
+$\theta$ is the angle between $\vec{a}$ and $\vec{b}$
 
 #### Properties
 
