@@ -56,10 +56,15 @@ $$z=\vec{a} \cdot \vec{w}$$
 
 The dot product of two vectors **a** and **b** in an $n$-dimensional space is defined as:
 
+```math
 $\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^{n} a_i b_i$
+```
 
 Where:
-- $\mathbf{a} = \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}$
+- 
+```math
+$\mathbf{a} = \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}$
+```
 
 - $\mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}$
 
@@ -197,11 +202,11 @@ AT = A.T # How to calculate the transpose of A, denoted as AT
 W = np.array([[3, 5, 7, 9],[4, 6, 8, 0]]) # Numpy 2D array
 
 # Multiply both matrices
-Z = np.matmul(AT, W) # Method 1: using matmul
-Z = AT @ W # Method 2: Using the @ operator
+Z_method_1 = np.matmul(AT, W) # Method 1: using matmul
+Z_method_2 = AT @ W # Method 2: Using the @ operator
 ```
 
-The result for $Z$ is: 
+The results for *Z_method_1* and *Z_method_2* are the same: 
 
       [
          [11,17,23,9],
