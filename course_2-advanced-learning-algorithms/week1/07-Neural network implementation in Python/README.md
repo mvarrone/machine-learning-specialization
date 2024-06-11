@@ -104,23 +104,6 @@ $$\vec{w}^{[1]}_{1} = \begin{bmatrix} 1  \\ 2 \end{bmatrix} \quad \vec{w}^{[1]}_
 
 $$b^{[1]}_{1} = -1 \quad b^{[1]}_{2} = 1 \quad b^{[1]}_{3} = 2$$
 
-$b^{[1]}_{1} = -1$, $b^{[1]}_{2} = 1$, $b^{[1]}_{3} = 2$
-
-$$
-b^{[1]}_{1} = -1 \quad b^{[1]}_{2} = 1 \quad b^{[1]}_{3} = 2
-$$
-
-To display the values of the coefficients:
-
-Inline format:
-$b^{[1]}_{1} = -1$, $b^{[1]}_{2} = 1$, $b^{[1]}_{3} = 2$
-
-Display format:
-$$
-b^{[1]}_{1} = -1 \quad b^{[1]}_{2} = 1 \quad b^{[1]}_{3} = 2
-$$
-
-
 $$\vec{a}^{[0]} = \vec{x}$$
 
 ## Code
