@@ -68,7 +68,7 @@ where:
 
 The dot product is:
 
-$\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + ... + a_n b_n$
+$$\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + ... + a_n b_n$$
 
 #### Calculation
 
@@ -102,14 +102,12 @@ The dot product can also be interpreted geometrically. It is related to the magn
 
 Where:
 ```math 
-\|\mathbf{a} \|
+\|\mathbf{a} \| \quad is the magnitude (length) of $\vec{a}$
 ```
-is the magnitude (length) of $\vec{a}$
 
 ```math 
-\|\mathbf{b} \|
+\|\mathbf{b} \| \quad is the magnitude (length) of \vec{b}
 ```
-is the magnitude (length) of $\vec{b}$
 
 - $\theta$ is the angle between $\vec{a}$ and $\vec{b}$
 
