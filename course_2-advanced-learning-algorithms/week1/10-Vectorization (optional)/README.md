@@ -111,8 +111,10 @@ Where:
 is the magnitude (length) of $\vec{a}$
 
 ```math 
-\|\mathbf{b} \| is the magnitude (length) of \vec{b}
+\|\mathbf{b} \|
 ```
+is the magnitude (length) of $\vec{b}$
+
 - $\theta$ is the angle between $\vec{a}$ and $\vec{b}$
 
 #### Properties
