@@ -137,7 +137,7 @@ is the magnitude (length) of $\vec{b}$
 Given vectors $\vec{a}$ and $\vec{b}$:
 
 ```math 
-\mathbf{a} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} \quad and \mathbf{b} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}
+\mathbf{a} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix} \quad \text and \mathbf{b} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}
 ``` 
 
 then
