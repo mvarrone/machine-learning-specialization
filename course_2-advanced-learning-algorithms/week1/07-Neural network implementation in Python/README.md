@@ -102,17 +102,13 @@ Now, there are a lot of expressions in this page of code that you just saw. Let'
 
 $$\vec{w}^{[1]}_{1} = \begin{bmatrix} 1  \\ 2 \end{bmatrix} \quad
 \vec{w}^{[1]}_{2} = \begin{bmatrix} -3 \\ 4 \end{bmatrix} \quad
-\vec{w}^{[1]}_{3} = \begin{bmatrix} 5  \\ -6 \end{bmatrix}
-$$
+\vec{w}^{[1]}_{3} = \begin{bmatrix} 5  \\ -6 \end{bmatrix}$$
 
-$$
-b^{[1]}_{1} = -1 \quad
+$$b^{[1]}_{1} = -1 \quad
 b^{[1]}_{2} = 1  \quad
-b^{[1]}_{3} = 2
-$$
+b^{[1]}_{3} = 2$$
 
-$$
-\vec{a}^{[0]} = \vec{x}$$
+$$\vec{a}^{[0]} = \vec{x}$$
 
 ## Code
 
