@@ -57,13 +57,12 @@ $$z=\vec{a} \cdot \vec{w}$$
 The dot product of two vectors **a** and **b** in an $n$-dimensional space is defined as:
 
 ```math
-$\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^{n} a_i b_i$
+\mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^{n} a_i b_i
 ```
 
 Where:
-- 
-```math
-$\mathbf{a} = \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}$
+- ```math
+\mathbf{a} = \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}
 ```
 
 - $\mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}$
