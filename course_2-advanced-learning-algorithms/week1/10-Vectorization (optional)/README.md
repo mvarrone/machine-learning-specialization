@@ -12,13 +12,17 @@ In this video, we'll take a look at how these vectorized implementations of neur
 
 ![alt text](./images_for_10/image1.png)
 
-### Non-vectorized implementation (See *1-non-vectorized-code.ipynb*)
+### Non-vectorized implementation 
+
+### See [1-non-vectorized-code.ipynb](https://github.com/mvarrone/machine-learning-specialization/blob/master/course_2-advanced-learning-algorithms/week1/10-Vectorization%20(optional)/Own%20labs%20-%20Vectorization/1-non-vectorized-code.ipynb)
 
 On the left, is the code we developed previously of how to implement forward propagation in a single layer
 
 For this code, X is the input, W the weights of the 1st, 2nd and 3rd neurons and we have the parameters b. Result of this implementation is [1, 0, 1]
 
-### Vectorized implementation (See *2-vectorized-code.ipynb*)
+### Vectorized implementation
+
+### See [2-vectorized-code.ipynb](https://github.com/mvarrone/machine-learning-specialization/blob/master/course_2-advanced-learning-algorithms/week1/10-Vectorization%20(optional)/Own%20labs%20-%20Vectorization/2-vectorized-code.ipynb)
 
 On the right, is a vectorized implementation of this code.
 
