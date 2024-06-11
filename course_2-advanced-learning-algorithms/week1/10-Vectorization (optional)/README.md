@@ -76,27 +76,33 @@ $\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + ... + a_n b_n$
 
 #### Calculation
 
-For two-dimensional vectors, $\vec{a}$ and $\vec{b}$:
+- For two-dimensional vectors, $\vec{a}$ and $\vec{b}$:
 
-$\mathbf{a} = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}$
-
-The dot product is:
-
-$\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2$
-
-For three-dimensional vectors, $\vec{a}$ and $\vec{b}$:
-
-$\mathbf{a} = \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}$
+```math
+\mathbf{a} = \begin{bmatrix} a_1 \\ a_2 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \end{bmatrix}
+```
 
 The dot product is:
 
-$\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3$
+$$\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2$$
+
+- For three-dimensional vectors, $\vec{a}$ and $\vec{b}$:
+
+```math
+\mathbf{a} = \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \\ b_3 \end{bmatrix}
+```
+
+The dot product is:
+
+$$\mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3$$
 
 #### Geometric Interpretation
 
 The dot product can also be interpreted geometrically. It is related to the magnitudes of the vectors and the cosine of the angle between them:
 
-$\mathbf{a} \cdot \mathbf{b} = \|\mathbf{a}\| \|\mathbf{b}\| \cos \theta$
+```math
+\mathbf{a} \cdot \mathbf{b} = \|\mathbf{a}\| \|\mathbf{b}\| \cos \theta
+```
 
 Where:
 - $ \|\mathbf{a} \|$ is the magnitude (length) of $\vec{a}$
