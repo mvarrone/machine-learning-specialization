@@ -107,7 +107,8 @@ The dot product can also be interpreted geometrically. It is related to the magn
 Where:
 ```math 
 \|\mathbf{a} \|
-``` is the magnitude (length) of \vec{a}
+```
+is the magnitude (length) of $\vec{a}$
 
 ```math 
 \|\mathbf{b} \| is the magnitude (length) of \vec{b}
