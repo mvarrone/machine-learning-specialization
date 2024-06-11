@@ -100,8 +100,7 @@ Now, there are a lot of expressions in this page of code that you just saw. Let'
 
 > Note 2: Under the notational conventions from Linear Algebra is to use uppercase or capital alphabet when it is referring to a matrix and lowercase to referr to vectors and scalars. So, that is why we are using uppercase W to referr to the W matrix
 
-$$
-\vec{w}^{[1]}_{1} = \begin{bmatrix} 1  \\ 2 \end{bmatrix} \quad
+$$\vec{w}^{[1]}_{1} = \begin{bmatrix} 1  \\ 2 \end{bmatrix} \quad
 \vec{w}^{[1]}_{2} = \begin{bmatrix} -3 \\ 4 \end{bmatrix} \quad
 \vec{w}^{[1]}_{3} = \begin{bmatrix} 5  \\ -6 \end{bmatrix}
 $$
@@ -113,8 +112,7 @@ b^{[1]}_{3} = 2
 $$
 
 $$
-\vec{a}^{[0]} = \vec{x}
-$$
+\vec{a}^{[0]} = \vec{x}$$
 
 ## Code
 
