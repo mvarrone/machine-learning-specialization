@@ -102,14 +102,16 @@ The dot product can also be interpreted geometrically. It is related to the magn
 
 where:
 ```math 
-\|\mathbf{a} \| \quad \text{is the magnitude (length) of} \vec{a}
+\|\mathbf{a} \| \quad \text{is the magnitude (length) of } \vec{a}
 ```
 
 ```math 
-\|\mathbf{b} \| \quad is the magnitude (length) of \vec{b}
+\|\mathbf{b} \| \quad \text{is the magnitude (length) of } \vec{b}
 ```
 
-$\theta$ is the angle between $\vec{a}$ and $\vec{b}$
+```math 
+theta \quad \text{is the angle between } \vec{a} \quad \text{and} \vec{b} 
+```
 
 #### Properties
 
