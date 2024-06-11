@@ -110,7 +110,7 @@ where:
 ```
 
 ```math 
-theta \quad \text{is the angle between } \vec{a} \quad \text{and} \vec{b} 
+\theta \quad \text{is the angle between } \vec{a} \quad \text{and } \vec{b} 
 ```
 
 #### Properties
