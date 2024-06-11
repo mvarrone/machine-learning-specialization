@@ -106,6 +106,10 @@ $$b^{[1]}_{1} = -1 \quad b^{[1]}_{2} = 1 \quad b^{[1]}_{3} = 2$$
 
 $$\vec{a}^{[0]} = \vec{x}$$
 
+```math
+$\begin{bmatrix} X \\ Y \end{bmatrix}$
+```
+
 ## Code
 
 ```python
