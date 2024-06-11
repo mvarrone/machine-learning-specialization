@@ -238,3 +238,5 @@ print(result)
 The result is: 
 
       [[1, 0, 1]]
+
+## Programming Assignment: Practice Lab: Neural Networks for Binary Classification
