@@ -108,7 +108,10 @@ Where:
 ```math 
 \|\mathbf{a} \| is the magnitude (length) of \vec{a}
 ```
-- $ \|\mathbf{b} \|$ is the magnitude (length) of $\vec{b}$
+
+```math 
+\|\mathbf{b} \| is the magnitude (length) of \vec{b}
+```
 - $\theta$ is the angle between $\vec{a}$ and $\vec{b}$
 
 #### Properties
@@ -128,7 +131,11 @@ Where:
 
 ### Example
 
-Given vectors $\mathbf{a} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$ and $\mathbf{b} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}$, then
+Given vectors 
+
+```math 
+$\mathbf{a} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}$ and $\mathbf{b} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}
+```, then
 
 $\mathbf{a} \cdot \mathbf{b} = 1 \cdot 4 + 2 \cdot 5 + 3 \cdot 6 = 4 + 10 + 18 = 32$
 
