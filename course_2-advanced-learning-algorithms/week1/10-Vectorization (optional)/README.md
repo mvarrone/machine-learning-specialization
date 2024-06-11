@@ -8,7 +8,7 @@ They can be implemented very efficiently using matrix multiplications and it tur
 
 In this video, we'll take a look at how these vectorized implementations of neural networks work. Without these ideas, I don't think deep learning would be anywhere near a success and scale today
 
-## Vectorization of code (using np.matmul())
+## Vectorization of code using $np.matmul()$
 
 ![alt text](./images_for_10/image1.png)
 
@@ -60,12 +60,15 @@ The dot product of two vectors **a** and **b** in an $n$-dimensional space is de
 \mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^{n} a_i b_i
 ```
 
-Where:
-- ```math
+where:
+
+```math
 \mathbf{a} = \begin{bmatrix} a_1 \\ a_2 \\ \vdots \\ a_n \end{bmatrix}
 ```
 
-- $\mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}$
+```math
+\mathbf{b} = \begin{bmatrix} b_1 \\ b_2 \\ \vdots \\ b_n \end{bmatrix}
+```
 
 The dot product is:
 
