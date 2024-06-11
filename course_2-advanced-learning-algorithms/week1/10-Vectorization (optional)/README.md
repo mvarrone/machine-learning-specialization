@@ -140,9 +140,17 @@ Given vectors
 \mathbf{a} = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}
 ``` 
 
-and $\mathbf{b} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}$, then
+and 
 
-$\mathbf{a} \cdot \mathbf{b} = 1 \cdot 4 + 2 \cdot 5 + 3 \cdot 6 = 4 + 10 + 18 = 32$
+```math 
+\mathbf{b} = \begin{bmatrix} 4 \\ 5 \\ 6 \end{bmatrix}
+```
+
+, then
+
+```math 
+\mathbf{a} \cdot \mathbf{b} = 1 \cdot 4 + 2 \cdot 5 + 3 \cdot 6 = 4 + 10 + 18 = 32
+```
 
 Therefore, the dot product of $\mathbf{a}$ and $\mathbf{b}$ is 32
 
