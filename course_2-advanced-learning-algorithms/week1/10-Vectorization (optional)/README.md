@@ -223,7 +223,10 @@ W = np.array([[3, 5, 7, 9],[4, 6, 8, 0]]) # Numpy 2D array
 
 # Multiply both matrices
 Z_method_1 = np.matmul(AT, W) # Method 1: using matmul
+print(Z_method_1)
+
 Z_method_2 = AT @ W # Method 2: Using the @ operator
+print(Z_method_2)
 ```
 
 The results for *Z_method_1* and *Z_method_2* are the same: 
