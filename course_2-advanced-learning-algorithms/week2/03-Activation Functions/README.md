@@ -180,7 +180,7 @@ So, to compute $a^{[1]}$ as a function of x, the neural network will use $a^{[1]
 
 But $g(z)=z$
 
-So, this is just $a^{[1]} = w^{[1]}_{1} * x + b^{[1]}_{1}$
+So, this is just $a^{[1]} = w_{1}^{[1]} * x + b_{1}^{[1]}$
 
 Then $a^{[2]} = w^{[2]}_{1} * a^{[1]} + b^{[2]}_{1}$ because $g(z)=z$
 
@@ -190,11 +190,11 @@ So, that becomes w2 times w1 x plus b1 plus b2.
 
 If we simplify, this becomes w2, w1 times x plus w2, b1 plus b2. 
 
-It turns out that if I were to set w as follows:
+It turns out that if I were to set $w$ as follows:
 
 $$w = w_{1}^{[2]} * w_{1}^{[1]}$$
 
-and set b as follows:
+and set $b$ as follows:
 
 $$b = w_{1}^{[2]} * b_{1}^{[1]} + b_{1}^{[2]}$$
 
