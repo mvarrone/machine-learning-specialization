@@ -68,6 +68,7 @@ Then, the third and final step to train a Logistic Regression model was to use a
 And, we minimized the cost $J(w, b)$ as a function of the parameters using Gradient Descent where both parameters $w$ and $b$ were updated as follows:
 
 $$w = w - alpha * \frac{dJ(w, b)}{dw}$$
+
 $$b = b - alpha * \frac{dJ(w, b)}{db}$$
 
 ## Recap
