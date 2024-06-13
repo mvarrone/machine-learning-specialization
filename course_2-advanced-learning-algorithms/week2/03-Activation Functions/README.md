@@ -176,7 +176,7 @@ Let's look at the example of a neural network where the input x is just a number
 
 Let's see what this neural network would do if we were to use the linear activation function $g(z)=z$ everywhere
 
-So, to compute $a^{[1]}$ as a function of x, the neural network will use $a^{[1]} = g(w^{[1]}_{1} * x + b^{[1]}_{1})$
+So, to compute $a^{[1]}$ as a function of x, the neural network will use $a^{[1]} = g(w_{1}^{[1]} * x + b_{1}^{[1]})$
 
 But $g(z)=z$
 
