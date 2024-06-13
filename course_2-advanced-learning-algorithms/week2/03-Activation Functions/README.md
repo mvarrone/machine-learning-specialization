@@ -182,7 +182,7 @@ But $g(z)=z$
 
 So, this is just $a^{[1]} = w_{1}^{[1]} * x + b_{1}^{[1]}$
 
-Then $a^{[2]} = w^{[2]}_{1} * a^{[1]} + b^{[2]}_{1}$ because $g(z)=z$
+Then $a^{[2]} = w_{1}^{[2]} * a^{[1]} + b_{1}^{[2]}$ because $g(z)=z$
 
 Let me take this expression for $a^{[1]}$ and substitute it in there.
 
