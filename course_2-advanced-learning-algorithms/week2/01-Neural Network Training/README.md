@@ -105,11 +105,13 @@ The second step is to compile the model and to tell it what loss you want to use
 model.compile(loss=BinaryCrossentropy())
 ```
 
-which is the Binary Cross Entropy loss function. And once you specify this loss taking an average over the entire training set also gives you the cost function for the neural network
+which is the Binary Cross Entropy loss function.
+
+And once you specify this loss taking an average over the entire training set also gives you the cost function for the neural network
 
 ### Step 3: Train on data to minimize $J(w, b)$
 
-Step three is to call function to try to minimize the cost as a function of the parameters of the neural network
+Step three is to call a function to try to minimize the cost as a function of the parameters of the neural network
 
 ```python
 model.fit(X, y, epochs=100)
