@@ -196,7 +196,7 @@ $$w = \vec{w}^{[2]}_{1} * \vec{w}^{[1]}_{1}$$
 
 and set b as follows:
 
-$$b = w^{[2]}_{1} * b^{[1]}_{1} + b^{[2]}_{1}$$
+$$b=w^{[2]}_{1}*b^{[1]}_{1}+b^{[2]}_{1}$$
 
 then what we've just shown is that $a^{[2]}$
 
