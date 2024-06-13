@@ -192,11 +192,11 @@ If we simplify, this becomes w2, w1 times x plus w2, b1 plus b2.
 
 It turns out that if I were to set w as follows:
 
-$$w = \vec{w}^{[2]}_{1} * \vec{w}^{[1]}_{1} $$
+$$w = \vec{w}^{[2]}_{1} * \vec{w}^{[1]}_{1}$$
 
 and set b as follows:
 
-$$b = w^{[2]}_{1} * b^{[1]}_{1} + b^{[2]}_{1} $$
+$$b = w^{[2]}_{1} * b^{[1]}_{1} + b^{[2]}_{1}$$
 
 then what we've just shown is that $a^{[2]}$
 
