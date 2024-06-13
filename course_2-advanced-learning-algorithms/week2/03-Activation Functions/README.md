@@ -192,7 +192,7 @@ If we simplify, this becomes w2, w1 times x plus w2, b1 plus b2.
 
 It turns out that if I were to set w as follows:
 
-$$w = \vec{w}_{1}^{[2]} * \vec{w}_{1}^{[1]}$$
+$$w = w_{1}^{[2]} * w_{1}^{[1]}$$
 
 and set b as follows:
 
