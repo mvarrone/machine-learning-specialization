@@ -80,6 +80,7 @@ So, lets recap these 3 steps:
 - Step 3: Minimize the cost function $J$
 
 The same 3 steps is how we can train a neural network in TensorFlow
+
 Now let's look at how these three steps map to training a neural network. 
 
 ## 2. Neural network
