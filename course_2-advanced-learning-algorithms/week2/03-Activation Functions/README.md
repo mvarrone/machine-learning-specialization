@@ -10,7 +10,7 @@ So, rather than modeling awareness as a binary number 0, 1, that you try to esti
 
 So, whereas previously we had used this equation 
 
-$$a_{2}^{[1]} = g(z) = g(\vec{w}_{2}^{[1]} \cdot \vec{x} + b_{2}^{[1]})$$
+$$a_{2}^{[1]} = \text{g(z) = } g(\vec{w}_{2}^{[1]} \cdot \vec{x} + b_{2}^{[1]})$$
 
 to calculate the activation of that 2nd hidden unit estimating awareness where g was the sigmoid function and just goes between 0 and 1. 
 
@@ -217,7 +217,7 @@ So, in the general case, if you had a neural network with multiple layers like t
 Or alternatively, if we were to still use a linear activation function for all the hidden layers, for these three hidden layers here, but we were to use a Logistic activation function for the output layer, then it turns out you can show that this model becomes equivalent to **Logistic Regression**, and $a^{[4]}$, in this case, can be expressed as 1 over 1 plus e to the negative wx plus b for some values of w and b.
 So, this big neural network doesn't do anything that you can't also do with Logistic Regression.
 
-## Instructor piece of advice
+## Instructor's piece of advice
 
 That's why a common rule of thumb is don't use the linear activation function in the hidden layers of the neural network. In fact, I recommend typically using the ReLU activation function should do just fine. So that's why a neural network needs activation functions other than just the linear activation function everywhere. 
 
