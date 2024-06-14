@@ -10,7 +10,7 @@ So, rather than modeling awareness as a binary number 0, 1, that you try to esti
 
 So, whereas previously we had used this equation 
 
-$$a_2^{[1]} = g(\vec{w}_2^{[1]} \cdot \vec{x} + b_2^{[1]})$$
+$$a_2^{[1]} = g(z) = g(\vec{w}_2^{[1]} \cdot \vec{x} + b_2^{[1]})$$
 
 to calculate the activation of that 2nd hidden unit estimating awareness where g was the sigmoid function and just goes between 0 and 1. 
 
