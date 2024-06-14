@@ -12,9 +12,9 @@ So, whereas previously we had used this equation
 
 $$a_2^{[1]} = g(z) = g(\vec{w}_2^{[1]} \cdot \vec{x} + b_2^{[1]})$$
 
-to calculate the activation of that 2nd hidden unit estimating awareness where g was the sigmoid function and just goes between 0 and 1. 
+to calculate the activation of that 2nd hidden unit in layer 1 estimating awareness where g was the sigmoid function and just goes between 0 and 1. 
 
-If you want to allow $a_{2}^{[1]}$ to potentially take on much larger positive values, we can instead swap in a different activation function.
+If you want to allow $a_{2}^{[1]}$ to potentially take on much larger positive values we can instead swap in a different activation function.
 
 ## Another activation function: ReLU
 
