@@ -172,31 +172,43 @@ Let's illustrate this with a simpler example.
 
 ![alt text](./img/image8.png)
 
-Let's look at the example of a neural network where the input x is just a number and we have one hidden unit with parameters $w_{1}^{[1]}$ and $b_{1}^{[1]}$ that outputs $a^{[1]}$, which is here, just a number, and then the second layer is the output layer and it has also just one output unit with parameters $w_{1}^{[2]}$ and $b_{1}^{[2]}$ and then output $a^{[2]}$, which is also just a number, just a scalar, which is the output of the neural network $f(x)$.
+Let's look at the following example:
 
-Let's see what this neural network would do if we were to use the linear activation function $g(z)=z$ everywhere
+This example is about a neural network where the input $x$ is just a number, for example the number 2
 
-So, to compute $a^{[1]}$ as a function of $x$, the neural network will use $a^{[1]} = g(w_{1}^{[1]} * x + b_{1}^{[1]})$
+We have one hidden unit with parameters $w_{1}^{[1]}$ and $b_{1}^{[1]}$ that outputs $a^{[1]}$, which is just a number
 
-But $g(z)=z$
+Also, we have a second layer, the output layer, and it has also just one output unit with parameters $w_{1}^{[2]}$ and $b_{1}^{[2]}$ and it outputs $a^{[2]}$, which is also just a number, just a scalar, which is the output of the neural network $f(x)$.
 
-So, this is just $a^{[1]} = w_{1}^{[1]} * x + b_{1}^{[1]}$
+Let's see what this neural network would do if we were to use the Linear activation function $g(z)=z$ everywhere.
 
-Then $a^{[2]} = w_{1}^{[2]} * a^{[1]} + b_{1}^{[2]}$ because $g(z)=z$
+So, to compute $a^{[1]}$ as a function of $x$, the neural network will use 
 
-Let me take this expression for $a^{[1]}$ and substitute it in there.
+$$a^{[1]} = g(w_{1}^{[1]} * x + b_{1}^{[1]})$$
 
-So, that becomes w2 times w1 x plus b1 plus b2.
+But as we are using a Linear activation function, $g(z)=z$, so:
 
-If we simplify, this becomes w2, w1 times x plus w2, b1 plus b2. 
+This is just $$a^{[1]} = w_{1}^{[1]} * x + b_{1}^{[1]}$$
+
+Then, for the same reasons, $$a^{[2]} = w_{1}^{[2]} * a^{[1]} + b_{1}^{[2]}$$ because $g(z)=z$
+
+Now, let me take this expression for $a^{[1]}$ and substitute it in $a^{[2]}$:
+
+So, that becomes 
+
+$$a^{[2]} = w_{1}^{[2]} (w_{1}^{[1]} * x + b_{1}^{[1]}) + b_{1}^{[2]}$$
+
+If we simplify, this becomes:
+
+$$a^{[2]} = (w_{1}^{[2]} w_{1}^{[1]}) x + w_{1}^{[2]} b_{1}^{[1]} + b_{1}^{[2]}$$
 
 It turns out that if I were to set $w$ as follows:
 
-$$w = w_{1}^{[2]} * w_{1}^{[1]}$$
+$$w = w_{1}^{[2]} w_{1}^{[1]}$$
 
 and set $b$ as follows:
 
-$$b = w_{1}^{[2]} * b_{1}^{[1]} + b_{1}^{[2]}$$
+$$b = w_{1}^{[2]} b_{1}^{[1]} + b_{1}^{[2]}$$
 
 then what we've just shown is that $a^{[2]}$
 
@@ -212,7 +224,7 @@ If you're familiar with Linear Algebra, this result comes from the fact that a l
 
 ![alt text](./img/image9.png)
 
-So, in the general case, if you had a neural network with multiple layers like this and say you were to use a linear activation function for all of the hidden layers and also use a linear activation function for the output layer, then it turns out this model will compute an output that is completely equivalent to **Linear Regression**. The output $a^{[4]}$ can be expressed as a linear function of the input features x plus b.
+So, in the general case, if you had a neural network with multiple layers like this and say you were to use a linear activation function for all of the hidden layers and also use a linear activation function for the output layer, then it turns out this model will compute an output that is completely equivalent to **Linear Regression**. The output $a^{[4]}$ can be expressed as a linear function of the input features $x$ + $b$.
 
 Or alternatively, if we were to still use a linear activation function for all the hidden layers, for these three hidden layers here, but we were to use a Logistic activation function for the output layer, then it turns out you can show that this model becomes equivalent to **Logistic Regression**, and $a^{[4]}$, in this case, can be expressed as 1 over 1 plus e to the negative wx plus b for some values of w and b.
 So, this big neural network doesn't do anything that you can't also do with Logistic Regression.
