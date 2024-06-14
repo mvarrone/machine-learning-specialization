@@ -216,7 +216,7 @@ $$a^{[2]} = w x + b$$
 
 So, $a^{[2]}$ is just a linear function of the input x
 
-$$f(x) = w x + b \text{ Linear Regression}$$
+$$f(x) = w x + b \quad \text{Linear Regression}$$
 
 So, rather than using a neural network with one hidden layer and one output layer, we might as well have just used a Linear Regression model.
 
