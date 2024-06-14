@@ -224,10 +224,19 @@ If you're familiar with Linear Algebra, this result comes from the fact that a l
 
 ![alt text](./img/image9.png)
 
-So, in the general case, if you had a neural network with multiple layers like this and say you were to use a linear activation function for all of the hidden layers and also use a linear activation function for the output layer, then it turns out this model will compute an output that is completely equivalent to **Linear Regression**. The output $a^{[4]}$ can be expressed as a linear function of the input features $x$ + $b$.
+### Neural network equivalent to a Linear Regression model
 
-Or alternatively, if we were to still use a linear activation function for all the hidden layers, for these three hidden layers here, but we were to use a Logistic activation function for the output layer, then it turns out you can show that this model becomes equivalent to **Logistic Regression**, and $a^{[4]}$, in this case, can be expressed as 1 over 1 plus e to the negative wx plus b for some values of w and b.
-So, this big neural network doesn't do anything that you can't also do with Logistic Regression.
+So, in the general case, if you had a neural network with multiple layers like this and say you were to use a linear activation function for all of the hidden layers and also use a linear activation function for the output layer, then it turns out this model will compute an output that is completely equivalent to **Linear Regression**. The output $\vec{a}^{[4]}$ can be expressed as a linear function of the input features $x$ + $b$.
+
+$$\vec{a}^{[4]} = \vec{w}_1^{[4]} \cdot \vec{a}^{[3]} + b_1^{[4]}$$
+
+### Neural network equivalent to a Logistic Regression model
+
+Or alternatively, if we were to still use a Linear activation function for all the hidden layers, for these three hidden layers here, but we were to use a Logistic activation function for the output layer, then it turns out you can show that this model becomes equivalent to a **Logistic Regression model**, and $a^{[4]}$, in this case, can be expressed as: 
+
+$$\vec{a}^{[4]} = \frac{1}{1+e^-(\vec{w}_1^{[4]} \cdot \vec{a}^{[3]} + b_1^{[4]})}$$
+
+So, this big neural network does not do anything that you can't also do with a Logistic Regression model
 
 ## Instructor's piece of advice
 
