@@ -167,9 +167,35 @@ Changes needed to get a better version of Tensorflow implementation code:
 2. Add parameter *from_logits=True* to the *SparseCategoricalCrossentropy()* function
 3. After fitting the model, compute *logits = model(X)* and then apply *tf.nn.softmax(logits)* to obtain the predictions
 
+## TensorFlow code (Recommended version)
+
+```python
+import tensorflow as tf
+
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+
+model = Sequential([
+    Dense(units=25, activation='relu'),
+    Dense(units=15, activation='relu'),
+    Dense(units=10, activation='linear')
+    ])
+
+model.compile(..., loss=SparseCategoricalCrossentropy(from_logits=True))
+
+model.fit(X, Y, epochs=100)
+
+logits = model(X)
+
+f_x = tf.nn.softmax(logits)
+```
+
 ## Summary
 
 You now know how to do multi-class classification with a softmax output layer and also how to do it in a numerically stable way
 
 Before wrapping up **multi-class classification**, I want to share with you one other type of classification problem called a **multi-label classification** problem
+
+## Classification with multiple outputs (Optional)
 
