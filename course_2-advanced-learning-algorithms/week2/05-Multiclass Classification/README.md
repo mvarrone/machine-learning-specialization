@@ -55,5 +55,121 @@ So that's the definition of the multiclass classification problem.
 
 In the next video, we'll look at the softmax regression algorithm which is a generalization of the logistic regression algorithm and using that you'll be able to carry out multiclass classification problems. And after that we'll take softmax regression and fit it into a new neural network so that you'll also be able to train a neural network to carry out multiclass classification problems
 
+## Softmax regression algorithm
+
+The softmax regression algorithm is a generalization of logistic regression, which is a binary classification algorithm to the multiclass classification contexts
+
+![alt text](./img/image3.png)
+
+## How to specify the cost function for softmax regression
+
+![alt text](./img/image4.png)
+
+Notice that in the loss function used for Softmax Regression $y$ can take on only one value in each training example. And so you end up computing
+
+$$loss = -log(a_j)$$
+
+only for one value of $a_j$, which is whatever was the actual value of $y=j$ in that particular training example.
+
+For example, if $y=2$, you will **only** end up computing $loss = -log(a_2)$ and **not** any of the other terms.
+
+## Neural Network with Softmax output
+
+In order to build a Neural Network that can carry out multi class classification, we're going to take the Softmax regression model and put it into essentially the output layer of a Neural Network
+
+### Previuos handwritten digit recognition example for 2 classes
+![alt text](./img/image5.png)
+
+### Current handwritten digit recognition example for 10 classes
+![alt text](./img/image6.png)
+
+![alt text](./img/image7.png)
+
+I do want to mention that the Softmax layer, sometimes also called the Softmax activation function, it is a little bit unusual in one respect compared to the other activation functions we've seen so far, like sigmoid, ReLU and linear, which is that when we're looking at sigmoid or ReLU or linear activation functions, $a_1$ was a function of $Z_1$ and $a_2$ was a function of $Z_2$ and only $Z_2$ 
+
+In other words, to obtain the activation values, we could apply the activation function g be it sigmoid or ReLU or something else element-wise to $Z_1$ and $Z_2$ and so on to get $a_1$, $a_2$, $a_3$ and $a_4$
+
+But with the Softmax activation function, notice that $a_1$ is a function of $Z_1$ and $Z_2$ and $Z_3$ all the way up to $Z_{10}$. 
+
+So each of these activation values depends on all of the values of $Z$. 
+
+And this is a property that's a bit unique to the Softmax output or the Softmax activation function or stated differently if you want to compute $a_1$ through $a_{10}$, that is a function of $Z_1$ all the way up to $Z_{10}$ simultaneously. This is unlike the other activation functions we've seen so far
+
+## Implementation in TensorFlow
+
+![alt text](./img/image8.png)
+
+The cost function that you saw in the last video for multi class classification, Tensorflow calls that the **SparseCategoricalCrossentropy** function
+
+Whereas for logistic regression we had the **BinaryCrossentropy** function, here we are using the SparseCategoricalCrossentropy function. 
+
+What **sparse categorical** refers to is that you are still classifying $y$ into categories. So it's categorical. This takes on values from 1 to 10. 
+
+**Sparse** refers to that $y$ can only take on one of these 10 values. So each image is either 0 or 1 or 2 or so on up to 9. You're not going to see a picture that is simultaneously the number two and the number seven so sparse refers to that each digit is only one of these categories. 
+
+## TensorFlow code (Not recommended version)
+
+If you use the code shown below, you can train a neural network on a multi class classification problem but if you use it exactly as written there, it will work but there is a better version of it that makes Tensorflow work better being able to compute these probabilities much more accurately (It will be covered in the next video)
+
+```python
+import tensorflow as tf
+
+from tensorflow.keras import Sequential
+from tensorflow.keras.layers import Dense
+from tensorflow.keras.losses import SparseCategoricalCrossentropy
+
+model = Sequential([
+    Dense(units=25, activation='relu'),
+    Dense(units=15, activation='relu'),
+    Dense(units=10, activation='softmax')
+    ])
+
+model.compile(loss=SparseCategoricalCrossentropy())
+
+model.fit(X, Y, epochs=100)
+```
+
+## Improved implementation of softmax
+
+### Showing that exists a numerical roundoff error
+
+![alt text](./img/image9.png)
+
+### Showing that exists a numerical roundoff error on a Jupyter Notebook
+
+![alt text](./img/image10.png)
+
+## Logistic Regression
+
+![alt text](./img/image11.png)
+
+In case you're wondering what the **logits** are, it's basically this number $z$. TensorFlow will compute $z$ as an intermediate value but it can rearrange terms to make this become computed more accurately
+
+![alt text](./img/image14.png)
+
+> Note: In the image shown above, you can see there is a typo repeated twice. The correct activation functions are *relu* and not *sigmoid* for the 1st and 2nd layers
+
+Changes needed to get a better version of Tensorflow implementation code:
+
+1. Change the output layer from *sigmoid* to *linear*
+2. Add parameter *from_logits=True* to the *BinaryCrossentropy()* function
+3. After fitting the model, compute *logit = model(X)* and then apply *tf.nn.sigmoid(logit)* to obtain the predictions
+
 ## Softmax
+
+![alt text](./img/image12.png)
+
+![alt text](./img/image13.png)
+
+Changes needed to get a better version of Tensorflow implementation code:
+
+1. Change the output layer from *softmax* to *linear*
+2. Add parameter *from_logits=True* to the *SparseCategoricalCrossentropy()* function
+3. After fitting the model, compute *logits = model(X)* and then apply *tf.nn.softmax(logits)* to obtain the predictions
+
+## Summary
+
+You now know how to do multi-class classification with a softmax output layer and also how to do it in a numerically stable way
+
+Before wrapping up **multi-class classification**, I want to share with you one other type of classification problem called a **multi-label classification** problem
 
