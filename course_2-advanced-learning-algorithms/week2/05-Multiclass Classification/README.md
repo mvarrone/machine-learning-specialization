@@ -199,3 +199,47 @@ Before wrapping up **multi-class classification**, I want to share with you one 
 
 ## Classification with multiple outputs (Optional)
 
+You've learned about multi-class classification, where the output label $y$ can be any one of two or potentially many more than two possible categories but there is a different type of classification problem called a multi-label classification problem, which is where associate of each image, they could be multiple labels
+
+## Example
+
+![alt text](./img/image15.png)
+
+If you're building a self-driving car or maybe a driver assistance system, then given a picture of what's in front of your car, you may want to ask questions like:
+
+- Is there a car or at least one car?
+- or is there a bus? 
+- or is there a pedestrian or are there any pedestrians? 
+
+After analyzing the 3 photos shown above, we have:
+- In the left photo: there is a car, there is no bus, and there is at least one pedestrian 
+- In the middle photo: There are no cars, no buses and yes to pedestrians
+- In the right photo: There is a car, there is a bus and there are no pedestrians
+
+ These are examples of multi-label classification problems because associated with a single input image $\vec{X}$ are 3 different labels corresponding to whether or not there are any cars, buses, or pedestrians in the image
+ 
+In this case, the target of the $y$ is actually a vector of 3 numbers, and this is as distinct from multi-class classification, where for say handwritten digit classification, $y$ was just a single number, even if that number could take on 10 different possible values.
+
+## How to build a neural network for a multi-label classification problem?
+
+One way to go about it is to just treat this as 3 completely separate machine learning problems:
+
+You could build one neural network to decide if there are any cars, a second neural network could be one to detect buses and a third one to detect pedestrians. That's actually not an unreasonable approach. 
+
+![alt text](./img/image16.png)
+
+### Another approach
+
+But there's another way to do this, which is to train a single neural network to simultaneously detect all 3 of cars, buses and pedestrians, which is, if your neural network architecture, looks like this,
+
+![alt text](./img/image17.png)
+
+In this new approach, there's an input $\vec{X}$, a first hidden layer that outputs $\vec{a}^{[1]}$, a second hidden layer that outputs $\vec{a}^{[2]}$, and then the final output layer, in this case, will have 3 output neurons and that one will output $\vec{a}^{[3]}$, which is going to be a vector of three numbers. 
+
+Because we're solving three binary classification problems you can use a sigmoid activation function for each of these three nodes in the output layer.
+
+And so $\vec{a}^{[3]}$ in this case will be $a_1^{[3]}$, $a_2^{[3]}$ and $a_3^{[3]}$ corresponding to whether or not the learning algorithm thinks there is a car, a bus and/or pedestrians in the image
+
+## Optional Lab 5 - Softmax
+
+## Optional Lab 6 - Multiclass
