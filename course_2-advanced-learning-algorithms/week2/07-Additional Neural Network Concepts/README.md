@@ -101,6 +101,8 @@ In the Dense layer that we've been using the activation of a neuron in say the 2
 
 But it turns out that for some applications, someone designing a neural network may choose to use a different type of layer. One other layer type that you may see in some work is called a convolutional layer.
 
+For a convolutional layer, each neuron takes as input a subset of the vector that is fed into that layer.
+
 Let me illustrate this with an example. So what I'm showing on the left is the input X. Which is a handwritten digit nine. And what I'm going to do is construct a hidden layer which will compute different activations as functions of this input image $\vec{X}$. 
 
 But here's something I can do: For the first hidden unit, which I've drawn in blue rather than saying this neuron can look at all the pixels in this image I might say this neuron can only look at the pixels in this little rectangular region. Second neuron, which I'm going to illustrate in magenta is also not going to look at the entire input image X instead, it's only going to look at the pixels in a limited region of the image. And so on for the 3rd neuron and the 4th neuron and so on and so forth. Down to the last neuron which may be looking only at that region of the image.
