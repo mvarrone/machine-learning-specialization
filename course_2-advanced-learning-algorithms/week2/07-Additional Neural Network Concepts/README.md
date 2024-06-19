@@ -63,16 +63,22 @@ The details of how Adam does this is a bit complicated and beyond the scope of t
 
 ![alt text](./img/image5.png)
 
-The model code is exactly the same as before, and the way you compile the model is very similar to what we had before, except that we now add one extra argument to the $compile$ function, which is where we specify that the **optimizer** you want to use is $$tf.keras.optimizers.Adam$$ 
+The model is exactly the same as before and the way you compile the model is very similar to what we had before except that we now added one extra argument to the *compile* function. This is the place where we specify that the **optimizer** you want to use is Adam by using: $$tf.keras.optimizers.Adam()$$ 
 
 ```python
 ...
 
-model.compile(optimizer = tf.keras.optimizers.Adam(learning_rate=1e-3), loss = ...)
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3), loss=...)
 
 ...
 ```
 
-The Adam optimization algorithm needs some default initial learning rate $\alpha$.
+The Adam optimization algorithm needs some initial default value for the learning rate $\alpha$
 
-In this example, I've set that initial learning rate to be 10^ negative 3. But when you're using the Adam algorithm in practice, it's worth trying a few values for this default global learning rate. Try some large and some smaller values to see what gives you the fastest learning performance. Compared to the original gradient descent algorithm that you had learned in the previous course though, the Adam algorithm, because it can adapt the learning rate a bit automatically, it is more robust to the exact choice of learning rate that you pick. Though there's still way tuning this parameter little bit to see if you can get somewhat faster learning. That's it for the Adam optimization algorithm. It typically works much faster than gradient descent, and it's become a de facto standard in how practitioners train their neural networks. If you're trying to decide what learning algorithm to use, what optimization algorithm to use to train your neural network. A safe choice would be to just use the Adam optimization algorithm, and most practitioners today will use Adam rather than the optional gradient descent algorithm, and with this, I hope that your learning algorithms will be able to learn much more quickly. Now, in the next couple of videos, I'd like to touch on some more advanced concepts for neural networks, and in particular, in the next video, let's take a look at some alternative layer types.
+## Piece of advice for choosing this global learning rate value
+
+In this example, I've set that initial learning rate to be $\alpha=10^{-3}$ but when using the Adam algorithm in practice, it's worth trying a few values for this default global learning rate. Try some larger and some smaller values to see what gives you the fastest learning performance.
+
+Compared to the original gradient descent algorithm that you had learned in the previous course though, the Adam algorithm is more robust to the exact choice of learning rate that you pick because it can adapt the learning rate a bit automatically. Though there's still way tuning this parameter little bit to see if you can get somewhat faster learning.
+
+It typically works much faster than gradient descent, and it has become a de-facto standard in how practitioners train their neural networks. If you're trying to decide what learning algorithm to use, what optimization algorithm to use to train your neural network a safe choice would be to just use the Adam optimization algorithm, and most practitioners today will use Adam rather than the optional gradient descent algorithm
