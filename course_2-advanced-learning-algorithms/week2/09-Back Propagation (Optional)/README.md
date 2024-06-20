@@ -118,11 +118,11 @@ What does it mean?
 
 In this case what we conclude is that if $w=-3$ goes up by a tiny amount $\epsilon=0.001$, then $J(w)=w^2$:
 
-- goes up by roughly -6 times $\epsilon$ 
+- goes up by roughly -6 times $\epsilon$. This can be expressed as: $J(w) \uarr -6 \epsilon$
 
     or, which is the same,
 
-- goes down by roughly 6 times $\epsilon$
+- goes down by roughly 6 times $\epsilon$. This can be expressed as: $J(w) \darr 6 \epsilon$
 
 ### About the J(w) vs w graph
 
@@ -186,4 +186,7 @@ $$\frac{\partial J}{\partial w_i} \quad \frac{\partial }{\partial w_i}J$$
 
 I hope that gives you a sense of what are derivatives: It's just if $w$ goes up by a little amount $\epsilon$, how much does $J(w)$ change as a consequence?
 
+Next, let's take a look at how you can compute derivatives in a neural network. To do so, we need to take a look at something called a *computation graph*
+
 ## 2. Computation graph (Optional)
+
