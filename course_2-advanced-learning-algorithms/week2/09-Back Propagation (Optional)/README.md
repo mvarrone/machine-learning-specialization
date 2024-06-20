@@ -180,9 +180,7 @@ $$\frac{\partial }{\partial w_i}J(w_1, w_2, ..., w_n)$$
 
 2 more simplified abbreviated forms of this expression from above:
 
-$$\frac{\partial J}{\partial w_i}$$
-
-$$\frac{\partial }{\partial w_i}J$$
+$$\frac{\partial J}{\partial w_i} \quad \frac{\partial }{\partial w_i}J$$
 
 ## Summary
 
