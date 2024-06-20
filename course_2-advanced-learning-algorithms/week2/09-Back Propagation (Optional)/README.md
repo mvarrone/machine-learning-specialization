@@ -118,7 +118,7 @@ What does it mean?
 
 In this case what we conclude is that if $w=-3$ goes up by a tiny amount $\epsilon=0.001$, then $J(w)=w^2$:
 
-- goes up by roughly -6 times $\epsilon$. This can be expressed as: J(w) $\uarr;$ -6 $\epsilon$
+- goes up by roughly -6 times $\epsilon$. This can be expressed as: J(w) $uarr;$ -6 $\epsilon$
 
     or, which is the same,
 
