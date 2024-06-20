@@ -190,3 +190,89 @@ Next, let's take a look at how you can compute derivatives in a neural network. 
 
 ## 2. Computation graph (Optional)
 
+The computation graph is a key idea in Deep Learning, and it is also how programming frameworks like TensorFlow automatic compute derivatives of your neural networks. Let's take a look at how it works
+
+### Example
+Let me illustrate the concept of a computation graph with a small neural network example. 
+
+![alt text](./img/image10.png)
+
+This neural network has just 1 layer, which is also the output layer, and just 1 unit in the output layer. 
+
+It takes as inputs $\vec{X}$, applies a Linear activation function and outputs the activation $a$. More specifically this output is expressed as: $$a=wx + b \quad \text{Linear activation}$$
+
+$$a=g(z)=z$$
+
+This is basically Linear Regression but expressed as a neural network with 1 output unit.
+
+Given the output, the Cost function $J(w, b)$ is then 
+
+$$J(w, b)=\frac{1}{2}(a-y)^2$$
+
+where 
+- $a$ is the predicted value
+- $y$ is the actual observed value
+
+For this small example, we are only going to have a single training example $(m=1)$, where the training example is:
+
+- The input $x=-2$
+- The ground truth output value $y=2$
+
+    | # | x | y |
+    |---|---|---|
+    | 1 | -2| 2 |
+
+- The parameters of this network are:
+    - $w=2$ 
+    - $b=8$
+
+What I would like to do is show how the computation of the Cost function $J(w, b)$ can be computed step by step using a *computation graph*. Just as a reminder, when learning, we like to view the Cost function $J(w, b)$ as a function of the parameters $w$ and $b$
+
+![alt text](./img/image11.png)
+
+## Computation graph for the cost function J(w, b)
+
+Let's take the computation of $J(w, b)$ and break it down into individual steps. 
+
+### 1st step: Compute $c=wx$
+First, you have the parameter $w$ that is an input to the Cost function $J(w, b)$ and then we first need to compute $wx$. Let me just call that $c=wx$.
+
+Also, we have $w=2$ and $x=-2$ and so $$c=wx$$ $$c=2*(-2)$$ $$c=-4$$
+
+### 2nd step: Compute $a=wx+b=c+b$
+The next step is then to compute $a=wx+b=c+b$. This needs to input $b$, the other parameter that is input to the Cost function $J(w, b)$ $$a=wx+b$$ $$a=c+b$$ $$a=-4+8$$ $$a=4$$
+This is starting to build up a computation graph in which the steps we need to compute the Cost function $J(w, b)$ are broken down into smaller steps. 
+
+### 3rd step: Compute $d=a-y$
+The next step is to then compute $d=a-y$
+
+We have $y=2$ and $a=4$ so $$d=a-y$$ $$d=4-2$$ $$d=2$$
+
+### 4th step: Compute Cost function J(w, b)
+Then finally, we compute J, the cost function as $$J(w, b)=\frac{1}{2}(a-y)^2$$ or $$J(w, b)=\frac{1}{2}d^2$$
+We have $d=2$ so, 
+
+$$J(w, b)=\frac{1}{2}2^2$$
+$$J(w, b)=2$$
+
+What we've just done is build up a computation graph. This is a graph, not in a sense of plots with $x$ and $y$ axes but this is the other sense of the word graph using computer science, which is that this is a set of nodes that is connected by edges or connected by arrows in this case
+
+So, this computation graph shows the **forward prop** step of how we compute the output $a$ of the neural network. But then also go further than that so also compute the value of the cause function $J(w, b)$ 
+
+![alt text](./img/image12.png)
+
+The question now is, how do we find the derivative of $J$ with respect to the parameters $w$ and $b$? 
+
+$$\frac{\partial J}{\partial w} \quad \text{and } \frac{\partial J}{\partial b}$$
+
+Let's take a look at that next.
+
+![alt text](./img/image13.png)
+
+Here's the computation graph from the previous slide and we've completed forward propagation where we've computed that $J$, the cost function $J=2$ through all these steps going from left to right (forward prop) in the computation graph. 
+
+## Backward Propagation (backprop)
+What we'd like to do now is compute the derivative of $J$ with respect to $w$ and the derivative of $J$ with respect to $b$. It turns out that whereas forward prop was a left to right calculation, computing the derivatives will be a right to left calculation, which is why it's called **backprop**, was going backwards from right to left. 
+
+### Backprop 1st step
+The final computation nodes of this graph is this one over here, which computes J equals 1/2 of d squared. The first step of backprop will ask if the value of d, which was the input to this node where the change a little bit. How much does the value of j change? Specifically, will ask if d were to go up by a little bit, say 0.001, and that'll be our value of Epsilon in this case, how would the value of j change? It turns out in this case if d goes from 2-2.01, then j goes from 2-2.02.
