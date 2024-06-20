@@ -124,7 +124,7 @@ In this case what we conclude is that if $w=-3$ goes up by a tiny amount $\epsil
 
 - goes down by roughly 6 times $\epsilon$. This can be expressed as: J(w) $&darr;$ 6 $\epsilon$
 
-### About the J(w) vs w graph
+### About the $J(w)$ vs $w$ plot
 
 ![alt text](./img/image8.png)
 
