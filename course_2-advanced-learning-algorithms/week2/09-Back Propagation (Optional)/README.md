@@ -285,7 +285,7 @@ The first step of backprop will ask if the value of $d$, which was the input to 
 
 So, if $d$ goes up by $\epsilon$, then $J$ goes up by roughly 2 x $\epsilon$ which can be expressed as: 
 
-If d $&uarr;$ $\epsilon$, J(w) $&uarr;$ 2 $\epsilon$
+If $d$ $&uarr;$ $\epsilon$, $J(w)$ $&uarr;$ 2 $\epsilon$
 
 We conclude that the derivative of $J$ with respect to this value $d$ that is inputted this final node is equal to 2:
 
