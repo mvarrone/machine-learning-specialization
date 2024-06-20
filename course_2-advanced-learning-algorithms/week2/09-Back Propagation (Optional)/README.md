@@ -21,16 +21,16 @@ Say $w$=3, then $J(3)=3^2=9$
 If we increase $w$ by a tiny amount $\epsilon = 0.001$, how does $J(w)$ change?
 
 $$\hat{w}=w + \epsilon$$
-$$w^*=3 + 0.001$$
-$$w^*=3.001$$
+$$\hat{w}=3 + 0.001$$
+$$\hat{w}=3.001$$
 
 Then
 
-$$J(w^*)=(w^*)^2=3.001^2=9.006001$$
+$$J(\hat{w})=(\hat{w})^2=3.001^2=9.006001$$
 
 So, 
 
-$$k=\frac{J(w^*)-J(w)}{\epsilon}=\frac{9.006001-9}{0.001}=\frac{0.006001}{0.001}=6.001$$
+$$k=\frac{J(\hat{w})-J(w)}{\epsilon}=\frac{9.006001-9}{0.001}=\frac{0.006001}{0.001}=6.001$$
 
 Finally, 
 
@@ -44,17 +44,17 @@ It means that if we increase the value of $w$ by a tiny amount $\epsilon$, then 
 
 If we increase $w$ by a tiny amount $\epsilon = 0.002$, how does $J(w)$ change?
 
-$$w^*=w + \epsilon$$
-$$w^*=3 + 0.002$$
-$$w^*=3.002$$
+$$\hat{w}=w + \epsilon$$
+$$\hat{w}=3 + 0.002$$
+$$\hat{w}=3.002$$
 
 Then
 
-$$J(w^*)=(w^*)^2=3.002^2=9.012004$$
+$$J(\hat{w})=(\hat{w})^2=3.002^2=9.012004$$
 
 So, 
 
-$$k=\frac{J(w^*)-J(w)}{\epsilon}=\frac{9.012004-9}{0.002}=\frac{0.012004}{0.002}=6.002$$
+$$k=\frac{J(\hat{w})-J(w)}{\epsilon}=\frac{9.012004-9}{0.002}=\frac{0.012004}{0.002}=6.002$$
 
 Finally, 
 
@@ -98,17 +98,17 @@ But if the derivative is large, that means that even a tiny change the $w_j$ can
 
 If we increase $w=-3$ by a tiny amount $\epsilon = 0.001$, how does $J(w)$ change?
 
-$$w^*=w + \epsilon$$
-$$w^*=-3 + 0.001$$
-$$w^*=-2.999$$
+$$\hat{w}=w + \epsilon$$
+$$\hat{w}=-3 + 0.001$$
+$$\hat{w}=-2.999$$
 
 Then
 
-$$J(w^*)=(w^*)^2=(-2.999)^2=8.994001$$
+$$J(\hat{w})=(\hat{w})^2=(-2.999)^2=8.994001$$
 
 So, 
 
-$$k=\frac{J(w^*)-J(w)}{\epsilon}=\frac{8.994001-9}{0.001}=\frac{-0.005999}{0.001}=-5.999\approx-6$$
+$$k=\frac{J(\hat{w})-J(w)}{\epsilon}=\frac{8.994001-9}{0.001}=\frac{-0.005999}{0.001}=-5.999\approx-6$$
 
 Finally, 
 
