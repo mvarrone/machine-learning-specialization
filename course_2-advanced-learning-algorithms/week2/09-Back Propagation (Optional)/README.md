@@ -20,7 +20,7 @@ Say $w$=3, then $J(3)=3^2=9$
 
 If we increase $w$ by a tiny amount $\epsilon = 0.001$, how does $J(w)$ change?
 
-$$w^*=w + \epsilon$$
+$$\hat{w}=w + \epsilon$$
 $$w^*=3 + 0.001$$
 $$w^*=3.001$$
 
@@ -99,7 +99,7 @@ But if the derivative is large, that means that even a tiny change the $w_j$ can
 If we increase $w=-3$ by a tiny amount $\epsilon = 0.001$, how does $J(w)$ change?
 
 $$w^*=w + \epsilon$$
-$$w^{*}=-3 + 0.001$$
+$$w^*=-3 + 0.001$$
 $$w^*=-2.999$$
 
 Then
