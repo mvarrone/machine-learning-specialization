@@ -257,7 +257,7 @@ $$J(w, b)=2$$
 
 What we've just done is build up a computation graph. This is a graph, not in a sense of plots with $x$ and $y$ axes but this is the other sense of the word graph using computer science, which is that this is a set of nodes that is connected by edges or connected by arrows in this case
 
-So, this computation graph shows the **forward prop** step of how we compute the output $a$ of the neural network. But then also go further than that so also compute the value of the cause function $J(w, b)$ 
+So, this computation graph shows the **forward prop** steps of how we compute the output $a$ of the neural network. But then also go further than that so also compute the value of the cost function $J(w, b)$ 
 
 ![alt text](./img/image12.png)
 
