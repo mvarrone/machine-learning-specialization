@@ -272,7 +272,23 @@ Let's take a look at that next.
 Here's the computation graph from the previous slide and we've completed forward propagation where we've computed that $J$, the cost function $J=2$ through all these steps going from left to right (forward prop) in the computation graph. 
 
 ## Backward Propagation (backprop)
-What we'd like to do now is compute the derivative of $J$ with respect to $w$ and the derivative of $J$ with respect to $b$. It turns out that whereas forward prop was a left to right calculation, computing the derivatives will be a right to left calculation, which is why it's called **backprop**, was going backwards from right to left. 
+What we'd like to do now is compute the derivative of $J$ with respect to $w$ and the derivative of $J$ with respect to $b$. 
 
-### Backprop 1st step
-The final computation nodes of this graph is this one over here, which computes J equals 1/2 of d squared. The first step of backprop will ask if the value of d, which was the input to this node where the change a little bit. How much does the value of j change? Specifically, will ask if d were to go up by a little bit, say 0.001, and that'll be our value of Epsilon in this case, how would the value of j change? It turns out in this case if d goes from 2-2.01, then j goes from 2-2.02.
+$$\frac{\partial J}{\partial w} \quad \text{and } \frac{\partial J}{\partial b}$$
+
+It turns out that whereas forward prop was a left to right calculation, computing the derivatives will be a right to left calculation, which is why it's called **backprop**, was going backwards from right to left. 
+
+The final computation node of this graph is this one over here, which computes $$J(w, b)=\frac{1}{2}d^2$$
+
+### Backprop: 1st step
+The first step of backprop will ask if the value of $d$, which was the input to this node where the change a little bit, How much does the value of $J$ change? Specifically, it will ask if $d$ were to go up by a little bit, say 0.001, and that'll be our value of $\epsilon$ in this case, how would the value of $J$ change? It turns out in this case if $d$ goes from $d=2$ to $d=2.001$, then $J$ goes from $J=2$ to $J=2.002$
+
+So, if $d$ goes up by $\epsilon$, then $J$ goes up by roughly 2 x $\epsilon$ which can be expressed as: 
+
+If d $&uarr;$ $\epsilon$, J(w) $&uarr;$ 2 $\epsilon$
+
+We conclude that the derivative of $J$ with respect to this value $d$ that is inputted this final node is equal to 2:
+
+$$\frac{\partial J}{\partial d} = 2$$
+
+So, the first step of backprop would be to fill in this value two over here, where this value is the derivative of j with respect to this input value d. We know if d changes a little bit, j changes by twice as much because this derivative is equal to two. The next step is to look at the node before that and ask what is the derivative of j with respect to a? To answer that, we have to ask, well, if a goes up by 0.001, how does that change j? Well, we know that if a goes up by 0.001, d is just a minus y. If a becomes 4.001, d which is a minus y, becomes 4.001 minus y equals 2, so becomes 2.001, sub a goes up by 0.001, d also goes up by 0.001. But we'd already concluded previously that the d goes up by 0.001, j goes up by twice as much. Now we know if a goes up by 0.001, d goes up by 0.001, then j goes up roughly by two times 0.001. This tells us that the derivative of j with respect to a is also equal to two. So I'm going to fill in that value over here. That this is the derivative of j with respect to a. Just as this was the derivative of j respect to d. If you've taken a calculus class before and if you've heard of the chain rule, you might recognize that this step of computation that I just did is actually relying on the chain rule for calculus. If you're not familiar with the chain rule, don't worry about it. You won't need to know it for the rest of these videos. But if you have seen the chain rule, you might recognize that the derivative of j with respect to a is asking, how much does d change respect to a, which is derivative of d respect to a times the derivative of j with respect to d, and does little calculation on top showed that the partial of t with respect to a is one, and we'd show EZ that the derivative of J with respect to d is equal to two, which is why the derivative of J with respect to a is one times two, which is equal to two.
