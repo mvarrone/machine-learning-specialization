@@ -274,12 +274,13 @@ Here's the computation graph from the previous slide and we've completed forward
 ## Backward Propagation (backprop)
 What we'd like to do now is compute the derivative of $J$ with respect to $w$ and the derivative of $J$ with respect to $b$. 
 
-$$\frac{\partial J}{\partial w} \quad \text{and } \frac{\partial J}{\partial b}$$
+$$\frac{\partial J}{\partial w} \quad \text{and} \quad \frac{\partial J}{\partial b}$$
 
 It turns out that whereas forward prop was a left to right calculation, computing the derivatives will be a right to left calculation, which is why it's called **backprop**, was going backwards from right to left. 
 
 The final computation node of this graph is this one over here, which computes $$J(w, b)=\frac{1}{2}d^2$$
 
+## Backward Propagation (backprop)
 ### Backprop: 1st step
 The first step of backprop will ask if the value of $d$, which was the input to this node where the change a little bit, How much does the value of $J$ change? Specifically, it will ask if $d$ were to go up by a little bit, say 0.001, and that'll be our value of $\epsilon$ in this case, how would the value of $J$ change? It turns out in this case if $d$ goes from $d=2$ to $d=2.001$, then $J$ goes from $J=2$ to $J=2.002$
 
@@ -291,4 +292,67 @@ We conclude that the derivative of $J$ with respect to this value $d$ that is in
 
 $$\frac{\partial J}{\partial d} = 2$$
 
-So, the first step of backprop would be to fill in this value two over here, where this value is the derivative of j with respect to this input value d. We know if d changes a little bit, j changes by twice as much because this derivative is equal to two. The next step is to look at the node before that and ask what is the derivative of j with respect to a? To answer that, we have to ask, well, if a goes up by 0.001, how does that change j? Well, we know that if a goes up by 0.001, d is just a minus y. If a becomes 4.001, d which is a minus y, becomes 4.001 minus y equals 2, so becomes 2.001, sub a goes up by 0.001, d also goes up by 0.001. But we'd already concluded previously that the d goes up by 0.001, j goes up by twice as much. Now we know if a goes up by 0.001, d goes up by 0.001, then j goes up roughly by two times 0.001. This tells us that the derivative of j with respect to a is also equal to two. So I'm going to fill in that value over here. That this is the derivative of j with respect to a. Just as this was the derivative of j respect to d. If you've taken a calculus class before and if you've heard of the chain rule, you might recognize that this step of computation that I just did is actually relying on the chain rule for calculus. If you're not familiar with the chain rule, don't worry about it. You won't need to know it for the rest of these videos. But if you have seen the chain rule, you might recognize that the derivative of j with respect to a is asking, how much does d change respect to a, which is derivative of d respect to a times the derivative of j with respect to d, and does little calculation on top showed that the partial of t with respect to a is one, and we'd show EZ that the derivative of J with respect to d is equal to two, which is why the derivative of J with respect to a is one times two, which is equal to two.
+So, the first step of backprop would be to fill in this value 2 over here, where this value is the derivative of $J$ with respect to this input value $d$. We know if $d$ changes a little bit, $J$ changes by twice as much because this derivative is equal to 2. 
+
+### Backprop: 2nd step
+The next step is to look at the node before that and ask what is the derivative of $J$ with respect to $a$? 
+
+$$\frac{\partial J}{\partial a} = ?$$
+
+To answer that, we have to ask, if $a$ goes up by $\epsilon=0.001$, how does that change $J$? 
+
+If $a$ $&uarr;$ $\epsilon=0.001$, how does $J$ change? 
+
+Well, we know that if $a$ goes up by $\epsilon=0.001$, $d$ is just $d=a-y$ and $y=2$
+
+If $a$ becomes $a=4.001$, $d$ which is $d=a-y$ becomes into $d=4.001-2$, so $d$ becomes $d=2.001$
+
+So, $a$ goes up by 0.001, $d$ also goes up by 0.001. 
+
+But we'd already concluded previously that the $d$ goes up by 0.001, $J$ goes up by twice as much. 
+
+Now we know if $a$ goes up by 0.001, $d$ goes up by 0.001, then $J$ goes up roughly by two times 0.001
+
+This tells us that the derivative of $J$ with respect to $a$ is also equal to two.
+
+$$\frac{\partial J}{\partial a} = 2$$
+
+So I'm going to fill in that value over here. That this is the derivative of $J$ with respect to $a$. Just as this was the derivative of $J$ respect to $d$ 
+
+#### Chain rule for this 2nd step
+If you've taken a Calculus class before and if you've heard of the chain rule, you might recognize that this step of computation that I just did is actually relying on the chain rule for Calculus. If you're not familiar with the chain rule, don't worry about it. You won't need to know it for the rest of these videos. 
+
+But if you have seen the chain rule, you might recognize that the derivative of $J$ with respect to $a$ is asking how much does $d$ change respect to $a$ times the derivative of $J$ with respect to $d$ which can be expressed as:
+
+$$\frac{\partial J}{\partial a} = \frac{\partial d}{\partial a} * \frac{\partial J}{\partial d}$$
+
+And does little calculation on top showed that the partial of $d$ with respect to $a$ is 1:
+
+$$\frac{\partial d}{\partial a} = 1$$
+
+and we showed previously that the derivative of $J$ with respect to $d$ is equal to 2:
+
+$$\frac{\partial J}{\partial d} = 2$$
+
+Finally, this is why the derivative of $J$ with respect to $a$ is 
+
+$$\frac{\partial J}{\partial a} = 1 * 2 = 2$$
+
+That's the value we got before entering this chain rule section
+
+But again, if you're not familiar with the chain rule, don't worry about it. The logic that we just went through here is why we know $J$ goes up by twice as much as $a$ does and that's why this derivative term is equal to 2. 
+
+### Backprop: 3rd step
+The next step then is to keep on going right to left as we do in backprop
+
+And we will ask how much does a little change in $c$ cause $J$ to change? and we will ask how much does a little  change in $b$ cause $J$ to change? What we need to figure out can be expressed as follows:
+
+$$\frac{\partial J}{\partial c} = ? \quad \text{and} \quad \frac{\partial J}{\partial b} = ?$$
+
+The way we figure that out is to ask what if $c$ goes up by a little amount $\epsilon=0.001$, how much does $a$ change? 
+
+Well, $a=c+b$. It turns out that if $c$ ends up being $c=-3.999$, then $a$, which is $a=-3.999 + 8$, becomes $a=4.001$. If $c$ goes up by $\epsilon$, $a$ goes up by $\epsilon$. 
+
+We know if $a$ up by $\epsilon$, then because the derivative of $J$ with respect to $a$ is 2, we know that this in turn causes $J$ to go up by 2 $\epsilon$. 
+
+We can conclude that if $c$ goes up by a little bit, $J$ goes up by twice as much. We know this because we know the derivative of J with respect to a is 2. This allows us to conclude that the derivative of J with respect to c is also equal to 2. I'm going to fill in that value over here. Again, only if you're familiar with chain rule another way to write this is derivative of J respect to c, is the derivative of a respect to c. This turns out to be 1 times the derivative of J respect to a, which we have previously figured out was equal to 2, so that's why this ends up being equal to 2. By a similar calculation, the b goes up by 0.001, then a also goes up by 0.001 and J goes up by 2 times 0.001, which is why this derivative is also equal to 2. We filled in here the derivative of J respect to b, and here the derivative of J respect to c. Now one final step, which is, what is the derivative of J with respect to w? W goes up by 0.001. What happens? C which is w times x, if w were 2.001, c which is w times x, becomes negative 2 times 2.001, so it becomes negative 4.002. If w goes up by epsilon, c goes down by 2 times 0.001, or equivalently c goes up by negative 2 times 0.001. We know that if c goes up by negative 2 times 0.001, because the derivative of J with respect to c is 2, this means that J will go up by negative 4 times 0.001, because if c goes up by a certain amount, J changes by 2 times as much, so negative 2 times this is negative 4 times this. This allows us to conclude that if w goes up by 0.001, J goes up by negative 4 times 0.001. The derivative of J with respect to w is negative 4. I'm going to write negative 4 over here because has the derivative of J with respect to w. Once again, the chain rule calculation, if you're familiar with it, is this. It is the derivative of c respect to w times derivative of J with respect to c. This is 2 and this is negative 2, which is why we end up with negative 4, but again, don't worry about it if you're not familiar with chain rule. To wrap up what we've just done this manually carry out backprop in this computation graph. Whereas forward prop was a left-to-right computation where we had w equals 2, that allowed us to compute c. Then we had b and that allows us to compute a and then d, and then J backprop went from right-to-left and we would first compute the derivative of J with respect to d and then go back to compute the derivative of J with respect to a, then the derivative of J with respect to b, derivative of J with respect to c and finally the derivative of J with respect to w. So that's why backprop is a right-to-left computation, whereas forward prop was a left-to-right computation.
