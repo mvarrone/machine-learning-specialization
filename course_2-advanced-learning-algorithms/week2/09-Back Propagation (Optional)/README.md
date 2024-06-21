@@ -466,3 +466,22 @@ The backpropagation algorithm done using the computation graph gives you a very 
 
 ![alt text](./img/image18.png)
 
+## Larger neural network example (Optional)
+
+![alt text](./img/image19.png)
+
+### Forward prop
+
+![alt text](./img/image20.png)
+
+### Back prop
+
+![alt text](./img/image21.png)
+
+### Verification
+
+![alt text](./img/image22.png)
+
+## Optional Lab 7 - Derivatives
+
+## Optional Lab 8 - Back propagation
