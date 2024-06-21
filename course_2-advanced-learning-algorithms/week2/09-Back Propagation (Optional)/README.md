@@ -482,6 +482,18 @@ The backpropagation algorithm done using the computation graph gives you a very 
 
 ![alt text](./img/image22.png)
 
+And I hope that you now have an intuition for when you use a program frameworks, like Tensorflow, to train a neural network. What's actually happening under the hood and how is using the computation graph to efficiently compute derivatives for you. 
+
+Many years ago, before the rise of frameworks like TensorFlow and PyTorch, researchers used to have to manually use calculus to compute the derivatives of the neural networks that they wanted to train
+
+And so in modern program frameworks you can specify forward prop and have it take care of backprop for you. 
+
+Many years ago, researchers used to write down the neural network by hand, manually use calculus to compute the derivatives and then neural implement a bunch of equations that they had laboriously derived on paper, to implement backprop. 
+
+Thanks to the computation graph and these techniques for automatically carrying out derivative calculations. Is sometimes called *autodiff*, for automatic differentiation. This process of researchers manually using calculus to take derivatives is no longer really done. At least, I've not had to do this for many years now myself, because of autodiff. 
+
+So, many years ago, to use neural networks, the bar for the amount of calculus you have to know actually used to be higher. But because of automatic differentiation algorithms, usually based on the computation graph, you can now implement a neural network and get derivatives computed for you easier than before. So maybe with the maturing of neural networks, the amount of calculus you need to know in order to get these algorithms work, has actually gone down
+
 ## Optional Lab 7 - Derivatives
 
 ## Optional Lab 8 - Back propagation
