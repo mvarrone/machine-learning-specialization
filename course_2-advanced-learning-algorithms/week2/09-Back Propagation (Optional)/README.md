@@ -351,8 +351,118 @@ $$\frac{\partial J}{\partial c} = ? \quad \text{and} \quad \frac{\partial J}{\pa
 
 The way we figure that out is to ask what if $c$ goes up by a little amount $\epsilon=0.001$, how much does $a$ change? 
 
-Well, $a=c+b$. It turns out that if $c$ ends up being $c=-3.999$, then $a$, which is $a=-3.999 + 8$, becomes $a=4.001$. If $c$ goes up by $\epsilon$, $a$ goes up by $\epsilon$. 
+Well, $a=c+b$. So, it turns out that if $c$ ends up being $c=-3.999$, then $a$, which is $a=-3.999 + 8$, becomes $a=4.001$. And if $c$ goes up by $\epsilon$, $a$ goes up by $\epsilon$. This can be expressed as follows:
 
-We know if $a$ up by $\epsilon$, then because the derivative of $J$ with respect to $a$ is 2, we know that this in turn causes $J$ to go up by 2 $\epsilon$. 
+$$\frac{\partial a}{\partial c} = 1$$
 
-We can conclude that if $c$ goes up by a little bit, $J$ goes up by twice as much. We know this because we know the derivative of J with respect to a is 2. This allows us to conclude that the derivative of J with respect to c is also equal to 2. I'm going to fill in that value over here. Again, only if you're familiar with chain rule another way to write this is derivative of J respect to c, is the derivative of a respect to c. This turns out to be 1 times the derivative of J respect to a, which we have previously figured out was equal to 2, so that's why this ends up being equal to 2. By a similar calculation, the b goes up by 0.001, then a also goes up by 0.001 and J goes up by 2 times 0.001, which is why this derivative is also equal to 2. We filled in here the derivative of J respect to b, and here the derivative of J respect to c. Now one final step, which is, what is the derivative of J with respect to w? W goes up by 0.001. What happens? C which is w times x, if w were 2.001, c which is w times x, becomes negative 2 times 2.001, so it becomes negative 4.002. If w goes up by epsilon, c goes down by 2 times 0.001, or equivalently c goes up by negative 2 times 0.001. We know that if c goes up by negative 2 times 0.001, because the derivative of J with respect to c is 2, this means that J will go up by negative 4 times 0.001, because if c goes up by a certain amount, J changes by 2 times as much, so negative 2 times this is negative 4 times this. This allows us to conclude that if w goes up by 0.001, J goes up by negative 4 times 0.001. The derivative of J with respect to w is negative 4. I'm going to write negative 4 over here because has the derivative of J with respect to w. Once again, the chain rule calculation, if you're familiar with it, is this. It is the derivative of c respect to w times derivative of J with respect to c. This is 2 and this is negative 2, which is why we end up with negative 4, but again, don't worry about it if you're not familiar with chain rule. To wrap up what we've just done this manually carry out backprop in this computation graph. Whereas forward prop was a left-to-right computation where we had w equals 2, that allowed us to compute c. Then we had b and that allows us to compute a and then d, and then J backprop went from right-to-left and we would first compute the derivative of J with respect to d and then go back to compute the derivative of J with respect to a, then the derivative of J with respect to b, derivative of J with respect to c and finally the derivative of J with respect to w. So that's why backprop is a right-to-left computation, whereas forward prop was a left-to-right computation.
+We know if $a$ up by $\epsilon$, then because the derivative of $J$ with respect to $a$ is 2:
+
+$$\frac{\partial J}{\partial a} = 2 \quad \text{Previously calculated on step 2}$$
+
+we know that this in turn causes $J$ to go up by 2 $\epsilon$. 
+
+We can conclude that if $c$ goes up by a little bit, $J$ goes up by twice as much and we know this because we know the derivative of $J$ with respect to $a$ is 2. 
+
+So, this allows us to conclude that the derivative of $J$ with respect to $c$ is also equal to 2.
+
+$$\frac{\partial J}{\partial c} = 2$$
+
+I'm going to fill in that value over here. 
+
+#### Chain rule for this 3rd step
+Again, only if you're familiar with Chain rule, another way to write this is as the derivative of $J$ respect to $c$ is the derivative of $a$ respect to $c$ times the derivative of $J$ respect to $a$
+
+$$\frac{\partial J}{\partial c} = \frac{\partial a}{\partial c} * \frac{\partial J}{\partial a}$$
+
+$$\frac{\partial J}{\partial c} = 1 * 2$$
+
+$$\frac{\partial J}{\partial c} = 2$$
+
+### Chain rule: Same for $\frac{\partial J}{\partial b}$
+
+By a similar calculation, if $b$ goes up by 0.001, then $a$ also goes up by 0.001 and $J$ goes up by 2 times 0.001, which is why this derivative is also equal to 2. 
+
+We filled in here the derivative of $J$ respect to $b$, and here the derivative of $J$ respect to $c$. 
+
+$$\frac{\partial J}{\partial b} = \frac{\partial a}{\partial b} * \frac{\partial J}{\partial a}$$
+
+$$\frac{\partial J}{\partial b} = 1 * 2$$
+
+$$\frac{\partial J}{\partial b} = 2$$
+
+### Backprop: 4th step
+Now one final step: What is the derivative of $J$ with respect to $w$? 
+
+$$\frac{\partial J}{\partial w} = ?$$
+
+So, when $w$ goes up by $\epsilon=0.001$, what happens? 
+
+If $w$ were $w=2.001$, $c$ which is $c=wx$, becomes $c=-2(2.001)$,  so it becomes $c=-4.002$
+
+And so if $w$ goes up by epsilon, $c$ goes down by 2 times 0.001, or equivalently $c$ goes up by -2 times 0.001
+
+And we know that if $c$ goes up by -2 times 0.001 because the derivative of $J$ with respect to $c$ is 2, this means that $J$ will go up by -4 times 0.001 because if $c$ goes up by a certain amount, $J$ changes by 2 times as much, so -2 times this is -4 times this. 
+
+This allows us to conclude that if $w$ goes up by 0.001, $J$ goes up by -4 times 0.001.
+
+And so, the derivative of $J$ with respect to $w$ is -4.
+
+$$\frac{\partial J}{\partial w} = -4$$
+
+#### Chain rule for this 4th step
+Once again, the Chain rule calculation, if you're familiar with it, is this. 
+
+It is the derivative of $c$ respect to $w$ times the derivative of $J$ with respect to $c$. 
+
+$$\frac{\partial J}{\partial w} = \frac{\partial c}{\partial w} * \frac{\partial J}{\partial c}$$
+
+$$\frac{\partial J}{\partial w} = -2 * 2$$
+
+$$\frac{\partial J}{\partial w} = -4$$
+
+## Wrap up
+To wrap up what we've just done this manually carry out backprop in this computation graph
+
+Whereas forward prop was a left-to-right computation where we had $w=2$ that allowed us to compute $c$, then we had $b$ and that allowed us to compute $a$ and then $d$ and then $J$, backprop instead went from right-to-left and we would first compute the derivative of $J$ with respect to $d$ and then go back to compute the derivative of $J$ with respect to $a$, then the derivative of $J$ with respect to $b$, then the derivative of $J$ with respect to $c$ and finally the derivative of $J$ with respect to $w$. 
+
+So that's why backprop is a right-to-left computation, whereas forward prop was a left-to-right computation.
+
+| #  | Forward Prop | Backward Prop                     |
+|----|--------------|-----------------------------------|
+| 1  | $$w$$        | $$\frac{\partial J}{\partial d}$$ |
+| 2  | $$c$$        | $$\frac{\partial J}{\partial a}$$ |
+| 3  | $$b$$        | $$\frac{\partial J}{\partial b}$$ |
+| 4  | $$a$$        | $$\frac{\partial J}{\partial c}$$ |
+| 5  | $$d$$        | $$\frac{\partial J}{\partial w}$$ |
+| 6  | $$J$$        |                                   |
+
+
+![alt text](./img/image14.png)
+
+## Double-checking the computations we just did 
+
+![alt text](./img/image15.png)
+
+![alt text](./img/image16.png)
+
+## Why do we use the backprop algorithm to compute derivatives?
+
+![alt text](./img/image17.png)
+
+One thing that makes backprop efficient is that when we do the right-to-left calculation, we had to compute this term, the derivative of $J$ with respect to $a$, just once
+
+$$\frac{\partial J}{\partial a}$$
+
+This quantity is then used to compute both the derivative of $J$ with respect to $w$ and the derivative of $J$ with respect to $b$
+
+$$\frac{\partial J}{\partial w} \quad \text{and} \quad \frac{\partial J}{\partial b}$$
+
+It turns out that if a computation graph has $N$ nodes and $P$ parameters (in this case, we have $N=2$ parameters: $w$ and $b$), this procedure allows us to compute all the derivatives of $J$ with respect to all the parameters in roughly $N + P$ steps rather than $N * P$ steps
+
+## Example
+If you have a neural network with $N=10,000$ nodes and maybe $P=100,000$ parameters (this would not be considered even a very large neural network by modern standards) being able to compute the derivatives in $10,000 + 100,0000 = 110,000$ steps is much better than meeting $10,000 * 100,0000 = 1,000,000,000$ which would be a billion steps
+
+The backpropagation algorithm done using the computation graph gives you a very efficient way to compute all the derivatives. That's why it is such a key idea in how Deep Learning algorithms are implemented today.
+
+![alt text](./img/image18.png)
+
