@@ -46,9 +46,11 @@ It means that if we increase the value of $w$ by a tiny amount $\epsilon$, then 
 
 If we increase $w$ by a tiny amount $\epsilon = 0.002$, how does $J(w)$ change?
 
-$$\hat{w}=w + \epsilon$$
-$$\hat{w}=3 + 0.002$$
-$$\hat{w}=3.002$$
+$$ \hat{w}=w + \epsilon $$
+
+$$ \hat{w}=3 + 0.002 $$
+
+$$ \hat{w}=3.002 $$
 
 Then
 
@@ -100,9 +102,9 @@ But if the derivative is large, that means that even a tiny change the $w_j$ can
 
 If we increase $w=-3$ by a tiny amount $\epsilon = 0.001$, how does $J(w)$ change?
 
-$$\hat{w}=w + \epsilon$$
-$$\hat{w}=-3 + 0.001$$
-$$\hat{w}=-2.999$$
+$$ \hat{w}=w + \epsilon $$
+$$ \hat{w}=-3 + 0.001 $$
+$$ \hat{w}=-2.999 $$
 
 Then
 
