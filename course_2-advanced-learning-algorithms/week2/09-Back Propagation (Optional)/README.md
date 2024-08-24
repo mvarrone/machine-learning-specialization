@@ -21,7 +21,9 @@ Say $w$=3, then $J(3)=3^2=9$
 If we increase $w$ by a tiny amount $\epsilon = 0.001$, how does $J(w)$ change?
 
 $$\hat{w}=w + \epsilon$$
+
 $$\hat{w}=3 + 0.001$$
+
 $$\hat{w}=3.001$$
 
 Then
