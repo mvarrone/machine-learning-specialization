@@ -251,11 +251,12 @@ The next step is to then compute $d=a-y$
 We have $y=2$ and $a=4$ so $$d=a-y$$ $$d=4-2$$ $$d=2$$
 
 ### 4th step: Compute Cost function J(w, b)
-Then finally, we compute J, the cost function as $$J(w, b)=\frac{1}{2}(a-y)^2$$ or $$J(w, b)=\frac{1}{2}d^2$$
+Then finally, we compute J, the cost function as $$ J(w, b)=\frac{1}{2}(a-y)^2 $$ or $$ J(w, b)=\frac{1}{2}d^2 $$
+
 We have $d=2$ so, 
 
-$$J(w, b)=\frac{1}{2}2^2$$
-$$J(w, b)=2$$
+$$ J(w, b)=\frac{1}{2}2^2 $$
+$$ J(w, b)=2 $$
 
 What we've just done is build up a computation graph. This is a graph, not in a sense of plots with $x$ and $y$ axes but this is the other sense of the word graph using computer science, which is that this is a set of nodes that is connected by edges or connected by arrows in this case
 
