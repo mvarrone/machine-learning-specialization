@@ -415,3 +415,117 @@ Now, one interesting thing about this plot is you can ask, what do you think wil
 
 I know that we're used to thinking that having more data is good, but if your algorithm has high bias, then if the only thing you do is throw more training data at it, that by itself will not ever let you bring down the error rate that much. It's because of this really, no matter how many more examples you add to this figure, the straight linear fitting just isn't going to get that much better. That's why before investing a lot of effort into collecting more training data, it's worth checking if your learning algorithm has high bias, because if it does, then you probably need to do some other things other than just throw more training data at it. 
 
+### Analyzing the learning curve for a algorithm with high variance
+
+Let's now take a look at what the learning curve looks like for a learning algorithm with high variance
+
+![alt text](./img/image18.png)
+
+You might remember that if you were to fit the fourth-order polynomial with small lambda, say, or even lambda equals zero, then you get a curve that looks like this, and even though it fits the training data very well, it doesn't generalize. 
+
+Let's now look at what a learning curve might look like in this high variance scenario. 
+
+### High variance case: Analyzing the training/cv error
+
+$J_{train}$ will be going up as the training set size increases, so you get a curve that looks like this, and $J_{cv}$ will be much higher, so your cross-validation error is much higher than your training error and the fact there's a huge gap here is what I can tell you that this high-variance is doing much better on the training set than it's doing on your cross-validation set.
+
+### High variance case: Analyzing the baseline level of performance
+
+If you were to plot a baseline level of performance, such as human level performance, you may find that it turns out to be here, that $J_{train}$ can sometimes be even lower than the human level performance or maybe human level performance is a little bit lower than this. 
+
+But when you're over fitting the training set, you may be able to fit the training set so well to have an unrealistically low error, such as zero error in this example over here, which is actually better than how well humans will actually be able to predict housing prices or whatever the application you're working on. 
+
+But again, the signal for high variance is whether $J_{cv}$ is much higher than $J_{train}$ and when you have high variance then increasing the training set size could help a lot, and in particular, if we could extrapolate these curves to the right, increase $m_{train}$, then the training error will continue to go up, but then the cross-validation error hopefully will come down and approach $J_{train}$. 
+
+So, in this scenario, it might be possible just by increasing the training set size ($m_{train}$) to lower the cross-validation error and to get your algorithm to perform better and better, and this is unlike the high bias case, where if the only thing you do is get more training data, that won't actually help you learn your algorithm performance much. 
+
+### Summary
+
+To summarize, if a learning algorithm suffers from high variance, then getting more training data is indeed likely to help because extrapolating to the right of this curve, you see that you can expect $J_{cv}$ to keep on coming down. 
+
+In this example, just by getting more training data, allows the algorithm to go from relatively high cross-validation error to get much closer to human level performance. You can see that if you were to add a lot more training examples and continue to fill the fourth-order polynomial, then you can just get a better fourth order polynomial fit to this data than this very wiggly curve up on top. 
+
+So, if you're building a machine learning application, you could plot the learning curves if you want, that is, you can take different subsets of your training sets, and even if you have, say, 1,000 training examples, you could train a model on just 100 training examples and look at the training error and cross-validation error, then train a model on 200 examples, holding out 800 examples and just not using them for now, and plot $J_{train}$ and $J_{cv}$ and so on the repeats and plot out what the learning curve looks like. 
+
+If we were to visualize it that way, then that could be another way for you to see if your learning curve looks more like a high bias or high variance one. 
+
+One downside of the plotting learning curves like this is something I've done, but one downside is, it is computationally quite expensive to train so many different models using different size subsets of your training set, so in practice, it isn't done that often, but nonetheless, I find that having this mental visual picture in my head of what the training set looks like, sometimes that helps me to think through what I think my learning algorithm is doing and whether it has high bias or high variance. 
+
+I know we've gone through a lot about bias and variance, let's go back to our earlier example of if you've trained a model for housing price prediction, how does bias and variance help you decide what to do next? Let's go back to that earlier example, which I hope will now make a lot more sense to you. Let's do that in the next video.
+
+## Deciding what to try next revisited
+
+![alt text](./img/image19.png)
+
+You've seen how by looking at $J_{train}$ and $J_{cv}$, that is the training error and the cross-validation error, or maybe even plotting a learning curve you can try to get a sense of whether your learning algorithm has high bias or high variance. 
+
+This is the procedure I routinely do when I'm training a learning algorithm more often look at the training error and cross-validation error to try to decide if my algorithm has high bias or high variance. 
+
+It turns out this will help you make better decisions about what to try next in order to improve the performance of your learning algorithm. 
+
+Let's look at an example. 
+
+This is actually the example that you have seen earlier. If you've implemented regularized linear regression on predicting housing prices, but your algorithm makes unacceptably large errors in its predictions, what do you try next? 
+
+These were the six ideas that we had when we had looked over this slide earlier: Getting more training examples, try small set of features, additional features, and so on. 
+
+It turns out that each of these six items either helps fix a high variance or a high bias problem. 
+
+In particular, if your learning algorithm has high bias, three of these techniques will be useful and if your learning algorithm has high variance then a different three of these techniques will be useful. 
+
+1. First one is **get more training examples**: We saw in the last video that if your algorithm has high bias, then if the only thing we do is get more training data, that by itself probably won't help that much. But in contrast, if your algorithm has high variance, say it was overfitting to a very small training set, then getting more training examples will help a lot. So, this first option of getting more training examples **helps to fix a high variance problem**
+
+2. How about trying a **smaller set of features**? Sometimes if your learning algorithm has too many features, then it gives the algorithm too much flexibility to fit very complicated models. This is a little bit like if you had $x, x^2, x^3, x^4, x^5$ and so on. If only you were to eliminate a few of these, then your model won't be so complex and won't have such high variance. So, if you suspect that your algorithm has a lot of features that are not actually relevant or helpful to predicting housing price, or if you suspect that you had even somewhat redundant features, then **eliminating or reducing the number of features will help reduce the flexibility of your algorithm to overfit the data**. This is a tactic that will **help you to fix high variance**
+
+3. **Getting additional features**: that's just adding additional features is the opposite of going to a smaller set of features. This will **help you to fix a high bias problem**. As a concrete example, if you're trying to predict the price of the house just based on the size, but it turns out that the price of house also really depends on the number of bedrooms and on the number of floors and on the age of the house, then the algorithm will never do that well unless you add in those additional features. That's a high bias problem because you just can't do that well on the training set when you know only the size. It is only when you tell the algorithm how many bedrooms are there, how many floors are there, what's the age of the house that it finally has enough information to even do better on the training set. Adding additional features is a way to fix a high bias problem. 
+
+4. **Adding polynomial features** is a little bit like adding additional features. So, if your linear functions, three-line can fit the training set that well, then adding additional polynomial features can help you do better on the training set, and helping you do better on the training set is a way **to fix a high bias problem**. 
+
+5. **Decreasing the Lambda $\lambda$ value** means to use a lower value for the regularization parameter. That means we're going to pay less attention to the regularization term and pay more attention to the original cost function  J term to try to do better on the training set. Again, that **helps you to fix a high bias problem**
+
+6. Finally, **increasing the Lambda $\lambda$ value**, well that's the opposite of this, but that says you're overfitting the data. Increasing Lambda will make sense if is overfitting the training set, just putting too much attention to fit the training set, but at the expense of generalizing to new examples, and so increasing Lambda would force the algorithm to fit a smoother function, maybe a less wiggly function and use this **to fix a high variance problem**
+
+The takeaways I hope you have are:
+
+### Takeaways on high variance
+
+If you find that your algorithm has high variance, then the 2 main ways to fix that are:
+1. either get more training data/training examples
+    
+    or
+
+2. simplify your model and by simplify the model I mean:
+
+    a) either get a smaller set of features
+    
+    or 
+
+    b) increase the regularization parameter Lambda $\lambda$ so your algorithm has less flexibility to fit very complex, very wiggly curves. 
+      
+### Takeaways on high bias
+
+Conversely, if your algorithm has high bias, then that means is not doing well even on the training set. 
+
+If that's the case, the main fixes are to make your model more powerful or to give them more flexibility to fit more complex or more wiggly functions. 
+
+Some ways to do that are:
+
+- to give it additional features
+- add these polynomial features
+- to decrease the regularization parameter Lambda. 
+
+>NOTE: 
+Anyway, in case you're wondering if you should fix high bias by reducing the training set size, that doesn't actually help: If you reduce the training set size, you will fit the training set better but that tends to worsen your cross-validation error and the performance of your learning algorithm, so don't randomly throw away training examples just to try to fix a high bias problem. 
+
+One of my PhD students from Stanford, many years after he'd already graduated from Stanford, once said to me that while he was studying at Stanford, he learned about bias and variance and felt like he got it, he understood it. But that subsequently, after many years of work experience in a few different companies, he realized that bias and variance is one of those concepts that takes a short time to learn, but takes a lifetime to master. Those were his exact words. 
+
+Bias and variance is one of those very powerful ideas. When I'm training learning algorithms, I almost always try to figure out if it is high bias or high variance. But the way you go about addressing that systematically is something that you will keep on getting better at through repeated practice. 
+
+But you'll find that understanding these ideas will help you be much more effective at how you decide what to try next when developing a learning algorithm.
+
+Later this week in the practice labs and practice quizzes will have also additional opportunities to go over these ideas so that you can get additional practice where thinking about bias and variance of different learning algorithms. 
+
+Before moving on, bias and variance also are very useful when thinking about how to train a neural network. In the next video, let's take a look at these concepts applied to neural network training
+
+## Bias/variance and neural networks
+
