@@ -6,7 +6,7 @@ If you had to implement forward propagation yourself from scratch in python, how
 
 Let's look at how you would take an input feature vector $\vec{X}$ and implement forward prop to get this output vector $\vec{a}^{[2]}$
 
-![alt text](./images_for_07/image1.png)
+![alt text](./img/image1.png)
 
 ```python
 x = np.array([200, 17]) # Numpy 1D array
@@ -86,7 +86,7 @@ a2 = np.array([a2_1])
 
 ## Recap
 
-![alt text](./images_for_07/image2.png)
+![alt text](./img/image2.png)
 
 That is how you implement forward prop using just python and numpy.
 
@@ -94,7 +94,7 @@ Now, there are a lot of expressions in this page of code that you just saw. Let'
 
 ## General implementation of forward propagation
 
-![alt text](./images_for_07/image3.png)
+![alt text](./img/image3.png)
 
 > Note 1: Function g() is defined outside of dense() function
 

@@ -2,11 +2,11 @@
 
 ### Example 1: Making inference for coffee roasting (Problem description)
 
-![alt text](./images_for_05/image1.png)
+![alt text](./img/image1.png)
 
 ### Example 1: Making inference for coffee roasting (TensorFlow implementation)
 
-![alt text](./images_for_05/image2.png)
+![alt text](./img/image2.png)
 
 *Dense* is another name for the layers of a sneural network. There are other type of layers as well (covered later on the course)
 
@@ -16,7 +16,7 @@ These are the key steps for forward propagation in how you compute a1 and a2 and
 
 ### Example 2: Making inference for the previous digit classification (TensorFlow implementation)
 
-![alt text](./images_for_05/image3.png)
+![alt text](./img/image3.png)
 
 In this example, $\vec{X}$ is numpy array meaning a list of the pixel intensity values
 
@@ -24,23 +24,23 @@ In this example, $\vec{X}$ is numpy array meaning a list of the pixel intensity 
 
 ## Data in TensorFlow
 
-![alt text](./images_for_05/image4.png)
+![alt text](./img/image4.png)
 
-![alt text](./images_for_05/image5.png)
+![alt text](./img/image5.png)
 
-![alt text](./images_for_05/image6.png)
+![alt text](./img/image6.png)
 
-![alt text](./images_for_05/image7.png)
+![alt text](./img/image7.png)
 
-![alt text](./images_for_05/image8.png)
+![alt text](./img/image8.png)
 
-![alt text](./images_for_05/image9.png)
+![alt text](./img/image9.png)
 
 ## Building a neural network
 
 ### Previous explicit way of carrying out forward propagation
 
-![alt text](./images_for_05/image10.png)
+![alt text](./img/image10.png)
 
 This was implemented as one layer of computation at the time
 
@@ -55,7 +55,7 @@ a2 = layer_2(a1)
 
 ### TensorFlow way of implementing forward propagation
 
-![alt text](./images_for_05/image11.png)
+![alt text](./img/image11.png)
 
 Instead of manually taking the data and passing it to layer 1 and then taking the activations from layer 1 and pass it to layer 2, we can instead tell TensorFlow that we would like to take layer 1 and layer 2 and string them together to form a neural network using Sequential
 
@@ -82,7 +82,7 @@ model.predict(x_new) # It carries out forward propagation and carries an inferen
 
 ### Simplified TensorFlow way of implementing forward propagation
 
-![alt text](./images_for_05/image12.png)
+![alt text](./img/image12.png)
 
 By convention, we dont explicitly assign layers to variables but instead we declare layers inside Sequential.
 
@@ -109,7 +109,7 @@ model.predict(x_new) # It carries out forward propagation and carries an inferen
 
 ## Redo this for the previous digit classification example
 
-![alt text](./images_for_05/image13.png)
+![alt text](./img/image13.png)
 
 We had:
 
@@ -134,7 +134,7 @@ model.predict(x_new)
 
 ## Simplified way
 
-![alt text](./images_for_05/image14.png)
+![alt text](./img/image14.png)
 
 ```python
 model = Sequential([

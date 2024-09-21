@@ -40,7 +40,7 @@ where 0 < g(z) < 1
 - In case *z* is a large negative number, then g(z) $\approx$ 0
 - In case *z=0*, then g(z)=0.5
 
-![alt text](./images_for_01/image1.png)
+![alt text](./img/image1.png)
 
 ### Building the Logistic Regression algorithm (Step 1/2)
 
@@ -102,7 +102,7 @@ $$z < 0$$
 $$\vec{w}.\vec{x} + b < 0$$
 $$\hat{y} = 0$$
 
-![alt text](./images_for_01/image2.png)
+![alt text](./img/image2.png)
 
 ### Decision boundary
 
@@ -114,19 +114,19 @@ It a situation where we it is neutral about whether $y=0$ or $y=1$
 
 ### Linear decision boundary
 
-![alt text](./images_for_01/image3.png)
+![alt text](./img/image3.png)
 
 ### Non-linear decision boundary: Circle
 
-![alt text](./images_for_01/image4.png)
+![alt text](./img/image4.png)
 
 ### Non-linear decision boundary: Ellipse
 
-![alt text](./images_for_01/image5.png)
+![alt text](./img/image5.png)
 
 ### Non-linear decision boundary: A more complex decision boundary
 
-![alt text](./images_for_01/image6.png)
+![alt text](./img/image6.png)
 
  With polynomial features, you can get very complex decision boundaries. In other words, Logistic Regression can learn to fit pretty complex data
 

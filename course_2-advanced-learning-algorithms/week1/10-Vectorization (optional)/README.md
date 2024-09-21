@@ -10,7 +10,7 @@ In this video, we'll take a look at how these vectorized implementations of neur
 
 ## Vectorization of code using $np.matmul()$
 
-![alt text](./images_for_10/image1.png)
+![alt text](./img/image1.png)
 
 ### Non-vectorized implementation 
 
@@ -44,7 +44,7 @@ A matrix is just a block or a 2D array of numbers
 
 ### 2.1.1 - The dot product
 
-![alt text](./images_for_10/image2.png)
+![alt text](./img/image2.png)
 
 If $z$ is the dot product between $\vec{a}$ and $\vec{w}$, then you compute $z$ by multiplying the first element together and then the second elements together and the third and so on and then adding up all of these products.
 
@@ -150,17 +150,17 @@ There is an equivalent way of writing a dot product: Transpose
 
 The transpose of the $\vec{a}$ means you take a vector and lay its elements on the side (turn from a column vector into a row vector)
 
-![alt text](./images_for_10/image3.png)
+![alt text](./img/image3.png)
 
 $$z=\mathbf{\vec{a}}^T \vec{w}$$
 
 ### Both ways are equivalent
 
-![alt text](./images_for_10/image4.png)
+![alt text](./img/image4.png)
 
 ### 2.2 - Vector-matrix multiplication
 
-![alt text](./images_for_10/image5.png)
+![alt text](./img/image5.png)
 
 Now, let's look at vector matrix multiplication, which is when you take a vector and you multiply it by a matrix. Here again is the vector a 1, 2 and a transpose is a laid on the side, so rather than this think of this as a 2x1 matrix it becomes a 1x2 matrix. 
 
@@ -182,17 +182,17 @@ Advice from the instructor:
 
 One way I encourage you to think of matrices, at least there is useful for neural network implementations, is if you see a **matrix**, think of the **columns** of the matrix and if you see the **transpose of a matrix**, think of the **rows** of that matrix as being grouped together
 
-![alt text](./images_for_10/image6.png)
+![alt text](./img/image6.png)
 
 ## Matrix multiplication rules
 
 ### Example
 
-![alt text](./images_for_10/image7.png)
+![alt text](./img/image7.png)
 
 ## Requirement for multiplying matrices together
 
-![alt text](./images_for_10/image8.png)
+![alt text](./img/image8.png)
 
 One requirement in order to multiply 2 matrices together is that the number of columns of the 1st matrix to be multiplied must match the number of rows of the 2nd matrix
 
@@ -208,7 +208,7 @@ The dimensions of Z is equal to the number of rows of the 1st matrix by the numb
 
 Without further ado, let's jump into the vectorized implementation of a neural network. Hopefully, *matmul*, a function from the Numpy library that computes matrix multiplication, will make more sense now.
 
-![alt text](./images_for_10/image9.png)
+![alt text](./img/image9.png)
 
 ```python
 # Define the A matrix
@@ -239,7 +239,7 @@ The results for *Z_method_1* and *Z_method_2* are the same:
 
 ## Coffee Roasting example
 
-![alt text](./images_for_10/image10.png)
+![alt text](./img/image10.png)
 
 ### Implementing forward prop in a neural network in Python
 

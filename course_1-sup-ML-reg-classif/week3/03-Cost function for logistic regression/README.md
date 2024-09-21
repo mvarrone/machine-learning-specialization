@@ -18,7 +18,7 @@ The squared error cost function (previously used in Linear Regression) is not an
 
 That cost function J(w, b) worked well for linear regression: It is natural to consider it for logistic regression as well. However, $f_{wb}(x)$ now has a non-linear component, the sigmoid function:   $f_{w,b}(x^{(i)}) = sigmoid(wx^{(i)} + b )$
 
-![alt text](./images_for_03/image1.png)
+![alt text](./img/image1.png)
 
 ## The new cost function J(w, b) and a new concept: Loss L
 
@@ -73,7 +73,7 @@ The defining feature of this loss function L is the fact that it uses 2 separate
 
 Consider the curves below:
 
-![alt text](./images_for_03/image2.png)
+![alt text](./img/image2.png)
 
 ## Why does this definition of the Loss function L makes sense?
 
@@ -89,7 +89,7 @@ a) Let's consider the case of $y^{(i)}=1$ and plot what this function looks like
 
 > Note: So, when $y^{(i)}=1$, the loss function L incentivizes/nurtures/helps push the algorithm to make more accurate predictions because the loss is lowest when it predicts values close to 1.
 
-![alt text](./images_for_03/image3.png)
+![alt text](./img/image3.png)
 
 b) Now, let's consider the case of $y^{(i)}=0$ and plot what this function looks like:
 
@@ -105,7 +105,7 @@ In fact, if $f_{\vec{w}, b}(\vec{x}^{(i)})$ approaches 0, the loss L actually go
 
 When the true label is 1 ($y^{(i)}=1$), the algorithm is strongly incentivized not to predict something to0 close to 0
 
-![alt text](./images_for_03/image4.png)
+![alt text](./img/image4.png)
 
 ## Recap
 
@@ -162,6 +162,6 @@ And this is the cost function that pretty much everyone uses to train Logistic R
 
 You might be wondering, why do we choose this particular function when there could be tons of other costs functions we could have chosen? Although we won't have time to go into great detail on this in this class, I'd just like to mention that this particular cost function is derived from **statistics** using a **statistical principle called maximum likelihood estimation**, which is an idea from statistics on how to efficiently find parameters for different models. This cost function has the nice property that it is **convex**
 
-![alt text](./images_for_03/image5.png)
+![alt text](./img/image5.png)
 
 ## Optional lab 14: Cost function for logistic regression

@@ -19,11 +19,11 @@ with *x* as a vector
 and *b* still a number
 
 ## Notation
-![alt text](./images_for_1/image1.png)
+![alt text](./img/image1.png)
 
 * Instead of only having one input feature x representing the size of the house in squared feet, now we have more input features x like the number of bedrooms, number of floor and the age of the home. Our target is still the price of the house.
 
-![alt text](./images_for_1/image2.png)
+![alt text](./img/image2.png)
  
  Note: This model is called multiple linear regression. This is in contrast to univariate regression, which has just one feature, just like we learnt before.
 
@@ -44,11 +44,11 @@ $$ f = np.dot(w,x) + b $$
 - The reason that the vectorized implementation is much faster is, **behind the scenes**, the *NumPy dot()* function is able to use parallel hardware in your computer and this is true whether you're running this on a normal computer (that is on a normal computer CPU) or if you are using a GPU, a Graphics Processor Unit, that is often used to accelerate machine learning jobs.
 - The ability of the NumPy dot function to use parallel hardware makes it much more efficient than the for loop or the sequential calculation shown in the following image:
 
-![alt text](./images_for_1/image3.png)
+![alt text](./img/image3.png)
 
  ## Vectorization (Part 2): *np.dot()* function behind the scenes
 
-![alt text](./images_for_1/image4.png)
+![alt text](./img/image4.png)
 
 - The *without vectorization* method calculates these computations one step at a time, one step after another, 
 
@@ -60,7 +60,7 @@ $$ f = np.dot(w,x) + b $$
 
 - That's why being able to vectorize implementations of learning algorithms, has been a key step to getting learning algorithms to run efficiently, and therefore scale well to large datasets that many modern machine learning algorithms now have to operate on.
 
-![alt text](./images_for_1/image5.png)
+![alt text](./img/image5.png)
 
 ## Optional lab 5: Python, NumPy and vectorization
 
@@ -70,11 +70,11 @@ $$ f = np.dot(w,x) + b $$
 
 ### Recap
 
-![alt text](./images_for_1/image6.png)
+![alt text](./img/image6.png)
 
 ### Gradient descent for multiple regression
 
-![alt text](./images_for_1/image7.png)
+![alt text](./img/image7.png)
 
 ## An alternative way for finding w and b for Linear Regression: The Normal Equation
 

@@ -24,11 +24,11 @@ Generalization refers to the ability of a model to perform well on new, unseen d
 
 ## Underfitting, Generalization and Overfitting for Regression
 
-![alt text](./images_for_07/image1.png)
+![alt text](./img/image1.png)
 
 ## Underfitting, Generalization and Overfitting for Classification
 
-![alt text](./images_for_07/image2.png)
+![alt text](./img/image2.png)
 
 ## Addressing overfitting
 
@@ -64,7 +64,7 @@ Example:
 
 It turns out that even if you fit a higher order polynomial the shown in the image below, so long as you can get the algorithm to use smaller parameter values: $w_{1}$, $w_{2}$, $w_{3}$, $w_{4}$ you end up with a curve that ends up fitting the training data much better.
 
-![alt text](./images_for_07/image3.png)
+![alt text](./img/image3.png)
 
 ## Optional lab 17: Overfitting
 
@@ -132,14 +132,14 @@ So, $f(x)$ is the linear regression model.
 
 If lambda was set to be 0, then you would not be using the regularization term at all because the regularization term is multiplied by 0. And so if lambda was 0, you end up fitting the overly wiggly, overly complex curve and it **overfits**. So that was one extreme of if lambda was 0. 
 
-![alt text](./images_for_07/image4.png)
+![alt text](./img/image4.png)
 
 ### 2nd case: $\lambda=\text{large number}$
 
 Let's now look at the other extreme. If you said lambda to be a really, really, really large number, say lambda equals 10 to the power of 10. In this case, you are placing a very heavy weight on the regularization term. And the only way to minimize this is to be sure that all the values of w are pretty much very close to 0. 
 So if lambda is very, very large, the learning algorithm will choose $w_{1}$, $w_{2}$, $w_{3}$ and $w_{4}$ to be extremely close to 0 and thus $f(x)$ is basically equal to *b* and so the learning algorithm fits a horizontal straight line and **underfits**. 
 
-![alt text](./images_for_07/image5.png)
+![alt text](./img/image5.png)
 
 To recap:
 
@@ -153,7 +153,7 @@ And so what you want is some value of lambda that is in between that more approp
 
 And when the value of lambda is not too small and not too large, but just right, then hopefully you end up able to fit a 4th order polynomial, keeping all of these features, but with a function that looks like the image below:
 
-![alt text](./images_for_07/image6.png)
+![alt text](./img/image6.png)
 
 For a model that includes the regularization parameter $\lambda$, increasing its value reduces overfitting by reducing the size of the parameters $w_{j}$. For some parameters that are near zero, this reduces the effect of the associated features.
 
@@ -164,11 +164,11 @@ So, let's implement Gradient Descent for Linear Regression using a regularizatio
 We need to remember that we are going to regularize only the $w_{j}$ parameters. 
 We are not going to regularize the parameter *b*. So, the only changes are applied to the derivative of the cost function J over $w_{j}$ as shown in the image below:
 
-![alt text](./images_for_07/image7.png)
+![alt text](./img/image7.png)
 
 So, the final gradient descent implementation looks like the following image shown below:
 
-![alt text](./images_for_07/image8.png)
+![alt text](./img/image8.png)
 
 Parameters $w_{j}$
 
@@ -190,7 +190,7 @@ $$w_{j}=w_{j} - \alpha [\frac{1}{m}\sum\limits_{i = 1}^{m}[(f_{w,b}(x^{(i)}) - y
 ## (Optional) A deeper intuition on what this $w_{j}$ formula is actually doing
 ### 1. Another view on why regularization has an effect of shrinking the parameters $w_{j}$
 
-![alt text](./images_for_07/image9.png)
+![alt text](./img/image9.png)
 
 As can be seen above, after operating the expression for the $w_{j}$ parameters, we can observe that every $w_{j}$ parameter is being affected by a factor (which later we will call *k*, shrink factor).
 
@@ -217,13 +217,13 @@ Considerations:
 
 ### 2. How these derivatives are derived
 
-![alt text](./images_for_07/image10.png)
+![alt text](./img/image10.png)
 
 This is why this expression is used to compute the gradient in regularized linear regression
 
 ## Regularized Logistic Regression
 
-![alt text](./images_for_07/image11.png)
+![alt text](./img/image11.png)
 
 ### Updated cost function J(w, b) for Logistic Regression using regularization
 
@@ -233,7 +233,7 @@ As can be seen, J(w, b) now incorporates the regularization term in this express
 
 ### Implementing gradient descent for Logistic Regression
 
-![alt text](./images_for_07/image12.png)
+![alt text](./img/image12.png)
 
 Same as the Linear Regression procedure: We do not regularize the parameter *b* but only $w_{j}$ parameters.
 

@@ -36,7 +36,7 @@
     
     2) Likewise, when the possible values of the feature are **small**, like the number of bedrooms, then a reasonable value for its parameters will be relatively **large**, like 50. 
 
-![alt text](./images_for_3/image1.png)
+![alt text](./img/image1.png)
     
 ## Relating to Gradient Descent
 
@@ -44,27 +44,27 @@
 
 Next, let's look at how the cost function J(w, b) might look in a *contour plot*. You might see a *contour plot* where the horizontal axis has a much narrower range, say between 0 and 1, whereas the vertical axis takes on much larger values, say between 10 and 100. So, the contours form ovals or ellipses and they are short on one side and longer on the other. And this is because a very small change to $w_{1}$ can have a very large impact on the estimated price and that's a very large impact on the cost function J(w, b) because $w_{1}$ tends to be multiplied by a very large number, the size in square feet. 
 
-![alt text](./images_for_3/image2.png)
+![alt text](./img/image2.png)
     
 In contrast, it takes a much larger change in $w_{2}$ in order to change the predictions much. And thus, small changes to $w_{2}$, don't change the cost function J(w, b) nearly as much. 
 
-![alt text](./images_for_3/image3.png)
+![alt text](./img/image3.png)
     
 So, where does this leave us? This is what might end up happening if you were to run Gradient Descent, if you were to use your training data as is. Because the contours are so tall and skinny, Gradient Descent may end up **bouncing back and forth** for a long time before it can finally find **its way to the global minimum**. 
     
-![alt text](./images_for_3/image4.png) 
+![alt text](./img/image4.png) 
 
 ## Scaling the features
 
 In situations like this, a useful thing to do is to **scale the features**: This means performing some transformation of your training data so that $x_{1}$ say might now range from 0 to 1 and $x_{2}$ might also range from 0 to 1. So, the data points now look more like the next image shown below and you might notice that the scale of the plot on the bottom is now quite different than the one on top. 
 
-![alt text](./images_for_3/image5.png) 
+![alt text](./img/image5.png) 
     
 The key point is that the rescaled **$x_{1}$ and $x_{2}$ are both now taking comparable ranges of values to each other**. 
 
 And if you run Gradient Descent on a cost function J(w, b) to find on this rescaled $x_{1}$ and $x_{2}$ using this transformed data, then the contours will look more like the next image shown below: more like circles and less tall and skinny and now, Gradient Descent can find a **much more direct path to the global minimum**.
 
-![alt text](./images_for_3/image6.png) 
+![alt text](./img/image6.png) 
 
 ## Recap
 
@@ -116,7 +116,7 @@ $$
 
 Now, if you plot the scaled versions, $x_{1, scaled}$ and $x_{2, scaled}$ on a graph it might look like the following image:
 
-![alt text](./images_for_3/image7.png) 
+![alt text](./img/image7.png) 
 
 ## 2. Using the mean normalization
 
@@ -148,7 +148,7 @@ $$
 
 If you plot the training data using the mean normalized $x_{1}$ and $x_{2}$, it might look like the image shown below:
 
-![alt text](./images_for_3/image8.png) 
+![alt text](./img/image8.png) 
 
 ## 3. Using the Z-score normalization
 
@@ -182,7 +182,7 @@ $$
 
 If you plot the training data on the normalized $x_{1}$ and $x_{2}$ on a graph, it might look like the following image:
 
-![alt text](./images_for_3/image9.png) 
+![alt text](./img/image9.png) 
 
 ## Aim for Feature Scaling
 
@@ -207,7 +207,7 @@ $$
 
 - Finally, what if your feature $x_{5}$, such as measurements of a hospital patients by the temperature ranges from 98.6 to 105 degrees Fahrenheit? In this case, these values are around 100, which is actually **pretty large compared to other scale features**, and this will actually cause gradient descent to run more slowly. In this case, feature re-scaling will likely help. 
 
-![alt text](./images_for_3/image10.png)
+![alt text](./img/image10.png)
 
 ## Some advice on rescaling
 
@@ -224,7 +224,7 @@ When running Gradient Descent, how can you tell if it is converging? That is, wh
 
 As a reminder, here's the Gradient Descent rule. One of the key choices is the choice of the learning rate alpha $\alpha$. Let's see 2 options to make sure that Gradient Descent is working well.
 
-![alt text](./images_for_3/image11.png)
+![alt text](./img/image11.png)
 
 ## Option 1: Analyze the Learning curve: A plot of J(w, b) vs number of iterations
 
@@ -234,7 +234,7 @@ What I'll often do is plot the cost function J, which is calculated on the train
 
 This curve is also called a learning curve. Note that there are a few different types of learning curves used in machine learning, and you see some of the types later in this course as well. 
 
-![alt text](./images_for_3/image12.png)
+![alt text](./img/image12.png)
 
 From the image shown above, (a, pink color) if you look at the 1st point (pink color) on the curve, this means that after you have run Gradient Descent for 100 iterations meaning 100 simultaneous updates of the parameters, you have some learned values for w and b. If you compute the cost J(w, b) for those values of w and b, the ones you got after 100 iterations, you get a certain value for the cost function J(w, b). 
 
@@ -259,7 +259,7 @@ Let's set epsilon $\epsilon$ to be a variable representing a small number, such 
 
 If the cost function J(w, b) decreases by less than this number epsilon $\epsilon$ on one iteration, then you're likely on this flattened part of the curve that you see on the previuos plot and you can declare **convergence**. 
 
-![alt text](./images_for_3/image13.png)
+![alt text](./img/image13.png)
 
 Remember, convergence, hopefully in the case that you found parameters w and b that are close to the minimum possible value of J. 
 
@@ -278,7 +278,7 @@ Concretely, if you plot the cost function J(w, b) for a number of iterations and
 
 So, here is an illustration of what might be happening: 
 
-![alt text](./images_for_3/image14.png)
+![alt text](./img/image14.png)
 
 The vertical axis is a cost function J(w, b) and the horizontal axis represents a parameter like maybe $w_{1}$. If **the learning rate alpha $\alpha$ is too big**, then if you start off here, your update step may overshoot the minimum and end up here, and in the next update step here, your gain overshooting so you end up here and so on. That's why the cost can sometimes go up instead of decreasing. 
 
@@ -286,13 +286,13 @@ The vertical axis is a cost function J(w, b) and the horizontal axis represents 
 
 To fix this, you can use a smaller learning rate. Then your updates may start here and go down a little bit and down a bit, and we will hopefully consistently decrease until it reaches the global minimum. 
 
-![alt text](./images_for_3/image15.png)
+![alt text](./img/image15.png)
 
 ## Situation 2:
 
 - Sometimes you may see that the cost function J(w, b) consistently increases after each iteration, like the curve shown in the image below: 
 
-![alt text](./images_for_3/image16.png)
+![alt text](./img/image16.png)
 
 This is also likely due to a **learning rate alpha $\alpha$ that is too large**
 
@@ -338,7 +338,7 @@ What I'll do is try a range of values until I found the value of that's too smal
 
 When I do that, it usually gives me a good learning rate for my model. 
 
-![alt text](./images_for_3/image17.png)
+![alt text](./img/image17.png)
 
 ## Next video
 
@@ -393,7 +393,7 @@ So, depending on what insights you may have into the application, rather than ju
 
 That's Feature Engineering. It turns out that this one flavor of feature engineering, that allow you to fit not just straight lines, but curves, non-linear functions to your data.
 
-![alt text](./images_for_3/image18.png)
+![alt text](./img/image18.png)
 
 ## Polynomial regression
 
@@ -403,7 +403,7 @@ So far we have just been fitting straight lines to our data. Let's take the idea
 
 Let's say you have a housing data-set that looks like this 
 
-![alt text](./images_for_3/image19.png)
+![alt text](./img/image19.png)
 
 where feature x is the size in square feet. It doesn't look like a straight line fits this data-set very well. So, maybe you want to fit a curve, maybe a quadratic function to the data like the following function:
 
@@ -413,7 +413,7 @@ which includes a size $x$ and also $x^2$, which is the size raised to the power 
 
 But then you may decide that your quadratic model doesn't really make sense because a quadratic function eventually comes back down: We wouldn't really expect housing prices to go down when the size increases. Big houses seem like they should usually cost more. 
 
-![alt text](./images_for_3/image20.png)
+![alt text](./img/image20.png)
 
 ## Example 2
 
@@ -423,7 +423,7 @@ $$ f_{\vec{w}, b}(\vec{x}) = w_{1}x + w_{2}x^2 + w_{3}x^3 + b $$
 
 where we now have not only $x^2$ but $x^3$. Maybe this model produces this curve here
 
-![alt text](./images_for_3/image21.png)
+![alt text](./img/image21.png)
 
 which is a somewhat better fit to the data because the size does eventually come back up as the size increases. 
 
@@ -439,7 +439,7 @@ If the size of the house ranges from 1 to 1000 square feet, then the second feat
 
 If you're using Gradient Descent, it's important to apply Feature Scaling to get your features into comparable ranges of values. 
 
-![alt text](./images_for_3/image22.png)
+![alt text](./img/image22.png)
 
 ## Example 3
 
@@ -453,7 +453,7 @@ This would be another choice of features that might work well for this data-set 
 
 By using Feature Engineering and Polynomial functions you can potentially get a much better model for your data.
 
-![alt text](./images_for_3/image23.png)
+![alt text](./img/image23.png)
 
 ## Optional lab 8: Feature engineering and Polynomial regression
 

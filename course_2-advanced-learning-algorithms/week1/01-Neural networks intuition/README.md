@@ -1,6 +1,6 @@
 ## Welcome
 
-![alt text](./images_for_01/image1.png)
+![alt text](./img/image1.png)
 
 ### Topics for this 2nd course
 
@@ -27,27 +27,27 @@ Then, in the final week of this course, you learn about decision trees. While de
 
 ## Neurons and the brain
 
-![alt text](./images_for_01/image2.png)
+![alt text](./img/image2.png)
 
-![alt text](./images_for_01/image3.png)
+![alt text](./img/image3.png)
 
-![alt text](./images_for_01/image4.png)
+![alt text](./img/image4.png)
 
-![alt text](./images_for_01/image5.png)
+![alt text](./img/image5.png)
 
 ## Demand Prediction
 
-![alt text](./images_for_01/image6.png)
+![alt text](./img/image6.png)
 
-![alt text](./images_for_01/image7.png)
+![alt text](./img/image7.png)
 
 ## Example: Recognizing Images
 
-![alt text](./images_for_01/image8.png)
+![alt text](./img/image8.png)
 
-![alt text](./images_for_01/image9.png)
+![alt text](./img/image9.png)
 
-![alt text](./images_for_01/image10.png)
+![alt text](./img/image10.png)
 
 ## Forum
 
