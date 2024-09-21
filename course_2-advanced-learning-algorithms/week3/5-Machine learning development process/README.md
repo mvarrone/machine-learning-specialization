@@ -2,13 +2,13 @@
 
 ![alt text](./img/image1.png)
 
-In the next few videos, I'd like to share with you what is like to go through the process of developing a machine learning system so that when you are doing so yourself, hopefully, you'd be in a position to make great decisions at many stages of the machine learning development process. 
+In the next few videos, I'd like to share with you what is like to go through the process of developing a Machine Learning system so that when you are doing so yourself, hopefully, you'd be in a position to make great decisions at many stages of the Machine Learning development process. 
 
-Let's take a look first at the iterative loop of machine learning development. 
+Let's take a look first at the iterative loop of Machine Learning development. 
 
-This is what developing a machine learning model will often feel like. 
+This is what developing a Machine Learning model will often feel like. 
 
-1. First, you decide on what is the overall architecture of your system. That means choosing your machine learning model as well as deciding what data to use, maybe picking the hyperparameters, and so on. 
+1. First, you decide on what is the overall architecture of your system. That means choosing your Machine Learning model as well as deciding what data to use, maybe picking the hyperparameters, and so on. 
 
 2. Then, given those decisions, you would implement and train a model. As I've mentioned before, when you train a model for the first time, it will almost never work as well as you want it to. 
 
@@ -22,7 +22,7 @@ Let's look at an example of building an email spam classifier
 
 ![alt text](./img/image2.png)
 
-I think many of us passionately hate email spam and this is a problem that I worked on years ago and also was involved in starting an anti-spam conference once years ago. 
+I think many of us passionatel$\hat y$e email spam and this is a problem that I worked on years ago and also was involved in starting an anti-spam conference once years ago. 
 
 The example on the left is what a highly spammy email might look like: Deal of the week, buy now, Rolex watches. Spammers will sometimes deliberately misspell words like these, watches, medicine, and mortgages in order to try to trip up a spam recognizer. 
 
@@ -61,7 +61,7 @@ Doing the iterative loop of Machine Learning development, you may have many idea
 
 In the last several videos, we've already talked about bias and variance. 
 
-In the next video, I'd like to start describing to you the error analysis process, which has a second key set of ideas for gaining insight about what architecture choices might be fruitful. That's the iterative loop of machine learning development and using the example of building a spam classifier let's take a look at what error analysis looks like. Let's do that in the next video.
+In the next video, I'd like to start describing to you the error analysis process, which has a second key set of ideas for gaining insight about what architecture choices might be fruitful. That's the iterative loop of Machine Learning development and using the example of building a spam classifier let's take a look at what error analysis looks like. Let's do that in the next video.
 
 ## Error analysis
 
@@ -130,9 +130,9 @@ In the next video, I'd like to dive deeper into the problem of adding data. When
 
 ![alt text](./img/image9.png)
 
-In this video, I'd like to share with you some tips for adding data or collecting more data or sometimes even creating more data for your machine learning application. 
+In this video, I'd like to share with you some tips for adding data or collecting more data or sometimes even creating more data for your Machine Learning application. 
 
-Just a heads up that this and the next few videos will seem a little bit like a grab bag of different techniques and I apologize if it seems a little bit grab baggy and that's because machine learning applications are different. Machine learning is applied to so many different problems and for some humans are great at creating labels and for some you can get more data and for some you can't. 
+Just a heads up that this and the next few videos will seem a little bit like a grab bag of different techniques and I apologize if it seems a little bit grab baggy and that's because Machine Learning applications are different. Machine learning is applied to so many different problems and for some humans are great at creating labels and for some you can get more data and for some you can't. 
 
 And that's why different applications actually sometimes call for slightly different techniques but I hope in this in the next few videos to share with you some of the techniques that are found to be most useful for different applications, although not every one of them will apply for every single application but I hope many of them would be useful for many of the applications that you'll be working on as well 
 
@@ -140,7 +140,7 @@ But let's take a look at some tips for how to add data for your application.
 
 ### Technique to add data: 1. Get more data of everything
 
-When training machine learning algorithms, it feels like always we wish we had even more data almost all the time. And so sometimes it's tempting to let's just get more data of everything. But, trying to get more data of all types can be slow and expensive. 
+When training Machine Learning algorithms, it feels like always we wish we had even more data almost all the time. And so sometimes it's tempting to let's just get more data of everything. But, trying to get more data of all types can be slow and expensive. 
 
 ### Technique to add data: 2. Only get more data of the types where needed
 
@@ -254,7 +254,7 @@ Synthetic data generation has been used most probably for computer vision tasks 
 
 All the techniques you've seen in this video relate to finding ways to engineer the data used by your system. 
 
-In the way that machine learning has developed over the last several decades, many decades, most machine learning researcher's attention was on the **conventional model-centric approach** and here's what I mean: A machine learning system or an AI system includes both code to implement your algorithm or your model, as well as the data that you train the algorithm model. And over the last few decades, most researchers doing machine learning research would download the dataset and hold the data fixed while they focus on improving the code or the algorithm or the model.
+In the way that Machine Learning has developed over the last several decades, many decades, most Machine Learning researcher's attention was on the **conventional model-centric approach** and here's what I mean: A Machine Learning system or an AI system includes both code to implement your algorithm or your model, as well as the data that you train the algorithm model. And over the last few decades, most researchers doing Machine Learning research would download the dataset and hold the data fixed while they focus on improving the code or the algorithm or the model.
 
 Thanks to that paradigm of Machine Learning research, I find that today the algorithm we have access to such as Linear Regression, Logistic Regression, Neural Networks, also Decision Trees we should see next week there are algorithms that already very good and will work well for many applications. 
 
@@ -262,7 +262,7 @@ And so sometimes it can be more fruitful to spend more of your time taking a **d
 
 And sometimes that focus on the data can be an efficient way to help your learning algorithm improve its performance. 
 
-## Summary
+### Summary
 
 So, I hope that this video gives you a set of tools to be efficient and effective in how you add more data to get your learning algorithm to work better.
 
@@ -310,7 +310,7 @@ One nice thing about Transfer Learning as well is maybe you don't need to be the
 
 What that means is rather than carrying out the first step yourself, you can just download the neural network that someone else may have spent weeks training and then replace the output layer with your own output layer and carry out either Option 1 or Option 2 to fine tune a neural network that someone else has already carried out supervised pre-training on and just do a little bit of fine tuning to quickly be able to get a neural network that performs well on your task. 
 
-Downloading a pre-trained model that someone else has trained and provided for free is one of those techniques where by building on each other's work on machine learning community we can all get much better results by the generosity of other researchers that have pre-trained and posted their neural networks online. 
+Downloading a pre-trained model that someone else has trained and provided for free is one of those techniques where by building on each other's work on Machine Learning community we can all get much better results by the generosity of other researchers that have pre-trained and posted their neural networks online. 
 
 But why does transfer learning even work? How can you possibly take parameters obtained by recognizing cats, dogs, cars, and people and use that to help you recognize something as different as handwritten digits?
 
@@ -340,11 +340,177 @@ To summarize, these are the two steps for transfer learning.
 
 This technique isn't panacea., you can't get every application to work just on 50 images, but it does help a lot when the dataset you have for your application isn't that large. 
 
-By the way, if you've heard of advanced techniques in the news like GPT-3 or BERTs or neural networks pre-trained on ImageNet, those are actually examples of neural networks that they have someone else's pre-trained on a very large image datasets or text dataset, they can then be fine tuned on other applications. If you haven't heard of GPT-3, or BERTs, or ImageNet, don't worry about it, but if you have those have been successful applications of transfer learning in the machine learning literature. 
+By the way, if you've heard of advanced techniques in the news like GPT-3 or BERTs or neural networks pre-trained on ImageNet, those are actually examples of neural networks that they have someone else's pre-trained on a very large image datasets or text dataset, they can then be fine tuned on other applications. If you haven't heard of GPT-3, or BERTs, or ImageNet, don't worry about it, but if you have those have been successful applications of transfer learning in the Machine Learning literature. 
 
-One of the things I like about transfer learning is just that one of the ways that the machine learning community has shared ideas and code, and even parameters, with each other because thanks to the researchers that have pre-trained large neural networks and posted the parameters on the internet freely for anyone else to download and use. 
+One of the things I like about transfer learning is just that one of the ways that the Machine Learning community has shared ideas and code, and even parameters, with each other because thanks to the researchers that have pre-trained large neural networks and posted the parameters on the internet freely for anyone else to download and use. 
 
-This empowers anyone to take models that they have pre-trained, to fine tune on potentially much smaller dataset. In machine learning, all of us end up often building on the work of each other and that open sharing of ideas, of codes, of trained parameters is one of the ways that the machine learning community, all of us collectively manage to do much better work than any single person by themselves can. 
+This empowers anyone to take models that they have pre-trained, to fine tune on potentially much smaller dataset. In Machine Learning, all of us end up often building on the work of each other and that open sharing of ideas, of codes, of trained parameters is one of the ways that the Machine Learning community, all of us collectively manage to do much better work than any single person by themselves can. 
 
-I hope that you joining the machine learning community will someday maybe find a way to contribute back to this community as well. That's it for pre-training. I hope you find this technique useful. In the next video, I'd like to share with you some thoughts on the full cycle of a machine learning project. When building a machine learning system, whether all the steps that are worth thinking about. Let's take a look at that in the next video
+I hope that you joining the Machine Learning community will someday maybe find a way to contribute back to this community as well. That's it for pre-training. I hope you find this technique useful. In the next video, I'd like to share with you some thoughts on the full cycle of a Machine Learning project. When building a Machine Learning system, whether all the steps that are worth thinking about. Let's take a look at that in the next video
+
+## Full cycle of a Machine Learning project
+
+![alt text](./img/image22.png)
+
+So far we've talked a lot about how to train a model and also talked a bit about how to get data for your Machine Learning application but when I'm building a Machine Learning system I find that training a model is just one part of the puzzle. 
+
+In this video I'd like to share with you what I think of as the full cycle of a Machine Learning project that is when you're building a valuable Machine Learning system, what are the steps to think about and plan for? Let's take a look
+
+### Example: Speech recognition project
+
+Let me use speech recognition as an example to illustrate the full cycle of a Machine Learning project. 
+
+#### 1st step: Scope the project
+
+The first step of Machine Learning project is to scope the project. In other words, decide what is the project and what you want to work on. For example, I once decided to work on speech recognition for voice search. That is to do web search using speaking to your mobile phone rather than typing into your mobile phone 
+
+#### 2nd step: Collect data
+
+After deciding what to work on you have to collect data. So, decide what data you need to train your Machine Learning system and go and do the work to get the audio and get the transcripts of the labels for your dataset. 
+
+#### 3rd step: Train the model
+
+After you have your initial data collection you can then start to train the model. Here you would train a speech recognition system and carry out error analysis and iteratively improve your model. And is not at all uncommon that after you've started training the model for error analysis or for a bias-variance analysis to tell you that you might want to go back to collect more data. Maybe collect more data of everything or just collect more data of a specific type where your error analysis tells you you want to improve the performance of your learning algorithm. 
+
+For example, once when working on speech I realized that my model was doing particularly poorly when there was car noise in the background. That sounded like someone was speaking in a car. My speech system performed poorly and I decided to get more data, actually using data augmentation to get more speech data that sounds like it was a car in order to improve the performance of my learning algorithm. 
+
+#### 4th step: Deploy the model
+
+So you go around this loop a few times: train the model, carry an error analysis, go back to collect more data, maybe do this for a while until eventually you think the model is good enough to then deploy in a production environment and what that means is you make it available for users to use. 
+
+When you deploy a system you have to also make sure that you continue to monitor the performance of the system and to maintain the system in case the performance gets worse to bring us performance back up. 
+
+Instead of just hosting your Machine Learning model on a server I'll say a little bit more about why you need to maintain these Machine Learning systems on the next slide but after this deployment, sometimes you realize that is not working as well as you hoped and you go back to train the model to improve it again or even go back and get more data. In fact, if users and if you have permission to use data from your production deployment, sometimes that data from your working speech system can give you access to even more data with which to keep on improving the performance of your system. 
+
+Now, I think you have a sense of what scoping a project means and we've talked a bunch about collecting data and training models in this course. But let me share with you a little bit more detail about what deploying in production might look like
+
+#### More details into the 4th step: Deploy the model
+
+![alt text](./img/image23.png)
+
+After you've trained a high performing Machine Learning model, say a speech recognition model, a common way to deploy the model would be to take your Machine Learning model and implement it in a server, which I'm going to call *an inference server*, whose job it is to call your Machine Learning model, your trained model, in order to make predictions. 
+
+Then if your team has implemented a mobile app, say a search application, then when a user talks to the mobile app, the mobile app can then make an API call to pass to your inference server the audio clip that was recorded and the inference server's job is apply the Machine Learning model to it and then return to it the prediction of your model, which in this case would be the text transcripts of what was said. 
+
+This would be a common way of implementing an application that calls via the API and inference server that has your model repeatedly make predictions based on the input $x$. 
+
+This were common pattern where depend on the application does implemented you have an API call to give your learning algorithm the input $x$ and your Machine Learning model within output to prediction, say $\hat y$. To implement this some software engineering may be needed to write all the code that does all of these things and depending on whether your application needs to serve just a few handful of users or millions of users the amounts of software engineer needed can be quite different. 
+
+I've build software that serve just a handful of users on my laptop and I've also built software that serves hundreds of millions of users requiring significant data center resources. So, depending on scale application needed, software engineering may be needed to make sure that your inference server is able to make reliable and efficient predictions hopefully not too high of computational cost. 
+
+Software engineering may be needed to manage scaling to a large number of users. You often want to log the data you're getting both the inputs x, as well as the predictions, $\hat y$, assuming that user privacy and consent allows you to store this data. This data, if you can access to it, is also very useful for system monitoring: For example, I once built a speech recognition system on a certain dataset that I had but when there were new celebrities that suddenly became well-known or elections cause new politicians to become elected and people will search for these new names that were not in the training set and then my system did poorly on. And it was because we were monitoring the system allowed us to figure out when the data was shifting and the algorithm was becoming less accurate and this allowed us to retrain the model and then to carry out a model update to replace the old model with a new one. 
+
+So, the deployment process can require some amounts of software engineering. For some applications, if you're just running it on a laptop or on a one or two servers, maybe not that much software engineering is needed. 
+
+### ML Ops (Machine Learning Operations)
+
+Depending on the team you're working on, it is possible that you built the Machine Learning model but there could be a different team responsible for deploying it. But there is a growing field in Machine Learning called MLOps. This stands for Machine Learning Operations. 
+
+This refers to the practice of how to systematically build and deploy and maintain Machine Learning systems to do all of these things to make sure that your Machine Learning model is reliable, scales well, has good laws, is monitored, and then you have the opportunity to make updates to the model as appropriate to keep it running well. 
+
+For example, if you are deploying your system to millions of people you may want to make sure you have a highly optimized implementation so that the compute cost of serving millions of people is not too expensive. 
+
+### Summary
+
+In this and the last class I spent a lot of time talking about how to train a Machine Learning model and got this absolutely the critical piece to making sure you have a high performance system. If you ever have to deploy a system to millions of people, these are some additional steps that you probably have to address. Think about the [inaudible] at that point as well. Before moving on from the topic of the Machine Learning development process, there's one more set of ideas that I want to share with you that relates to the ethics of building Machine Learning systems. This is a crucial topic for many applications so let's take a look at this in the next video.
+
+## Fairness, bias, and ethics
+
+![alt text](./img/image24.png)
+
+Machine learning algorithms today are affecting billions of people. You've heard me mention ethics in other videos before and I hope that if you're building a Machine Learning system that affects people that you give some thought to making sure that your system is
+
+- reasonably fair
+- reasonably free from bias and  
+- that you're taking a ethical approach to your application
+ 
+Let's take a look at some issues related to fairness, bias and ethics. 
+
+### Bias
+
+Unfortunately, in the history of Machine Learning that happened a few systems, some widely publicized, that turned out to exhibit a completely unacceptable level of bias. 
+
+#### Bias example 1
+
+For example, there was a hiring tool that was once shown to discriminate against women. The company that built the system stopped using it but one wishes that the system had never been rolled out in the first place. 
+
+#### Bias example 2
+
+Another example: There was also well documented example of face recognition systems that match dark skinned individuals to criminal mugshots much more often than lighter skinned individuals and clearly this is not acceptable and we should get better as a community at just not building and deploying systems with a problem like this in the first place
+
+#### Bias example 3
+
+There have been systems that gave bank loan approvals in a way that was biased and discriminated against subgroup
+
+#### Bias example 4
+
+And we also really like learning algorithms to not have the toxic effect of reinforcing negative stereotypes. For example, I have a daughter and if she searches online for certain professions and doesn't see anyone that looks like her, I would hate for that to discourage her from taking on certain professions.
+
+### Adverse use cases
+
+![alt text](./img/image25.png)
+
+In addition to the issues of bias and fair treatment of individuals, there have also been adverse use cases or negative use cases of Machine Learning algorithms. For example, there was this widely cited and widely viewed video release with full disclosure and full transparency by the company *Buzzfeed* of a deepfake of former US President Barack Obama and you can actually find and watch the whole video online if you want but the company that created this video did so full transparency and full disclosure but clearly using this technology to generate fake videos without consent and without disclosure would be unethical.
+
+![alt text](./img/image26.png)
+
+We've also seen unfortunately social media sometimes spreading toxic or incendiary speech because optimizing for user engagement has led to algorithms doing so. 
+
+There have been bots that were used to generate fake content for either commercial purposes such as posting fake comments on products or for political purposes. 
+
+And there are users of Machine Learning to build harmful products, commit fraud and so on. 
+
+And in parts of the Machine Learning world, just as an email, there has been a battle between the spammers and the anti spam community. I am seeing today in for example, the financial industry, a battle between people trying to commit fraud and the people fighting fraud and unfortunately Machine Learning is used by some of the fraudsters and some of the spammers. 
+
+So for goodness sakes please don't build a Machine Learning system that has a negative impact on society and if you are asked to work on an application that you consider unethical, I urge you to walk away. 
+
+For what it's worth, there have been multiple times that I have looked at the project that seemed to be financially sound (you'll make money for some company) but I have killed the project just on ethical grounds because I think that even though the financial case will sound, I felt that it makes the world worse off and I just don't ever want to be involved in a project like that.
+
+### Ethics
+
+Ethics is a very complicated and very rich subject that humanity has studied for at least a few 1000 years. When AI became more widespread, I actually went and read up multiple books on philosophy and multiple books on ethics because I was hoping naively it turned out to come up with if only there's a checklist of five things we could do and so as we do these five things then we can be ethical, but I failed and I don't think anyone has ever managed to come up with a simple checklist of things to do to give that level of concrete guidance about how to be ethical. 
+
+So what I hope to share with you instead is not a checklist because I wasn't even come up with one but just some general guidance and some suggestions for how to make sure the work is less bias more fair and more ethical and I hope that some of these guidance, some which would be relatively general, will help you with your work as well.
+
+![alt text](./img/image27.png)
+
+So, here are some suggestions for making your work more fair, less biased and more ethical. 
+
+#### Ethics guidelines: 1. Assemble a diverse team
+
+Before deploying a system that could create harm I will usually try to assemble a diverse team to brainstorm possible things that might go wrong with an emphasis on possible harm to vulnerable groups.
+
+I found many times in my life that having a more diverse team and by diverse I mean, diversity on multiple dimensions ranging from gender to ethnicity to culture, to many other traits. I found that having more diverse teams actually causes a team collectively to be better at coming up with ideas about things that might go wrong and it increases the odds that will recognize the problem and fix it before rolling out the system and having that cause harm to some particular group.
+
+#### Ethics guidelines: 2. Carry out a literature search on any standards
+
+In addition to having a diverse team carrying out brainstorming I have also found it useful to carry out a literature search on any standards or guidelines for your industry or particular application area.
+
+For example, in the financial industry, there are starting to be established standards for what it means to be a system so they want that decides who to approve loans to, what it means for a system like that to be reasonably fair and free from bias and those standards that still emerging in different sectors could inform your work depending on what you're working on. 
+
+#### Ethics guidelines: 3. Audit the system
+
+After identifying possible problems I found it useful to then audit the system against this identified dimensions of possible home prior to deployment.
+
+You saw, in the last video, the full cycle of a Machine Learning project and one key step that's often a crucial line of defense against deploying something problematic is after you've trained the model but before you deployed in production, if the team has brainstormed, then it may be biased against certain subgroups such as certain genders or certain ethnicities you can then order the system to measure the performance to see if it really is bias against certain genders or ethnicities or other subgroups and to make sure that any problems are identified and fixed prior to deployment
+
+#### Ethics guidelines: 4. Develop a mitigation plan (if applicable)
+
+Finally, I found it useful to develop a mitigation plan if applicable and one simple mitigation plan would be a roll back to the earlier system that we knew was reasonably fair. 
+
+And then even after deployment to continue to monitor harm so that you can then trigger a mitigation plan and act quickly in case there is a problem that needs to be addressed. 
+
+For example, all of the self driving car teams prior to rolling out self driving cars on the road had developed mitigation plans for what to do in case the car ever gets involved in an accident so that if the car was ever in an accident, there was already a mitigation plan that they could execute immediately rather than have a car got into an accident and then only scramble after the fact to figure out what to do. 
+
+### Summary 
+
+I've worked on many Machine Learning systems and let me tell you the issues of ethics, fairness and bias are issues we should take seriously. It's not something to brush off. It's not something to take lightly. 
+
+Now of course, there's some projects with more serious ethical implications than others. For example, if I'm building a neural network to decide how long to roast my coffee beans, clearly, the ethical implications of that seems significantly less than if, say you're building a system to decide what bank loans are approved, which if it's bias can cause significant harm. 
+
+But I hope that all of us collectively working in Machine Learning can keep on getting better, debate theseissues, spot problems, fix them before they cause harm so that we collectively can avoid some of the mistakes that the Machine Learning world had made before because this stuff matters and the systems we built can affect a lot of people. 
+
+And so that's it on the process of developing a Machine Learning system and congratulations on getting to the end of this week's required videos. I have just two more optional videos this week for you on addressing skewed data sets and that means data sets where the ratio of positive to negative examples is very far from 50/50. And it turns out that some special techniques are needed to address Machine Learning applications like that. 
+
+So, I hope to see you in the next optional video on how to handle skewed data sets
 
