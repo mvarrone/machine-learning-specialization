@@ -4,7 +4,7 @@
 
 Welcome to this first assignment of course 2. 
 
-In this exercise:  
+In this exercise: 
 
 - You will use a neural network to recognize the hand-written digits
 - You will first learn to build a neural network in a popular machine learning framework, Tensorflow
