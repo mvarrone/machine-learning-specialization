@@ -76,7 +76,7 @@ $$ \text{Precision =} \frac{TP}{TP + FP} $$
 
 In this example, the numerator, true positives (TP), would be 15 divided by 15 plus 5, and so that's 15 over 20 or three-quarters, 0.75. So we say that this algorithm has a Precision of 75 % because of all the things it predicted as positive, of all the patients that it thought has this rare disease, it was right 75 % of the time. 
 
-$$ \text{Precision =} \frac{15}{15 + 5} = \frac{15}{20} = \frac{3}{4} = 0.75 =  \text{75 \%}$$
+$$ \text{Precision =} \frac{15}{15 + 5} = \frac{15}{20} = \frac{3}{4} = 0.75 $$
 
 ### Recall
 
@@ -92,7 +92,7 @@ $$ \text{Recall =} \frac{TP}{TP + FN} $$
 
 In our example, this would be 15 divided by 15 plus 10, which is 15 over 25, which is 0.6 or 60 %. 
 
-$$ \text{Recall =} \frac{15}{15 + 10} = \frac{15}{25} = \frac{3}{5} = 0.6 =  \text{60 \%}$$
+$$ \text{Recall =} \frac{15}{15 + 10} = \frac{15}{25} = \frac{3}{5} = 0.6 $$
 
 So, this learning algorithm would have 0.75 Precision and 0.60 Recall. 
 
