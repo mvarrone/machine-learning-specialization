@@ -408,3 +408,252 @@ Now that you've learned the decision tree, if you want to make a prediction, you
 
 Now that you know the basic decision tree learning algorithm, in the next few videos, I'd like to go into some further refinements of this algorithm. So far we've only used features to take on two possible values but sometimes you have a feature that takes on categorical or discrete values or maybe more than two values. Let's take a look in the next video at how to handle that case.
 
+## Using one-hot encoding of categorical features
+
+In the example we've seen so far each of the features could take on only one or two possible values: The ear shape was either pointy or floppy, the face shape was either round or not round and whiskers were either present or absent. 
+
+But what if you have features that can take on more than two discrete values?
+
+In this video we'll look at how you can use one-hot encoding to address features like that. 
+
+![alt text](./img/image17.png)
+
+Here's a new training set for our pet adoption center application where all the data is the same except for the ear shape feature. Rather than ear shape only being pointy and floppy, it can now also take on an oval shape. And so the initial feature is still a categorical value feature but it can take on three possible values instead of just two possible values and this means that when you split on this feature you end up creating three subsets of the data and end up building three sub branches for this tree.
+
+But in this video I'd like to describe a different way of addressing features that can take on more than two values, which is the use the one-hot encoding.
+
+### One hot encoding
+
+![alt text](./img/image18.png)
+
+In particular rather than using an ear shape feature that can take on any of three possible values we're instead going to create three new features where
+
+- one feature is does this animal have pointy ears? 
+- A second is does this animal have floppy ears? 
+- and the third is does it have oval ears?
+
+And so for the first example whereas we previously had ear shape as pointy, we are now instead say that this animal has a value for the pointy ear feature of 1 and 0 for floppy and oval, whereas previously for the second example, we previously said it had oval ears now we'll say that it has a value of 0 for pointy ears because it doesn't have pointy ears. It also doesn't have floppy ears but it does have oval ears which is why this value here is 1 and so on for the rest of the examples in the data set. 
+
+And so instead of one feature taking on three possible values, we've now constructed three new features each of which can take on only one of two possible values, either 0 or 1. 
+
+![alt text](./img/image19.png)
+
+In a little bit more detail, if a categorical feature can take on *k* possible values (*k* was three in our example) then we will replace it by creating *k* binary features that can only take on the values 0 or 1.
+
+![alt text](./img/image20.png)
+
+And you notice that among all of these three features, if you look at any row here, exactly 1 of the values is equal to 1. And that's what gives this method of feature construction the **name one-hot encoding**. And because one of these features will always take on the value 1 that's the hot feature and hence the name one-hot encoding. 
+
+And with this choice of features we're now back to the original setting of where each feature only takes on one of two possible values, and so the decision tree learning algorithm that we've seen previously will apply to this data with no further modifications. 
+
+![alt text](./img/image21.png)
+
+Just an aside, even though this week's material has been focused on training decision tree models the idea of using one-hot encodings to encode categorical features also works for training neural networks.
+
+In particular if you were to take the face shape feature and replace round and not round with 1 and 0 respectively where round gets matter 1, not round gets matter 0 and so on and for whiskers similarly replace presence with 1 and absence with 0, then notice that we have taken all the categorical features we had where we had 3 possible values for ear shape, 2 for face shape and 2 for whiskers and encoded it as a list of these five features: 3 from the one-hot encoding of ear shape, 1 from face shape and 1 from whiskers and now this list of five features can also be fed to a neural network or to logistic regression to try to train a cat classifier. 
+
+### Applications of One-hot encoding
+
+So, one-hot encoding is a technique that works not just for decision tree learning but also lets you encode categorical features using ones and zeros, so that it can be fed as inputs to a neural network as well which expects numbers as inputs. 
+
+## Summary 
+
+So that's it, with a one-hot encoding you can get your decision tree to work on features that can take on more than two discrete values and you can also apply this to neural network or linear regression or logistic regression training.
+
+But how about features that are numbers that can take on any value, not just a small number of discrete values. 
+
+In the next video let's look at how you can get the decision tree to handle continuous value features that can be any number
+
+## Continuous valued features
+
+![alt text](./img/image22.png)
+
+Let's look at how you can modify decision tree to work with features that aren't just discrete values but continuous values. That is features that can be any number. 
+
+### Example
+
+Let's start with an example. I have modified the cat adoption center of data set to add one more feature which is the weight of the animal in pounds.
+
+On average between cats and dogs, cats are a little bit lighter than dogs, although there are some cats are heavier than some dogs but so the weight of an animal is a useful feature for deciding if it is a cat or not. 
+
+So, how do you get a decision tree to use a feature like this? The decision tree learning algorithm will proceed similarly as before, except that rather than just splitting on ear shape, face shape, and whiskers, now you also have to consider splitting on ear shape, face shape, whiskers, or weight. If splitting on the weight feature gives better information gain than the other options, then you will split on the weight feature.
+
+![alt text](./img/image23.png)
+
+But how do you decide how to split on the weight feature? Let's take a look. 
+
+Here's a plot of the data at the root node. I have plotted on the horizontal axis *x* the weight of the animal and on the vertical axis is cat on top and not cat below, so the vertical axis indicates the label *y* being 1 or 0. 
+
+The way we will split on the weight feature would be if we were to split the data based on whether or not the weight is less than or equal to some value: Let's say 8 or some other number. That will be the job of the learning algorithm to choose. 
+
+And what we should do when constraints splitting on the weight feature is to consider many different values of this threshold and then to pick the one that is the best and by the best I mean the one that results in the best information gain.
+
+### Taking weight $\leq$ 8
+
+So in particular, if you were considering splitting the examples based on whether the weight is less than or equal to 8, then you will be splitting this data set into two subsets where it will result that the subset on the left has two cats and zero dogs and the subset on the right has three cats and five dogs. 
+
+So, if you were to calculate our usual Information gain calculation, you'll be computing the entropy as:
+
+$$ \text{Information gain = } H(0.5) - [\frac{2}{10}*H(\frac{2}{2}) + \frac{8}{10}*H(\frac{3}{8})] = 0.24$$
+
+So, this would be information gain if you were to split on whether the weight is less than equal to 8 but we should try other values as well. 
+
+### Taking weight $\leq$ 9
+
+So what if you were to split on whether or not the weight is less than equal to 9 and that corresponds to this new line over here and the information gain calculation becomes: 
+
+$$ \text{Information gain = } H(0.5) - [\frac{4}{10}*H(\frac{4}{4}) + \frac{6}{10}*H(\frac{1}{6})] = 0.61$$
+
+So, the information gain here looks much better is 0.61 information gain which is much higher than 0.24.
+
+### Taking weight $\leq$ 13
+
+Or we could try another value say 13. And the calculation turns out to look like this, which is 0.40.
+
+$$ \text{Information gain = } H(0.5) - [\frac{7}{10}*H(\frac{5}{7}) + \frac{3}{10}*H(\frac{0}{3})] = 0.40$$
+
+In the more general case, we'll actually try not just three values, but multiple values along the X axis and one convention would be to sort all of the examples according to the weight or according to the value on this feature and take all the values that are mid points between the sorted list of training examples as the values for consideration for this threshold over here. 
+
+This way, if you have 10 training examples, you will test 9 different possible values for this threshold and then try to pick the one that gives you the highest information gain.
+
+And finally, if the information gained from splitting on a given value of this threshold is better than the information gain from splitting on any other feature, then you will decide to split that node at that feature. And in this example an information gain of 0.61 turns out to be higher than that of any other feature.
+
+![alt text](./img/image24.png)
+
+It turns out there are actually two thresholds. And so assuming the algorithm chooses this feature to split on, you will end up splitting the data set according to whether or not the weight of the animal is less than equal to 9 pounds and so you end up with two subsets of the data like this and you can then build recursively additional decision trees using these two subsets of the data to build out the rest of the tree. 
+
+## Summary 
+
+So to summarize to get the decision tree to work on continuous valued features at every node when consuming splits, you would just:
+
+- consider different values to split on
+- carry out the usual information gain calculation and 
+- decide to split on that continuous value feature if it gives the highest possible information gain. 
+
+So that's how you get the decision tree to work with continuous value features:
+
+- Try different thresholds
+- Do the usual information gain calculation and 
+- Split on the continuous value feature with the selected threshold if it gives you the best possible information gain out of all possible features to split on
+
+And that's it for the required videos on the core decision tree algorithm.
+
+After there's there is an optional video you can watch or not that generalizes the decision tree learning algorithm to regression trees: So far, we've only talked about using decision trees to make predictions that are classifications predicting a discrete category, such as cat or not cat. But what if you have a regression problem where you want to predict a number. 
+
+In the next video, I'll talk about a generalization of decision trees to handle that.
+
+## Regression Trees (optional)
+
+![alt text](./img/image25.png)
+
+So far we've only been talking about decision trees as classification algorithms. In this optional video, we'll generalize decision trees to be regression algorithms so that we can predict a number. Let's take a look. 
+
+The example I'm going to use for this video will be to use these three valued features that we had previously, that is, these features X in order to predict the weight of the animal, Y. 
+
+So just to be clear, the weight here, unlike the previous video is no longer an input feature instead, this is the target output Y that we want to predict rather than trying to predict whether or not an animal is or is not a cat. 
+
+This is a regression problem because we want to predict a number, Y.
+
+![alt text](./img/image26.png)
+
+Let's look at what a regression tree will look like. Here I've already constructed a tree for this regression problem where the root node splits on ear shape and then the left and right sub tree split on face shape and also face shape here on the right. 
+
+> [!NOTE]
+> There's nothing wrong with a decision tree that chooses to split on the same feature in both the left and right sub branches. It's perfectly fine if the splitting algorithm chooses to do that. 
+
+If during training, you had decided on these splits, then this node down here would have these four animals with weights 7.2, 8.4, 7.6 and 10.2. This node would have this one animal with weight 9.2 and so on for these remaining two nodes.
+
+So, the last thing we need to fill in for this decision tree is if there's a test example that comes down to this node, what is there weights that we should predict for an animal with pointy ears and a round face shape? The decision tree is going to make a prediction based on taking the average of the weights in the training examples down here and by averaging these four numbers, it turns out you get 8.35
+
+If on the other hand, an animal has pointy ears and a not round face shape, then it will predict 9.2 pounds because that's the weight of this one animal down here. And similarly, this will be 17.70 and 9.90. 
+
+So, what this model will do is given a new test example, follow the decision nodes down as usual until it gets to a leaf node and then predict that value at the leaf node which I had just computed by taking an average of the weights of the animals that during training had gotten down to that same leaf node.
+
+### Choosing a split
+
+![alt text](./img/image27.png)
+
+So, if you were constructing a decision tree from scratch using this data set in order to predict the weight, the key decision as you've seen earlier this week will be, how do you choose which feature to split on? 
+
+Let me illustrate how to make that decision with an example. 
+
+At the root node, one thing you could do is split on the ear shape and if you do that, you end up with left and right branches of the tree with five animals on the left and right with the following weights: 7.2, 9.2, 8.4, 7.6 and 10.2 for the left sub branch and 8.8, 15, 11, 18 and 20 for the right sub branch.
+
+If you were to choose the split on the face shape, you end up with these animals on the left and right with the corresponding weights that are written below and if you were to choose to split on whiskers being present or absent, you end up with this. 
+
+### How to pick the best possible feature? 
+
+So, the question is, given these three possible features to split on at the root node, which one do you want to pick that gives the best predictions for the weight of the animal? 
+
+When building a regression tree, rather than trying to reduce entropy, which was that measure of impurity that we had for a classification problem, we instead try to reduce the **variance** of the weight of the values Y at each of these subsets of the data. 
+
+So, if you've seen the notion of variance in other contexts, that's great. This is the statistical mathematical notion of variance that we'll used in a minute but if you've not seen how to compute the variance of a set of numbers before, don't worry about it. 
+
+All you need to know for this slide is that variance informally computes how widely a set of numbers varies. 
+
+#### Calculating variance for the left branch (1st feature)
+
+So, for this set of numbers 7.2, 9.2, 8.4, 7.6 and 10.2 it turns out the variance is 1.47, so it doesn't vary that much. 
+
+#### Calculating variance for the right branch (1st feature)
+
+Whereas, here 8.8, 15, 11, 18 and 20, these numbers go all the way from 8.8 all the way up to 20 and so the variance is much larger. It turns out to the variance of 21.87.
+
+#### Calculating the quality of the split
+
+And so the way we'll evaluate the quality of this split is, we'll compute same as before, $w^{left}$ and $w^{right}$ as the fraction of examples that went to the left and right branches. 
+
+And the average variance after the split is going to be 5/10, which is $w^{left}$ times 1.47, which is the variance on the left and then plus 5/10 times the variance on the right, which is 21.87. 
+
+So, this weighted average variance plays a very similar role to the weighted average entropy that we had used when deciding what split to use for a classification problem. And we can then repeat this calculation for the other possible choices of features to split on. 
+
+### 2nd feature 
+
+Here in the tree in the middle, the variance of these numbers here turns out to be 27.80. The variance here is 1.37. And so with $w^{left}$ equals seven-tenths and $w^{right}$ as three-tenths, and so with these values, you can compute the weighted variance as follows. 
+
+### 3rd feature 
+
+Finally, for the last example, if you were to split on the whiskers feature, this is the variance on the left and right, there's $w^{left}$ and $w^{right}$ and so the weight of variance is this. 
+
+### Choosing a split
+
+A good way to choose a split would be to just choose the value of the weighted variance that is lowest. 
+
+Similar to when we're computing information gain, I'm going to make just one more modification to this equation. Just as for the classification problem, we didn't just measure the average weighted entropy, we measured the reduction in entropy and that was information gain. 
+
+For a regression tree we'll also similarly measure the reduction in variance. 
+
+> [!IMPORTANT]
+> For classification problems, we measure the reduction in entropy
+> 
+> For regression problems, we measure the reduction in variance
+
+It turns out, if you look at all of the examples in the training set, all ten examples, and compute the variance of all of them, the variance of all the examples turns out to be 20.51. And that's the same value for the roots node in all of these, of course, because it's the same ten examples at the roots node. 
+
+### Reduction in variance for 1st feature
+
+And so what we'll actually compute is the variance of the roots node, which is 20.51 minus this expression down here, which turns out to be equal to 8.84. And so at the roots node, the variance was 20.51 and after splitting on ear shape, the average weighted variance at these two nodes is 8.84 lower. So, the reduction in variance is 8.84. 
+
+### Reduction in variance for 2nd feature
+
+And similarly, if you compute the expression for reduction in variance for this example in the middle, it's 20.51 minus this expression that we had before, which turns out to be equal to 0.64. So, this is a very small reduction in variance. 
+
+### Reduction in variance for 3rd feature
+
+And for the whiskers feature you end up with this which is 6.22. 
+
+## Selecting a feature
+
+So, between all three of these examples, 8.84 gives you e largest reductithon in variance. So, just as previously we would choose the feature that gives you the largest information gain, for a regression tree, you will choose the feature that gives you the largest reduction in variance, which is why you choose ear shape as the feature to split on. 
+
+Having chosen the ear shape feature to split on, you now have two subsets of five examples in the left and right sub branches and you would then, again, we say recursively, where you take these five examples and do a new decision tree focusing on just these five examples, again, evaluating different options of features to split on and picking the one that gives you the biggest variance reduction. And similarly on the right. 
+
+And you keep on splitting until you meet the criteria for not splitting any further. 
+
+## Summary
+
+And so that's it. With this technique, you can get your decision tree to not just carry out classification problems, but also regression problems. 
+
+So far, we've talked about how to train a single decision tree. It turns out if you train a lot of decision trees, we call this an ensemble of decision trees, you can get a much better result. Let's take a look at why and how to do so in the next video.
+
+## Optional Lab 9 - Decision Trees
