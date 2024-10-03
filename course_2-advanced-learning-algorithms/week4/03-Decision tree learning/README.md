@@ -656,4 +656,4 @@ And so that's it. With this technique, you can get your decision tree to not jus
 
 So far, we've talked about how to train a single decision tree. It turns out if you train a lot of decision trees, we call this an ensemble of decision trees, you can get a much better result. Let's take a look at why and how to do so in the next video.
 
-## Optional Lab 9 - Decision Trees
+## [Optional Lab 9 - Decision Trees](./Optional%20Lab%209%20-%20Decision%20Trees/README.md)
