@@ -36,3 +36,4 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2024-10-03 20:40:18 - Commit message: course image changed to new image | Branch name: master | Result: OK
 2024-10-03 21:13:56 - Commit message: created a notebook for computing sample variance for c2 w4 03-Decision tree learning Regression optional | Branch name: master | Result: OK
 2024-10-03 21:25:14 - Commit message: added image to last notebook | Branch name: master | Result: OK
+2024-10-03 22:01:24 - Commit message: content added for c2 w4 03- and 04- | Branch name: master | Result: OK

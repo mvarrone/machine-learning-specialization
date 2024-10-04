@@ -52,7 +52,7 @@ By the end of this Specialization, you will be ready to:
 
 ## Professors
 
-- Andrew Ng: Instructor, Founder, DeepLearning.AI & Co-founder, Coursera
-- Eddy Shyu: Curriculum Architect, Curriculum Product Manager, DeepLearning.AI
-- Aarti Bagul: Curriculum Engineer
-- Geoff Ladwig: Curriculum Engineer, DeepLearning.AI
+- [Andrew Ng: Instructor, Founder, DeepLearning.AI & Co-founder, Coursera](https://www.coursera.org/instructor/andrewng)
+- [Eddy Shyu: Curriculum Architect, Curriculum Product Manager, DeepLearning.AI](https://www.linkedin.com/in/eddy-shyu/)
+- [Aarti Bagul: Curriculum Engineer](https://www.coursera.org/instructor/~77736236)
+- [Geoff Ladwig: Curriculum Engineer, DeepLearning.AI](https://www.coursera.org/instructor/geoff-ladwig)
