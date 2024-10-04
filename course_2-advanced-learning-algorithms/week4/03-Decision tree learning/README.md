@@ -476,7 +476,9 @@ Let's start with an example. I have modified the cat adoption center of data set
 
 On average between cats and dogs, cats are a little bit lighter than dogs, although there are some cats are heavier than some dogs but so the weight of an animal is a useful feature for deciding if it is a cat or not. 
 
-So, how do you get a decision tree to use a feature like this? The decision tree learning algorithm will proceed similarly as before, except that rather than just splitting on ear shape, face shape, and whiskers, now you also have to consider splitting on ear shape, face shape, whiskers, or weight. If splitting on the weight feature gives better information gain than the other options, then you will split on the weight feature.
+So, how do you get a decision tree to use a feature like this? The decision tree learning algorithm will proceed similarly as before, except that rather than just splitting on ear shape, face shape, and whiskers, now you also have to consider splitting on ear shape, face shape, whiskers or weight. 
+
+If splitting on the weight feature gives better information gain than the other options, then you will split on the weight feature.
 
 ![alt text](./img/image23.png)
 
