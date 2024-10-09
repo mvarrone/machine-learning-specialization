@@ -9,4 +9,3 @@ This week, you will learn about reinforcement learning, and build a deep Q-learn
 - Understand the state-action value function
 - Understand continuous state spaces
 - Build a deep Q-learning network
-- 
