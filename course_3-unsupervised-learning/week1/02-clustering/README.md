@@ -574,3 +574,5 @@ I hope you also have fun with the practice lab, it is actually one of the most f
 With that, we're ready to move on to our second unsupervised learning algorithm which is anomaly detection. 
 
 How do you look at the data set and find unusual or anomalous things in it? This turns out to be another, one of the most commercially important applications of unsupervised learning. I've used this myself many times in many different applications. Let's go on to the next video to talk about anomaly detection
+
+## [04-practice-lab-1](../04-practice-lab-1/)
