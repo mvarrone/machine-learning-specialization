@@ -68,7 +68,7 @@ Terminology (again):
 ![alt text](./img/image2.png)
 
 - So, the equation for the cost function with one variable is:
-- 
+
 $$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 $$
 
 or
