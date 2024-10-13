@@ -88,12 +88,16 @@ $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (wx^{(i)} + b - y^{(i)})^2 $$
 - The goal of Linear Regression is to find the parameters *w* and *b* that results in the smallest possible value for the cost function *J*.
 - We can say that when the cost function *J* is relatively small or closer to zero. It means the model fits the data better compared to other choices for *w* and *b*.
 - The goal is to find a model 𝑓𝑤,𝑏(𝑥)=𝑤𝑥+𝑏 with parameters 𝑤,𝑏 which will accurately predict house values given an input 𝑥. The cost is a measure of how accurate the model is on the training data.
-- The cost equation
 
-    $$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$ 
+The cost equation:
 
-    shows that if 𝑤 and 𝑏 can be selected such that the predictions 𝑓𝑤,𝑏(𝑥) match the target data 𝑦, then the $(f_{w,b}(x^{(i)}) - y^{(i)})^2 $
-    term will be zero and the cost J minimized.
+$$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$ 
+
+shows that if 𝑤 and 𝑏 can be selected such that the predictions 𝑓𝑤,𝑏(𝑥) match the target data 𝑦, then the term 
+
+$$ (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$
+
+term will be zero and the cost J minimized.
 
 ## Visualizing the cost function: J(w) and J(w,b)
 
