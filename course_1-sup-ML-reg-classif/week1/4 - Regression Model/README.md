@@ -90,7 +90,7 @@ $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (wx^{(i)} + b - y^{(i)})^2 $$
 - The goal is to find a model 𝑓𝑤,𝑏(𝑥)=𝑤𝑥+𝑏 with parameters 𝑤,𝑏 which will accurately predict house values given an input 𝑥. The cost is a measure of how accurate the model is on the training data.
 - The cost equation
 
-    $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$ 
+    $$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$ 
 
     shows that if 𝑤 and 𝑏 can be selected such that the predictions 𝑓𝑤,𝑏(𝑥) match the target data 𝑦, then the $(f_{w,b}(x^{(i)}) - y^{(i)})^2 $
     term will be zero and the cost J minimized.
