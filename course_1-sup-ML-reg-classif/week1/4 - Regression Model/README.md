@@ -97,9 +97,9 @@ $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (wx^{(i)} + b - y^{(i)})^2 $$
 
 ## Visualizing the cost function: J(w) and J(w,b)
 
-* For b = 0
+For $b = 0$:
 
-    We are taking *b=0* in order to do some simplifications and taking *w=0*, *w=1* and *w=0.5* in order to plot *J(w)*
+We are taking *b=0* in order to do some simplifications and taking *w=0*, *w=1* and *w=0.5* in order to plot *J(w)*
 
 ![alt text](./img/image3.png)
 
@@ -109,15 +109,15 @@ $$ f_{w}(x^{(i)}) = wx^{(i)} $$
 
 and 
 
-$$ J(w) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w}(x^{(i)}) - y^{(i)})^2 $$ 
+$$ J(w) = \frac{1}{2m} \sum\limits_{i = 1}^{m} [f_{w}(x^{(i)}) - y^{(i)}]^2 $$ 
 
-* For *b!=0*
-    
-    $ f_{w,b}(x^{(i)}) = wx^{(i)}+b $
+For $b \neq 0$:
+  
+  $$ f_{w,b}(x^{(i)}) = wx^{(i)}+b $$
 
-    and 
+  and 
 
-    $ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $ 
+  $$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} [f_{w,b}(x^{(i)}) - y^{(i)}]^2 $$ 
 
 In this case, our 2D *J(w,b)* plot turns into a 3D surface plot as the one shown below:
 
