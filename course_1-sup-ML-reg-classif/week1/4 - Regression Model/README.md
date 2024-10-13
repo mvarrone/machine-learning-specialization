@@ -103,19 +103,21 @@ $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (wx^{(i)} + b - y^{(i)})^2 $$
 
 ![alt text](./img/image3.png)
 
-In the image shown above, we are plotting $$f_{w}(x^{(i)}) = wx^{(i)} \tag{left}$$
+In the image shown above, we are plotting 
+
+$$ f_{w}(x^{(i)}) = wx^{(i)} \tag{left} $$
 
 and 
 
-$$J(w) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w}(x^{(i)}) - y^{(i)})^2 \tag{right}$$ 
+$$ J(w) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w}(x^{(i)}) - y^{(i)})^2 \tag{right} $$ 
 
 * For *b!=0*
     
-    $$f_{w,b}(x^{(i)}) = wx^{(i)}+b$$
+    $$ f_{w,b}(x^{(i)}) = wx^{(i)}+b $$
 
     and 
 
-    $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 \tag{below}$$ 
+    $$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 \tag{below} $$ 
 
 In this case, our 2D *J(w,b)* plot turns into a 3D surface plot as the one shown below:
 
