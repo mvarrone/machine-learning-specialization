@@ -1,4 +1,4 @@
-# Optional Lab 7: Feature scaling and learning rate
+# Optional Lab 7c-mean norm-FScaling and alpha
 
 ## Instructions
 
