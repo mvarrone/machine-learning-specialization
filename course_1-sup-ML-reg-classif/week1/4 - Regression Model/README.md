@@ -68,15 +68,20 @@ Terminology (again):
 ![alt text](./img/image2.png)
 
 - So, the equation for the cost function with one variable is:
-$$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 $$ 
+- 
+$$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (\hat{y}^{(i)} - y^{(i)})^2 $$
+
 or
-$$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$ 
+
+$$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$ 
 
 where 
-$$\hat{y}^{(i)} = f_{w,b}(x^{(i)}) = wx^{(i)} + b $$
+
+$$ \hat{y}^{(i)} = f_{w,b}(x^{(i)}) = wx^{(i)} + b $$
 
 Finally, we have the Cost function *J(w, b)* defined as:
-$$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (wx^{(i)} + b - y^{(i)})^2 $$ 
+
+$$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (wx^{(i)} + b - y^{(i)})^2 $$ 
 
 - m = number of training examples
 - $f_{w,b}(x^{(i)})$ is our prediction $\hat{y}^{(i)}$ for example $i$ using parameters $w,b$.  
