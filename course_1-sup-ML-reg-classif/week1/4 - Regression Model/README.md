@@ -105,11 +105,11 @@ $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (wx^{(i)} + b - y^{(i)})^2 $$
 
 In the image shown above, we are plotting 
 
-$$ f_{w}(x^{(i)}) = wx^{(i)} \tag{left} $$
+$$ f_{w}(x^{(i)}) = wx^{(i)} $$
 
 and 
 
-$$ J(w) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w}(x^{(i)}) - y^{(i)})^2 \tag{right} $$ 
+$$ J(w) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w}(x^{(i)}) - y^{(i)})^2 $$ 
 
 * For *b!=0*
     
