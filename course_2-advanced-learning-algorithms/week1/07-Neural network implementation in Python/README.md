@@ -152,4 +152,4 @@ def sequential(x):
 
 You now know how to implement forward prop yourself from scratch
 
-## Optional Lab 3: CoffeeRoastingNumPy
+## [Optional Lab 3 - CoffeeRoastingNumPy](./Optional%20Lab%203%20-%20CoffeeRoastingNumPy/)

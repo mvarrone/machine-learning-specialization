@@ -202,4 +202,4 @@ So, this is the Gradient descent algorithm:
 
 - There are other implementations of Gradient descent, but we are going to use the batch one for Linear Regression
 
-## Optional Lab 4: Gradient descent
+## [Optional Lab 4 - Gradient descent](./Optional%20Lab%204%20-%20Gradient%20descent/)

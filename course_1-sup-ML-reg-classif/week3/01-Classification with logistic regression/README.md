@@ -22,7 +22,7 @@ Logistic Regression is an algorithm where the output value of the outcome will a
 
 By the way, one thing confusing about the name Logistic Regression is that even though it has the word of Regression in it is actually used for Classification problems. Don't be confused by the name which was given for historical reasons. It's actually used to solve binary classification problems with output label *y* is either 0 or 1.
 
-## Optional Lab 10 - Classification
+## [Optional Lab 10 - Classification](./Optional%20Lab%2010%20-%20Classification/)
 
 ## Logistic Regression
 
@@ -72,7 +72,7 @@ $$f_{\vec{w}, b}(\vec{x}) = P(y=1 | \vec{x}; \vec{w}, b)$$
 
 We can read it as *"the probability that y is 1, given the input feature X with parameters w and b"*
 
-## Optional lab 11: Sigmoid function and logistic regression
+## [Optional Lab 11 - Sigmoid function](./Optional%20Lab%2011%20-%20Sigmoid%20function/)
 
 ## Decision boundary
 
@@ -130,4 +130,4 @@ It a situation where we it is neutral about whether $y=0$ or $y=1$
 
  With polynomial features, you can get very complex decision boundaries. In other words, Logistic Regression can learn to fit pretty complex data
 
- ## Optional lab 12: Decision boundary
+ ## [Optional Lab 12 - Decision boundary](./Optional%20Lab%2012%20-%20Decision%20boundary/)

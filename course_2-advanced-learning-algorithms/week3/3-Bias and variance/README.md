@@ -609,4 +609,4 @@ So the rise of deep learning has really changed the way that machine learning pr
 
 So that's it for bias and variance. Let's go on to the next video. We will take all the ideas we've learned and see how they fit in to the development process of machine learning systems. And I hope that we'll tie a lot of these pieces together to give you practical advice for how to quickly move forward in the development of your machine learning systems
 
-## Optional Lab 8 - Diagnosing Bias and Variance
+## [Optional Lab 8 - Diagnosing Bias and Variance](./Optional%20Lab%208%20-%20Diagnosing%20Bias%20and%20Variance/)

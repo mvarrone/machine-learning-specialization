@@ -62,7 +62,7 @@ $$ f = np.dot(w,x) + b $$
 
 ![alt text](./img/image5.png)
 
-## Optional lab 5: Python, NumPy and vectorization
+## [Optional Lab 5 - Vectorization](./Optional%20Lab%205%20-%20Vectorization/)
 
 - So, vectorization provides a large speed up in this example. This is because NumPy makes better use of available data parallelism in the underlying hardware. GPU's and modern CPU's implement Single Instruction, Multiple Data (SIMD) pipelines allowing multiple operations to be issued in parallel. This is critical in Machine Learning where the data sets are often very large.
 
@@ -92,4 +92,4 @@ $$ f = np.dot(w,x) + b $$
 
     Some Machine Learning libraries may use this complicated method in the backeend to solve for *w* and *b*. But for most learning algorithms, including how you implement Linear Regression yourself, Gradient Descent offers a better way to get the job done.
 
-## Optional lab 6: Multiple linear regression
+## [Optional Lab 6 - Multiple Linear Regression](./Optional%20Lab%206%20-%20Multiple%20Linear%20Regression/)

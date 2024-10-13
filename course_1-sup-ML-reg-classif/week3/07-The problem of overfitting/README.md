@@ -66,7 +66,7 @@ It turns out that even if you fit a higher order polynomial the shown in the ima
 
 ![alt text](./img/image3.png)
 
-## Optional lab 17: Overfitting
+## [Optional Lab 17- Overfitting](./Optional%20Lab%2017-%20Overfitting/)
 
 ## Cost function with regularization
 
@@ -260,4 +260,4 @@ where
 * $g(z) = \frac{1}{1+e^-z}$
 * $z = w.x+b$
 
-## Optional Final lab 18: Regularization
+## [Optional Lab 18 - Regularization](./Optional%20Lab%2018%20-%20Regularization/)

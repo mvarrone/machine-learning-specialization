@@ -58,4 +58,4 @@ This type of neural network architecture where you have more hidden units initia
 
 ![alt text](./img/image11.png)
 
-## Optional Lab 1: Neurons and Layers
+## [Optional Lab 1 - Neurons and Layers](./Optional%20Lab%201%20-%20Neurons%20and%20Layers/)

@@ -154,4 +154,4 @@ model.fit(x,y)
 model.predict(x_new)
 ```
 
-## Optional Lab 2: Coffee Roasting in Tensorflow
+## [Optional Lab 2 - Coffee Roasting in Tensorflow](./Optional%20Lab%202%20-%20Coffee%20Roasting%20in%20Tensorflow/)

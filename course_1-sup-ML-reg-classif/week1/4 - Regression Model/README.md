@@ -131,4 +131,8 @@ Instead of using 3D surface plots, we can also use 2D contour plots to graph *J(
 - There is an algorithm for doing this called **Gradient Descent** which is one of the most important algorithms in Machine Learning. 
 - Gradient descent and variations on gradient descent are used to train, not just linear regression, but some of the biggest and most complex models in all of AI.
 
-## Optional Lab 3: Cost function
+## [Optional Lab 2 - Model representation](./Optional%20Lab%202%20-%20Model%20representation/)
+
+## [Optional Lab 3 - Cost Function](./Optional%20Lab%203%20-%20Cost%20Function/)
+
+## [Optional Lab 3b - Cost Function Intuition](./Optional%20Lab%203b%20-%20Cost%20Function%20Intuition/)

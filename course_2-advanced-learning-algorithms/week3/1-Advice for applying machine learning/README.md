@@ -277,4 +277,4 @@ That's model selection and this is actually a very widely used procedure. I use 
 
 **The most powerful diagnostic** that I know of and that I used for a lot of machine learning applications is one called **bias and variance**. Let's take a look at what that means in the next video.
 
-## Optional Lab 7 - Model Evaluation and Selection
+## [Optional Lab 7 - Model Evaluation and Selection](./Optional%20Lab%207%20-%20Model%20Evaluation%20and%20Selection/)

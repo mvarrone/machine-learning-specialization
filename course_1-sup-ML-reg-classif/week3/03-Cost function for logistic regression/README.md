@@ -117,7 +117,7 @@ You may remember that the cost function J(w, b) is a function of the entire trai
 
 So, the cost on a certain set of parameters, w and b, is equal to 1 over m times the sum of all the training examples of the loss on the training examples. If you can find the value of the parameters, w and b, that minimizes the cost function J, then you'd have a pretty good set of values for the parameters w and b for logistic regression
 
-## Optional Lab 13: Logistic loss
+## [Optional Lab 13 - Logistic Loss](./Optional%20Lab%2013%20-%20Logistic%20Loss/)
 
 ## Simplified Cost Function for Logistic Regression
 
@@ -164,4 +164,4 @@ You might be wondering, why do we choose this particular function when there cou
 
 ![alt text](./img/image5.png)
 
-## Optional lab 14: Cost function for logistic regression
+## [Optional Lab 14 - Cost function for logistic regression](./Optional%20Lab%2014%20-%20Cost%20function%20for%20logistic%20regression/)

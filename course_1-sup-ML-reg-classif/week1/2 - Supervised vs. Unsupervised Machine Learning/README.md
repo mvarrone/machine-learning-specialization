@@ -162,3 +162,5 @@ For instance, emails labeled as "spam" or "not spam" are examples used for train
 ## Instructor explains what Jupyter Notebooks are and how to use them
 
 #### Next, we are invited to try the first optional lab called "Python and Jupyter Notebooks" which corresponds to the *C1_W1_Lab01_Python_Jupyter_Soln.ipynb* file in the *Optional Lab 1 - Python and Jupyter Notebooks* folder
+
+## [Optional Lab 1 - Python and Jupyter Notebooks](./Optional%20Lab%201%20-%20Python%20and%20Jupyter%20Notebooks/)

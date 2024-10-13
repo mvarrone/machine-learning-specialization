@@ -14,6 +14,6 @@ Even though the equations look the same for both Linear and Logistic Regression,
 
 ![alt text](./img/image3.png)
 
-## Optional lab 15: Gradient descent for logistic regression
+## [Optional Lab 15 - Gradient descent for logistic regression](./Optional%20Lab%2015%20-%20Gradient%20descent%20for%20logistic%20regression/)
 
-## Optional lab 16: Logistic regression with scikit-learn
+## [Optional Lab 16 - Logistic regression with scikit-learn](./Optional%20Lab%2016%20-%20Logistic%20regression%20with%20scikit-learn/)

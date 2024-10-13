@@ -240,6 +240,6 @@ Because we're solving three binary classification problems you can use a sigmoid
 
 And so $\vec{a}^{[3]}$ in this case will be $a_1^{[3]}$, $a_2^{[3]}$ and $a_3^{[3]}$ corresponding to whether or not the learning algorithm thinks there is a car, a bus and/or pedestrians in the image
 
-## Optional Lab 5 - Softmax
+## [Optional Lab 5 - Softmax](./Optional%20Lab%205%20-%20Softmax/)
 
-## Optional Lab 6 - Multiclass
+## [Optional Lab 6 - Multiclass](./Optional%20Lab%206%20-%20Multiclass/)

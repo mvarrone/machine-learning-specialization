@@ -224,9 +224,9 @@ For this small example, we are only going to have a single training example $(m=
 - The input $x=-2$
 - The ground truth output value $y=2$
 
-    | # | x | y |
-    |---|---|---|
-    | 1 | -2| 2 |
+    | #   | x   | y   |
+    | --- | --- | --- |
+    | 1   | -2  | 2   |
 
 - The parameters of this network are:
     - $w=2$ 
@@ -435,14 +435,14 @@ Whereas forward prop was a left-to-right computation where we had $w=2$ that all
 
 So that's why backprop is a right-to-left computation, whereas forward prop was a left-to-right computation.
 
-| #  | Forward Prop | Backward Prop                     |
-|----|--------------|-----------------------------------|
-| 1  | $$w$$        | $$\frac{\partial J}{\partial d}$$ |
-| 2  | $$c$$        | $$\frac{\partial J}{\partial a}$$ |
-| 3  | $$b$$        | $$\frac{\partial J}{\partial b}$$ |
-| 4  | $$a$$        | $$\frac{\partial J}{\partial c}$$ |
-| 5  | $$d$$        | $$\frac{\partial J}{\partial w}$$ |
-| 6  | $$J$$        |                                   |
+| #   | Forward Prop | Backward Prop                     |
+| --- | ------------ | --------------------------------- |
+| 1   | $$w$$        | $$\frac{\partial J}{\partial d}$$ |
+| 2   | $$c$$        | $$\frac{\partial J}{\partial a}$$ |
+| 3   | $$b$$        | $$\frac{\partial J}{\partial b}$$ |
+| 4   | $$a$$        | $$\frac{\partial J}{\partial c}$$ |
+| 5   | $$d$$        | $$\frac{\partial J}{\partial w}$$ |
+| 6   | $$J$$        |                                   |
 
 
 ![alt text](./img/image14.png)
@@ -502,6 +502,6 @@ Thanks to the computation graph and these techniques for automatically carrying 
 
 So, many years ago, to use neural networks, the bar for the amount of calculus you have to know actually used to be higher but because of automatic differentiation algorithms, usually based on the computation graph, you can now implement a neural network and get derivatives computed for you easier than before. So, maybe with the maturing of neural networks, the amount of calculus you need to know in order to get these algorithms work, has actually gone down
 
-## Optional Lab 7 - Derivatives
+## [Optional Lab 7 - Derivatives](./Optional%20Lab%207%20-%20Derivatives/)
 
-## Optional Lab 8 - Back propagation
+## [Optional Lab 8 - Back propagation](./Optional%20Lab%208%20-%20Back%20propagation/)

@@ -344,7 +344,13 @@ When I do that, it usually gives me a good learning rate for my model.
 
 Now, there are couple more ideas that you can use to make multiple linear regression much more powerful. That is choosing custom features, which will also allow you to fit curves, not just a straight line to your data. Let's take a look at that in the next video.
 
-## Optional Lab 7: Feature scaling and Learning Rate
+## [Optional Lab 7a-zscore norm-FScaling and alpha](./Optional%20Lab%207a-zscore%20norm-FScaling%20and%20alpha/)
+
+## [Optional Lab 7b-max norm-FScaling and alpha](./Optional%20Lab%207b-max%20norm-FScaling%20and%20alpha/)
+
+## [Optional Lab 7c-mean norm-FScaling and alpha](./Optional%20Lab%207c-mean%20norm-FScaling%20and%20alpha/)
+
+## [Optional Lab 7d-min max norm-FScaling and alpha](./Optional%20Lab%207d-min%20max%20norm-FScaling%20and%20alpha/)
 
 ## Feature engineering
 
@@ -455,6 +461,6 @@ By using Feature Engineering and Polynomial functions you can potentially get a 
 
 ![alt text](./img/image23.png)
 
-## Optional lab 8: Feature engineering and Polynomial regression
+## [Optional Lab 8 - Feature engineering and Polynomial Regression](./Optional%20Lab%208%20-%20Feature%20engineering%20and%20Polynomial%20Regression/)
 
-## Optional lab 9: Linear regression with scikit-learn
+## [Optional Lab 9 - Linear regression with scikit-learn](./Optional%20Lab%209%20-%20Linear%20regression%20with%20scikit-learn/)

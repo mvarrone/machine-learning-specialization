@@ -249,3 +249,5 @@ So far, you've learned to build neural networks for binary classification proble
 In the next video, I'd like to share with you a generalization of what you've seen so far for classification. In particular, when $y$ doesn't just take on 2 values, but may take on 3 or 4 or 10 or even more categorical values.
 
 Let's take a look at how you can build a neural network for that type of classification problem.
+
+## [Optional Lab 4 - ReLU activation](./Optional%20Lab%204%20-%20ReLU%20activation/)
