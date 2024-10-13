@@ -91,13 +91,13 @@ $$J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (wx^{(i)} + b - y^{(i)})^2 $$
 
 The cost equation:
 
-$$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$ 
+$$ J(w,b) = \frac{1}{2m} \sum\limits_{i = 1}^{m} [f_{w,b}(x^{(i)}) - y^{(i)}]^2 $$ 
 
 shows that if 𝑤 and 𝑏 can be selected such that the predictions 𝑓𝑤,𝑏(𝑥) match the target data 𝑦, then the term 
 
-$$ (f_{w,b}(x^{(i)}) - y^{(i)})^2 $$
+$$ [f_{w,b}(x^{(i)}) - y^{(i)}]^2 $$
 
-term will be zero and the cost J minimized.
+will be zero and the cost J minimized.
 
 ## Visualizing the cost function: J(w) and J(w,b)
 
