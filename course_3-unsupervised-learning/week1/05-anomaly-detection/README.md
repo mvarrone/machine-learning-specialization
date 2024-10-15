@@ -102,23 +102,279 @@ In order to get anonymous detection algorithms to work, we'll need to use a Gaus
 
 ## Gaussian (normal) distribution
 
+In order to apply anomaly detection, we're going to need to use the Gaussian distribution, which is also called the normal distribution. When you hear me say either Gaussian distribution or normal distribution, they mean exactly the same thing and if you've heard the bell-shaped distribution, that also refers to the same thing but if you haven't heard of the bell-shaped distribution, that's fine too. 
+
+But let's take a look at what is the Gaussian or the normal distribution. 
+
 ![alt text](./img/image4.png)
 
-In order to apply anomaly detection, we're going to need to use the Gaussian distribution, which is also called the normal distribution. When you hear me say either Gaussian distribution or normal distribution, they mean exactly the same thing. If you've heard the bell-shaped distribution, that also refers to the same thing. But if you haven't heard of the bell-shaped distribution, that's fine too. But let's take a look at what is the Gaussian or the normal distribution. Say x is a number, and if x is a random number, sometimes called the random variable, x can take on random values. If the probability of x is given by a Gaussian or normal distribution with mean parameter Mu, and with variance Sigma squared. What that means is that the probability of x looks like a curve that goes like this. The center or the middle of the curve is given by the mean Mu, and the standard deviation or the width of this curve is given by that variance parameter Sigma. Technically, Sigma is called the standard deviation and the square of Sigma or Sigma squared is called the variance of the distribution. This curve here shows what is p of x or the probability of x. If you've heard of the bell-shaped curve, this is that bell-shaped curve because a lot of classic bells say in towers were shaped like this with the bell clapper hanging down here, and so the shape of this curve is vaguely reminiscent of the shape of the large bells that you will still find in some old buildings today. Better looking than my hand-drawn one. There's a picture of the Liberty Bell. Indeed, the Liberty Bell's shape on top is vaguely bell-shaped curve. If you're wondering what does p of x really means? Here's one way to interpret it. It means that if you were to get, say, 100 numbers drawn from this probability distribution, and you were to plot a histogram of these 100 numbers drawn from this distribution, you might get a histogram that looks like this. It looks vaguely bell-shaped. What this curve on the left indicates is not if you have just 100 examples or 1,000 or a million or a billion. But if you had a practically infinite number of examples, and you were to draw a histogram of this practically infinite number of examples with a very fine histogram bin. Then you end up with essentially this bell-shaped curve here on the left. The formula for p of x is given by this expression; p of x equals 1 over square root 2 Pi. Pi here is that 3.14159 or it's about 22 over 7. Ratio of a circle's diameter circumference times Sigma times e to the negative x minus Mu, the mean parameter squared divided by 2 Sigma squared. For any given value of Mu and Sigma, if you were to plot this function as a function of x, you get this type of bell-shaped curve that is centered at Mu, and with the width of this bell-shaped curve being determined by the parameter Sigma.
+Say $x$ is a number, and if $x$ is a random number, sometimes called the random variable, $x$ can take on random values and if the probability of $x$ is given by a Gaussian or normal distribution with mean parameter Mu $\mu$, and with variance Sigma squared $\sigma^2$, what that means is that the probability of $x$, $p(x)$, looks like a curve that goes like the one shown above
+
+The center or the middle of the curve is given by the mean Mu $\mu$ and the standard deviation or the width of this curve is given by that variance parameter Sigma. 
+
+Technically, Sigma is called the standard deviation $\sigma$ and the square of Sigma or Sigma squared $\sigma^2$ is called the variance of the distribution and this curve here shows what is $p(x)$ or the probability of $x$
+
+If you've heard of the bell-shaped curve, this is that bell-shaped curve because a lot of classic bells say in towers were kind of shaped like this with the bell clapper hanging down here and so the shape of this curve is vaguely reminiscent of the shape of the large bells that you will still find in some old buildings today. 
+
+Better looking than my hand-drawn one, there's a picture of the Liberty Bell, indeed, the Liberty Bell's shape on top is vaguely bell-shaped curve. 
+
+### Interpretation of $p(x)$
+
+If you're wondering what does $p(x)$ really means, here's one way to interpret it: It means that if you were to get, say, 100 numbers drawn from this probability distribution and you were to plot a histogram of these 100 numbers drawn from this distribution, you might get a histogram that looks like the one shown above, next to the bell shaped curve.
+
+It looks vaguely bell-shaped and what this curve on the left indicates is not if you have just 100 examples or 1,000 or a million or a billion but if you had a practically infinite number of examples and you were to draw a histogram of this practically infinite number of examples with a very fine histogram bin, then you end up with essentially this bell-shaped curve here on the left. 
+
+The formula for $p(x)$ is given by this expression:
+
+$$ p(x) = \frac{1}{\sqrt{2\pi}\sigma} e^-{\frac{(x - \mu)^2}{2\sigma^2}} $$
+
+And for any given value of Mu $\mu$ and Sigma $\sigma$, if you were to plot this function as a function of $x$, you get this type of bell-shaped curve that is centered at Mu $\mu$ and with the width of this bell-shaped curve being determined by the parameter Sigma $\sigma$
+
+### Gaussian distribution example
 
 ![alt text](./img/image5.png)
 
-Now let's look at a few examples of how changing Mu and Sigma will affect the Gaussian distribution. First, let me set Mu equals 0 and Sigma equals 1. Here's my plot of the Gaussian distribution with mean 0, Mu equals 0, and standard deviation Sigma equals 1. You notice that this distribution is centered at zero and that is the standard deviation Sigma is equal to 1. Now, let's reduce the standard deviation Sigma to 0.5. If you plot the Gaussian distribution with Mu equals 0 and Sigma equals 0.5, it now it looks like this. Notice that it's still centered at zero because Mu is zero. But it's become a much thinner curve because Sigma is now 0.5. You might recall that Sigma is the standard deviation is 0.5, whereas Sigma squared is also called the variance. That's equal to 0.5 squared or 0.25. You may have heard that probabilities always have to sum up to one, so that's why the area under the curve is always equal to one, which is why when the Gaussian distribution becomes skinnier, it has to become taller as well. Let's look at another value of Mu and Sigma. Now, I'm going to increase Sigma to 2, so the standard deviation is 2 and the variance is 4. This now creates a much wider distribution because Sigma here is now much larger, and because it's now a wider distribution is become shorter as well because the area under the curve is still equals 1. Finally, let's try changing the mean parameter Mu, and I'll leave Sigma equals 0.5. In this case, the center of the distribution Mu moves over here to the right. But the width of the distribution is the same as the one on top because the standard deviation is 0.5 in both of these cases on the right. This is how different choices of Mu and Sigma affect the Gaussian distribution
+Now let's look at a few examples of how changing Mu $\mu$ and Sigma will affect the Gaussian distribution. 
+
+#### Example 1: $\mu = 0$ and $\sigma = 1$
+
+First, let me set Mu $\mu$ equals 0 and Sigma equals 1. Here's my plot of the Gaussian distribution with mean 0 and standard deviation Sigma equals 1. 
+
+You notice that this distribution is centered at zero and that is the standard deviation Sigma is equal to 1. 
+
+#### Example 2: $\mu = 0$ and $\sigma = 0.5$
+
+Now, let's reduce the standard deviation Sigma to 0.5. 
+
+If you plot the Gaussian distribution with Mu $\mu$ equals 0 and Sigma equals 0.5, it now it looks like this. Notice that it's still centered at zero because Mu $\mu$ is zero but it's become a much thinner curve because Sigma is now 0.5. You might recall that Sigma is the standard deviation is 0.5, whereas Sigma squared $\sigma^2$ is also called the variance and so that's equal to 0.5 squared or 0.25. 
+
+You may have heard that probabilities always have to sum up to one, so that's why the area under the curve is always equal to one, which is why when the Gaussian distribution becomes skinnier, it has to become taller as well.
+
+#### Example 3: $\mu = 0$ and $\sigma = 2$
+
+Let's look at another value of Mu $\mu$ and Sigma. Now, I'm going to increase Sigma to 2, so the standard deviation is 2 and the variance is 4. 
+
+This now creates a much wider distribution because Sigma here is now much larger and because it's now a wider distribution is become shorter as well because the area under the curve is still equals 1. 
+
+#### Example 4: $\mu = 3$ and $\sigma = 0.5$
+
+Finally, let's try changing the mean parameter Mu $\mu$ and I'll leave Sigma equals 0.5. In this case, the center of the distribution Mu $\mu$ moves over here to the right but the width of the distribution is the same as the one on top because the standard deviation is 0.5 in both of these cases on the right. 
+
+## Parameter estimation
 
 ![alt text](./img/image6.png)
 
-. When you're applying this to anomaly detection, here's what you have to do. You are given a dataset of m examples, and here x is just a number. Here, are plots of the training sets with 11 examples. What we have to do is try to estimate what a good choice is for the mean parameter Mu, as well as for the variance parameter Sigma squared. Given a dataset like this, it would seem that a Gaussian distribution maybe looking like that with a center here and a standard deviation like that. This might be a pretty good fit to the data. The way you would compute Mu and Sigma squared mathematically is our estimate for Mu will be just the average of all the training examples. It's 1 over m times sum from i equals 1 through m of the values of your training examples. The value we will use to estimate Sigma squared will be the average of the squared difference between two examples, and that Mu that you just estimated here on the left. It turns out that if you implement these two formulas in code with this value for Mu and this value for Sigma squared, then you pretty much get the Gaussian distribution that I hand drew on top. This will give you a choice of Mu and Sigma for a Gaussian distribution so that it looks like the 11 training samples might have been drawn from this Gaussian distribution. If you've taken an advanced statistics class, you may have heard that these formulas for Mu and Sigma squared are technically called the maximum likelihood estimates for Mu and Sigma. Some statistics classes will tell you to use the formula 1 over n minus 1 instead of 1 over m. In practice, using 1 over m or 1 over n minus 1 makes very little difference. I always use 1 over m, but just some other properties of dividing by m minus 1 that some statisticians prefer. But if you don't understand what they just said, don't worry about it. All you need to know is that if you set Mu according to this formula and Sigma squared according to this formula, you'd get a pretty good estimate of Mu and Sigma and in particular, you get a Gaussian distribution that will be a possible probability distribution in terms of what's the probability distribution that the training examples had come from. You can probably guess what comes next. If you were to get an example over here, then p of x is pretty high. Whereas if you were to get an example, we are here, then p of x is pretty low, which is why we would consider this example, okay, not really anomalous, not a lot like the other ones. Whereas an example we are here to be pretty unusual compared to the examples we've seen, and therefore more anomalous because p of x, which is the height of this curve, is much lower over here on the left compared to this point over here, closer to the middle. Now, we've done this only for when x is a number, as if you had only a single feature for your anomaly detection problem. For practical anomaly detection applications, you usually have a lot of different features
+So, this is how different choices of Mu $\mu$ and Sigma $\sigma$ affect the Gaussian distribution
+
+When you're applying this to anomaly detection, here's what you have to do.
+
+You are given a dataset of $m$ examples and here $x$ is just a number and here are plots of the training sets with 11 examples and what we have to do is try to estimate what a good choice is for the mean parameter Mu $\mu$ as well as for the variance parameter Sigma squared $\sigma^2$
+
+And given a dataset like this, it would seem that a Gaussian distribution maybe looking like that with a center here on $\mu$ and a standard deviation $\sigma$ like that, this might be a pretty good fit to the data. 
+
+The way you would compute Mu $\mu$ and Sigma squared $\sigma^2$ mathematically is:
+
+Our estimate for Mu $\mu$ will be just the average of all the $m$ training examples, so:
+
+$$ \mu = \frac{1}{m} \sum_{i = 1}^{m}{x^{(i)}} $$
+
+The value we will use to estimate Sigma squared $\sigma^2$ will be the average of the squared difference between each one of the $m$ training examples and that Mu $\mu$ that you just estimated before
+
+$$ \sigma^2 = \frac{1}{m} \sum_{i = 1}^{m}{(x^{(i)} - \mu)^2} $$
+
+It turns out that if you implement these two formulas in code with this value for Mu $\mu$ and this value for Sigma squared $\sigma^2$, then you pretty much get the Gaussian distribution that I hand drew on top. 
+
+This will give you a choice of Mu $\mu$ and Sigma $\sigma$ for a Gaussian distribution so that it kind of looks like the 11 training examples might have been drawn from this Gaussian distribution
+
+### Concept of maximum likelihood for $\mu$ and $\sigma$
+
+If you've taken an advanced statistics class, you may have heard that these formulas for Mu $\mu$ and Sigma squared $\sigma^2$ are technically called the maximum likelihood estimates for Mu $\mu$ and Sigma
+
+Some statistics classes will tell you to use the formula *1 over m minus 1* instead of *1 over m*: 
+
+$$ \sigma^2 = \frac{1}{m} \sum_{i = 1}^{m}{(x^{(i)} - \mu)^2}$$
+
+$$ \sigma^2 = \frac{1}{m-1} \sum_{i = 1}^{m}{(x^{(i)} - \mu)^2}$$
+
+In practice, using *1 over m* or *1 over m minus 1* makes very little difference. I always use *1 over m* but there are some other properties of dividing by *m minus 1* that some statisticians prefer but if you don't understand what they just said, don't worry about it. 
+
+All you need to know is that if you set Mu $\mu$ according to this formula and Sigma squared $\sigma^2$ according to this formula, you'd get a pretty good estimate of Mu and Sigma and in particular, you get a Gaussian distribution that will be a possible probability distribution in terms of what's the probability distribution that the training examples had come from
+
+You can probably guess what comes next. If you were to get an example over here, then $p(x)$ is pretty high whereas if you were to get an example, we are here and then $p(x)$ is pretty low which is why we would consider this example, okay, not really anomalous, not a lot like the other ones whereas an example we are here to be pretty unusual compared to the examples we've seen, and therefore more anomalous because $p(x)$, which is the height of this curve, is much lower over here on the left compared to this point over here, closer to the middle. 
+
+Now, we've done this only for when $x$ is a number as if you had only a single feature for your anomaly detection problem. For practical anomaly detection applications, you usually have a lot of different features
 
 ### Summary
 
-You've now seen how the Gaussian distribution works. If x is a single number, this corresponds to if, say you had just one feature for your anomaly detection problem. But for practical anomaly detection applications, you will have many features, two or three or some even larger number n of features. Let's take what you saw for a single Gaussian and use it to build a more sophisticated anomaly detection algorithm. They can handle multiple features. Let's go do that in the next video.
+So, you've now seen how the Gaussian distribution works: If $x$ is a single number, this corresponds to if, say you had just one feature for your anomaly detection problem. But for practical anomaly detection applications, you will have many features, two or three or some even larger number n of features. Let's take what you saw for a single Gaussian and use it to build a more sophisticated anomaly detection algorithm they can handle multiple features. 
+
+Let's go do that in the next video.
 
 ## Anomaly detection algorithm
+
+Now that you've seen how the Gaussian or the normal distribution works for a single number, we're ready to build our anomaly detection algorithm. Let's dive in.
+
+![alt text](./img/image7.png)
+
+You have a training set $x_1$ through $x_m$, where here each example $x$ has $n$ features. So, each example $x$ is a vector with $n$ numbers. 
+
+In the case of the airplane engine example, we had two features corresponding to the heat and the vibrations and so, each of these $x^{(i)}$'s would be a two dimensional vector and $n=2$
+
+But for many practical applications $n$ can be much larger and you might do this with dozens or even hundreds of features. 
+
+Given this training set, what we would like to do is to carry out density estimation and all that means is we will build a model or estimate the probability for $p(x)$: What's the probability of any given feature vector? 
+
+And our model for $p(x)$ is going to be as follows: $x$ is a feature vector with values $x_1$, $x_2$ and so on down to $x_n$ and I'm going to model $p(x)$ as the probability of $x_1$ times the probability of $x_2$ times the probability of $x_3$ times the probability of $x_n$ for the $n_{th}$ features in the feature vectors
+
+If you've taken an advanced class in probably in statistics before, you may recognize that this equation corresponds to assuming that the features $x_1$, $x_2$ and so on up to $x_m$ are statistically independent but it turns out this algorithm often works fine even that the features are not actually statistically independent
+
+But if you don't understand what I just said, don't worry about it. Understanding statistical independence is not needed to fully complete this class and also be able to very effectively use anomaly detection algorithm.
+
+Now, to fill in this equation a little bit more, we are saying that the probability of all the features of this vector features $x$, is the product of $p(x_1)$ and $p(x_2)$ and so on up through $p(x_n)$
+
+#### Modelling $p(x_1)$
+
+And in order to model the probability of $x_1$, say the heat feature in this example, we're going to have two parameters: $\mu_1$ and $\sigma_1^2$ and what that means is we're going to estimate the mean of the feature $x_1$ and also the variance of feature $x_1$ and that will be $\mu_1$ and $\sigma_1^2$
+
+#### Modelling $p(x_2)$
+
+To model $p(x_2)$, $x_2$ is a totally different feature measuring the vibrations of the airplane engine. We're going to have two different parameters, which I'm going to write as $\mu_2$, $\sigma_2^2$ and it turns out this will correspond to the mean or the average of the vibration feature and the variance of the vibration feature
+
+#### Modelling $p(x_n)$
+
+And so on, if you have additional features $\mu_3$, $\sigma_3^2$ up through $\mu_n$, $\sigma_n^2$
+
+#### Why are we multiplying probabilities
+
+In case you're wondering why we multiply probabilities, maybe here's one example that could build intuition: Suppose for an aircraft engine there's a 1/10 chance that it is really hot, unusually hot and maybe there is a 1 in 20 chance that it vibrates really hard. 
+
+Then, what is the chance that it runs really hot and vibrates really hard? We're saying that the chance of that is 1/10 times 1/20 which is 1/200. So, it's really unlikely to get an engine that both run really hot and vibrates really hard. It's the product of these two probabilities. 
+
+### Notation
+
+A somewhat more compact way to write this equation up here is to say that this is equal to:
+
+$$ \prod_{j = 1}^{n} p(x_j; \mu_j, \sigma_j^2) $$
+
+This is the product from j=1 through n of $p(x_j)$ with parameters $\mu_j$ and $\sigma_j^2$ and this symbol here is a lot like the summation symbol except that whereas the summation symbol corresponds to addition, this symbol here instead corresponds to multiplying these terms over here for j=1 through n. 
+
+## Anomaly detection algorithm
+
+![alt text](./img/image8.png)
+
+So, let's put it all together to see how you can build an anomaly detection system. 
+
+### Step 1
+
+The first step is to choose features $x_i$ that you think might be indicative of anomalous examples
+
+### Step 2
+
+Having come up with the features you want to use, you would then fit the parameters $\mu_1$ through $\mu_n$ and $\sigma_1^2$ through $\sigma_n^2$, for the $n$ features in your data set. 
+
+As you might guess, the parameter $\mu_j$ will be just the average of $x_j$ of the feature $j$ of all the examples in your training set, this is:
+
+$$ \mu_j = \frac{1}{m} \sum_{i = 1}^{m}{x_j^{(i)}} $$
+
+and $\sigma_j^2$ will be the average of the square difference between the feature and the value $\mu_j$ that you just computed, so we have:
+
+$$ \sigma_j^2 = \frac{1}{m} \sum_{i = 1}^{m}{(x_j^{(i)} - \mu_j)^2} $$
+
+##### Vectorized formula
+
+And by the way, if you have a vectorized implementation, you can also compute $\vec{\mu}$ as the average of the training examples as follows, where here $\vec{x}$ and $\vec{\mu}$ are both vectors:
+
+$$ \vec{\mu} = \frac{1}{m} \sum_{i = 1}^{m}{\vec{x}^{(i)}} $$
+
+And so this would be the vectorized way of computing mu 1 through mu and all at the same time. 
+
+$$
+
+\vec{\mu} =
+\begin{bmatrix}
+\mu_1 \\
+\mu_2 \\
+\vdots \\
+\mu_n
+\end{bmatrix}
+
+$$
+
+And by estimating these parameters on your unlabeled training set, you've now computed all the parameters of your model
+
+### Step 3
+
+Finally, when you are given a new example, $x_{test}$ or I'm just going to write a new example as $x$ here, what you would do is compute $p(x)$ and see if it's large or small. 
+
+So, $p(x)$ as you saw on the last slide is the product from j = 1 through n of the probability of the individual features. So, $p(x_j)$ with parameters $\mu_j$ and $\sigma_j^2$
+
+$$ p(x) = \prod_{j = 1}^{n} p(x_j; \mu_j, \sigma_j^2) $$
+
+And if you substitute in the formula for this probability you end up with this expression:
+
+$$ p(x) = \prod_{j = 1}^{n} \frac{1}{\sqrt{2\pi}\sigma_j} exp(-{\frac{(x_j - \mu_j)^2}{2\sigma_j^2}}) $$
+
+And so $x_j$ are the features, this is a $j$ feature of your new example, $\mu_j$ and $\sigma_j$ are numbers or parameters you have computed in the previous step and if you compute out this formula, you get some number for $p(x)$
+
+### Step 4
+
+And the final step is to see a $p(x)$ is less than epsilon ($p(x) < \epsilon$) and if it is then you flag that it is an anomaly.
+
+## Algorithm intuition
+
+One intuition behind what this algorithm is doing is that it will tend to flag an example as anomalous if 1 or more of the features are either very large or very small relative to what it has seen in the training set. 
+
+So, for each of the features $x_j$, you're fitting a Gaussian distribution like this and so if even one of the features of the new example was way out here, say, then $p(x_j)$ would be very small and if just one of the terms in this product is very small, then this overall product, when you multiply together will tend to be very small and does $p(x)$ will be small. 
+
+And what anomaly detection is doing in this algorithm is a systematic way of quantifying whether or not this new example $x$ has any features that are unusually large or unusually small.
+
+## Anomaly detection example
+
+![alt text](./img/image9.png)
+
+Now, let's take a look at what all this actually means on one example. 
+
+Here's the data set with features $x_1$ and $x_2$ and you notice that the features $x_1$ take on a much larger range of values than the features $x_2$
+
+### $x_1$
+
+If you were to compute the mean of the features $x_1$, you end up with five, (so, $\mu_1 = 5$) and it turns out that for this data set if you compute $\sigma_1$ it will be equal to about 2 ($\sigma_1 = 2$)
+
+### $x_2$
+
+And if you were to compute $\mu_2$, the average of the features on $x_2$, the average is three ($\mu_2 = 3$) and similarly its variance or standard deviation is much smaller, which is why ($\sigma_2 = 1$). 
+
+So, that corresponds to this Gaussian distribution for $x_1$ and this Gaussian distribution for $x_2$. 
+
+If you were to actually multiply $p(x_1)$ and $p(x_2)$, then you end up with this 3D surface plot for $p(x)$ where at any point, the height of this is the product of $p(x_1)$ times $p(x_2)$ for the corresponding values of $x_1$ and $x_2$. 
+
+And this signifies that values where $p(x)$ is higher or more likely, so, values near the middle kind of here are more likely whereas values far out here, values out here are much less likely, I have much lower chance.
+
+### Let's pick 2 test examples
+
+Now, let me pick two test examples: The first one here, I'm going to write this $x_{test}^1$ and the second one down here as $x_{test}^2$
+
+And let's see which of these 2 examples the algorithm will flag as anomalous.
+
+#### Picking the 1st test example
+
+I'm going to pick the parameter ε to be equal to 0.02 ($\epsilon = 0.02$) and if you were to compute $p(x_{test}^1)$, it turns out to be about 0.4 and this is much bigger than epsilon and so the algorithm will say this looks okay, doesn't look like an anomaly. 
+
+#### Picking the 2nd test example
+
+Whereas in contrast, if you were to compute $p(x)$ for this point down here, $p(x_{test}^2)$, corresponding to $x_1 \approx 8$ and $x_2 \approx 0.5$, kind of down here, then $p(x_{test}^2) = 0.0021$, so this is much smaller than epsilon and so the algorithm will flag this as a likely anomaly. 
+
+So, pretty much as you might hope, it decides that $x_{test}^1$ looks pretty normal whereas $x_{test}^2$ which is much further away than anything you see in the training set, looks like it could be an anomaly. 
+
+## Summary
+
+So, you've seen the process of how to build an anomaly detection system. 
+
+But how do you choose the parameter epsilon? And how do you know if your anomaly detection system is working well? 
+
+In the next video, let's dive a little bit more deeply into the process of developing and evaluating the performance of an anomaly detection system.
+
+Let's go on to the next video
 
 ## Developing and evaluating an anomaly detection system
 
