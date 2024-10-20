@@ -289,7 +289,6 @@ $$ \vec{\mu} = \frac{1}{m} \sum_{i = 1}^{m}{\vec{x}^{(i)}} $$
 And so this would be the vectorized way of computing mu 1 through mu and all at the same time. 
 
 $$
-
 \vec{\mu} =
 \begin{bmatrix}
 \mu_1 \\
@@ -297,7 +296,6 @@ $$
 \vdots \\
 \mu_n
 \end{bmatrix}
-
 $$
 
 And by estimating these parameters on your unlabeled training set, you've now computed all the parameters of your model
