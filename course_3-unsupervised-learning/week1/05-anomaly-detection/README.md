@@ -286,7 +286,7 @@ And by the way, if you have a vectorized implementation, you can also compute $\
 
 $$ \vec{\mu} = \frac{1}{m} \sum_{i = 1}^{m}{\vec{x}^{(i)}} $$
 
-And so this would be the vectorized way of computing mu 1 through mu and all at the same time. 
+And so this would be the vectorized way of computing $\mu_1$ through $\mu_n$ all at the same time
 
 $$
 \vec{\mu} =
