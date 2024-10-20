@@ -43,13 +43,13 @@ In this example that we have here, I think it is quite likely to see examples in
 
 The details of how you decide from the training set what regions are higher versus lower probability is something we'll see in the next few videos and having learned to model for $p(x)$ when you are given the new test example $x_{test}$, what you will do is then compute the probability of $x_{test}$, this is $p(x_{test})$.
 
-### Case 1: $p(x_{test}) < \epsilon $\epsilon$$
+### Case 1: $p(x_{test}) < \epsilon$
 
-And if it is small or more precisely, if it is less than some small number that I'm going to call epsilon $\epsilon$ $\epsilon $\epsilon$$, this is a greek alphabet epsilon $\epsilon$ $\epsilon $\epsilon$$, so what you should think of as a small number, which means that $p(x)$ is very small or in other words, the specific value of $x$ that you saw for a certain user was very unlikely, relative to other usage that you have seen. 
+And if it is small or more precisely, if it is less than some small number that I'm going to call epsilon $\epsilon$, this is a greek alphabet epsilon $\epsilon$, so what you should think of as a small number, which means that $p(x)$ is very small or in other words, the specific value of $x$ that you saw for a certain user was very unlikely, relative to other usage that you have seen
 
 But the $p(x_{test})$ is less than some small threshold or some small number epsilon $\epsilon$, we will raise a flag to say that this could be an anomaly. So, for example, if $x_{test}$ was all the way down here (purple cross), the probability of an example landing all the way out here is actually quite low and so hopefully $p(x_{test})$ for this value of $x_{test}$ will be less than epsilon $\epsilon$ and so we would flag this as an anomaly. 
 
-### Case 2: $p(x_{test}) >= \epsilon $\epsilon$$
+### Case 2: $p(x_{test}) >= \epsilon$
 
 Whereas in contrast, if $p(x_{test})$ is not less than epsilon $\epsilon$, if $p(x_{test})$ is greater than equal to epsilon $\epsilon$, then we will say that it looks okay, this doesn't look like an anomaly and that response to if you had an example in here say where our model $p(x)$ will say that examples near the middle here, they're actually quite high probability, there's a very high chance that the new airplane engine will have features close to these inner ellipses and so $p(x_{test})$ will be large for those examples and we'll say it's okay and it's not an anomaly.
 
@@ -318,7 +318,7 @@ And so $x_j$ are the features, this is a $j$ feature of your new example, $\mu_j
 
 ### Step 4
 
-And the final step is to see a $p(x)$ is less than epsilon $\epsilon$ ($p(x) < \epsilon $\epsilon$$) and if it is then you flag that it is an anomaly.
+And the final step is to see a $p(x)$ is less than epsilon $\epsilon$ ($p(x) < \epsilon$) and if it is then you flag that it is an anomaly.
 
 ## Algorithm intuition
 
@@ -358,7 +358,7 @@ And let's see which of these 2 examples the algorithm will flag as anomalous.
 
 #### Picking the 1st test example
 
-I'm going to pick the parameter ε to be equal to 0.02 ($\epsilon $\epsilon$ = 0.02$) and if you were to compute $p(x_{test}^1)$, it turns out to be about 0.4 and this is much bigger than epsilon $\epsilon$ and so the algorithm will say this looks okay, doesn't look like an anomaly. 
+I'm going to pick the parameter ε to be equal to 0.02 ($\epsilon = 0.02$) and if you were to compute $p(x_{test}^1)$, it turns out to be about 0.4 and this is much bigger than epsilon $\epsilon$ and so the algorithm will say this looks okay, doesn't look like an anomaly. 
 
 #### Picking the 2nd test example
 
