@@ -500,7 +500,7 @@ So, we also will want to update each of these parameters $x$ using gradient desc
 
 And it turns out that if you do this, then you actually find pretty good values of $w$ and $b$ as well as $x$. 
 
-And in this formulation of the problem, the parameters are $w$ and $b$, and $x$ is also a parameter. 
+And in this formulation of the problem, the parameters are $w$ and $b$ and $x$ is also a parameter. 
 
 Then finally, to learn the values of $x$ we also will update $x$ as $x$ minus the partial derivative respect to $x$ of the cost function $w$, $b$, $x$ 
 
@@ -519,3 +519,4 @@ In the next video, let's take a look at a generalization of the model that you'v
 Let's go see that in the next video.
 
 ## Binary labels: favs, likes and clicks
+
