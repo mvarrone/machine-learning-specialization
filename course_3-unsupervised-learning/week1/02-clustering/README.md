@@ -351,7 +351,7 @@ So, to take a simplified example, if you have two clusters centroids, say cluste
 
 And if you were to assign it to cluster centroid 2 then this squared distance would be the square of this much smaller distance: $distance = (7 - 9)^2 = (-2)^2 = 4$
 
-So, if you want to minimize this term, you will take $x^{(i)} and assign it to the closer centroid, which is exactly what the algorithm is doing up here.
+So, if you want to minimize this term, you will take $x^{(i)}$ and assign it to the closer centroid, which is exactly what the algorithm is doing up here.
 
 So, that's why the step where you assign points to a cluster centroid is choosing the values for $c^{(i)}$ to try to minimize J without changing $\mu_1$ through $\mu_k$ for now but just choosing the values of $c^{(1)}$ through $c^{(m)}$ to try to make these terms as small as possible.
 
