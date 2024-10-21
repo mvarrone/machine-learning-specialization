@@ -212,7 +212,7 @@ But the user hasn't rated all the movies, so if we're going to sum over this, we
 
 So we're going to sum only over the movies i that user j has actually rated. So that's what this denotes, sum of all values of i where r(i,j)=1 meaning that user j has rated that movie i. 
 
-And then finally we can take the usual normalization 1 over 2$m^{(j)}$. And this is very much like the cost function we have for Linear Regression with $m^{(j)}$ training examples where you're summing over the $m^{(j)}$ movies for which you have a rating taking a squared error and the normalizing by this 1 over 2$m^{(j)}$. 
+And then finally we can take the usual normalization 1 over 2 $m^{(j)}$. And this is very much like the cost function we have for Linear Regression with $m^{(j)}$ training examples where you're summing over the $m^{(j)}$ movies for which you have a rating taking a squared error and the normalizing by this 1 over 2 $m^{(j)}$
 
 And this is going to be a cost function J of w(j), b(j) and if we minimize this as a function of w(j) and b(j), then you should come up with a pretty good choice of parameters w(j) and b(j) for making predictions for user j's ratings.
 
@@ -224,7 +224,7 @@ Let me have just one more term to this cost function, which is the regularizatio
 
 $$ \frac{\lambda}{2m^{(j)}} \sum_{k=1}^{n} [w_k^{(j)}]^2 $$
 
-and so here's our usual regularization parameter lambda $\lambda$ divided by 2$m^{(j)}$ and then times as sum of the squared values of the parameters $w$ 
+and so here's our usual regularization parameter lambda $\lambda$ divided by 2 $m^{(j)}$ and then times as sum of the squared values of the parameters $w$ 
 
 And so $n$ is the number of features. Also, $x^{(i)}$ and that's the same as a number of numbers in w(j). 
 
@@ -275,5 +275,7 @@ In the next video, we'll look at the modification of this algorithm. They'll let
 Let's go on and take a look at that in the next video
 
 ## Collaborative filtering algorithm 
+
+
 
 ## Binary labels: favs, likes and clicks
