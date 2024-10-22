@@ -520,3 +520,74 @@ Let's go see that in the next video.
 
 ## Binary labels: favs, likes and clicks
 
+Many important applications of recommender systems or collaborative filtering algorithms involve binary labels where instead of a user giving you a one to five star or zero to five star rating, they just somehow give you a sense of they like this item or they did not like this item. Let's take a look at how to generalize the algorithm you've seen to this setting. The process we'll use to generalize the algorithm will be very much reminiscent to how we have gone from Linear Regression to Logistic Regression to predicting numbers to predicting a binary label back in course one, let's take a look.
+
+![alt text](./img/image12.png)
+
+Here's an example of a collaborative filtering data set with binary labels.
+
+![alt text](./img/image13.png)
+
+A one denotes that the user liked or engaged with a particular movie. So, label one could mean that Alice watched the movie Love at last all the way to the end and watch Romance forever all the way to the end but after playing a few minutes of nonstop car chases decided to stop the video and move on. Or it could mean that she explicitly hit like or favorite on an app to indicate that she liked these movies but after checking out nonstop car chasers and swords versus karate did not hit like. And the question mark usually means the user has not yet seen the item and so they weren't in a position to decide whether or not to hit like or favorite on that particular item. 
+
+So, the question is how can we take the collaborative filtering algorithm that you saw in the last video and get it to work on this dataset? And by predicting how likely Alice, Bob carol and Dave are to like the items that they have not yet rated, we can then decide how much we should recommend these items to them. 
+
+There are many ways of defining what is the label one and what is the label zero, and what is the label question mark in collaborative filtering with binary labels. Let's take a look at a few examples.
+
+### Example applications
+
+![alt text](./img/image14.png)
+
+In an online shopping website, the label could denote whether or not user $j$ chose to purchase an item after they were exposed to it, after they were shown the item. So, one would denote that they purchased it, zero would denote that they did not purchased it and the question mark would denote that they were not even shown were not even exposed to the item. 
+
+Or in a social media setting, the labels one or zero could denote did the user favorite or like an item after they were shown it and question mark would be if they have not yet been shown the item
+
+Or many sites instead of asking for explicit user rating will use the user behavior to try to guess if the user liked the item. So, for example, you can measure if a user spends at least 30 seconds of an item and if they did, then assign that a label one because the user found the item engaging or if a user was shown an item but did not spend at least 30 seconds with it, then assign that a label zero or if the user was not shown the item yet, then assign it a question mark. 
+
+Another way to generate a rating implicitly as a function of the user behavior will be to see that the user click on an item. This is often done in online advertising where if the user has been shown an ad, if they clicked on it assign it the label one, if they did not click assign it the label zero and the question mark were referred to if the user has not even been shown that ad in the first place. 
+
+So, often these binary labels will have a rough meaning as follows: A labor of one means that the user engaged after being shown an item and engaged could mean that they clicked or spend 30 seconds or explicitly favorite or like to purchase the item. 
+
+A zero will reflect the user not engaging after being shown the item
+
+The question mark will reflect the item not yet having been shown to the user.
+
+### From regression to binary classification
+
+![alt text](./img/image15.png)
+
+So, given these binary labels, let's look at how we can generalize our algorithm which is a lot like Linear Regression from the previous couple videos to predicting these binary outputs. 
+
+Previously, we were predicting label $y^{(i, j)}$ as $w^{(j)} \cdot x^{(i)} + b^{(j)}$
+
+So, this was a lot like a Linear Regression model. 
+
+For binary labels, we're going to predict that the probability of $y^{(i, j)}$ being 1 is given by not $w^{(j)} \cdot x^{(i)} + b^{(j)}$ but instead by $g$ of this formula, where now $g(z) = \frac{1}{1 + e^{(-z)}}$
+
+So, this is the Logistic function just like we saw in Logistic Regression. And what we would do is take what was a lot like a Linear Regression model and turn it into something that would be a lot like a Logistic Regression model where will now predict the probability of $y^{(i, j)}$ being 1 that is of the user having engaged with or like the item using this model
+
+### Cost function for binary application
+
+![alt text](./img/image16.png)
+
+In order to build this algorithm, we'll also have to modify the cost function from the squared error cost function to a cost function that is more appropriate for binary labels for a Logistic Regression like model. 
+
+So, previously, this was the cost function that we had where this term play their role similar to $f(x)$, the prediction of the algorithm. 
+
+When you now have binary labels, $y^{(i, j)}$ when the labels are one or zero or question mark, then the prediction $f(x)$ becomes instead of $w^{(j)} \cdot x^{(i)} + b^{(j)}$, it becomes $g$ of this where $g$ is the Logistic function. 
+
+And similar to when we had derived Logistic Regression, we had written out the following loss function for a single example which was at the loss if the algorithm predicts $f(x)$ and the true label was $y$, the loss was this: It was -y log f-y log 1-f. 
+
+This is also sometimes called the binary cross entropy cost function but this is a standard cost function that we used for Logistic Regression as well as for the binary classification problems when we're training neural networks.
+
+And so to adapt this to the collaborative filtering setting, let me write out the cost function which is now a function of all the parameters $w$ and $b$ as well as all the parameters $x$ which are the features of the individual movies or items of we now need to sum over all the pairs $(i, j):r(i, j)=1$ where $r(i, j)=1$. Notice this is just similar to this summation up on top and now instead of this squared error cost function, we're going to use that loss function that is a function of $f(x)$ and $y^{(i, j)}$ where $f(x)$ here that's my abbreviation, my shorthand for $g(w^{(j)} \cdot x^{(i)} + b^{(j)})$ and you plug this into here, then this gives you the cost function they could use for collaborative filtering on binary labels
+
+### Summary
+
+So, that's it. That's how you can take the Linear Regression like collaborative filtering algorithm and generalize it to work with binary labels. And this actually very significantly opens up the set of applications you can address with this algorithm.
+
+Now, even though you've seen the key structure and cost function of the algorithm, there are also some implementations or tips that will make your algorithm work much better. 
+
+Let's go on to the next video to take a look at some details of how you implement this and some little modifications that make the algorithm run much faster. 
+
+Let's go on to the next video.
