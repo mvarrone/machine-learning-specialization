@@ -218,6 +218,8 @@ And this is going to be a cost function J of w(j), b(j) and if we minimize this 
 
 $$ \text{min}_{w^{(j)}, b^{(j)}} J(w^{(j)}, b^{(j)}) = \frac{1}{2m^{(j)}} \sum_{i: r(i, j)=1}{[ w^{(j)} \cdot x^{(i)} + b^{(j)} - y^{(i, j)} ]^2} $$
 
+![alt text](./img/image17_fix_equation.png)
+
 #### Adding the regularization term to this cost function
 
 Let me have just one more term to this cost function, which is the regularization term to prevent overfitting:
@@ -232,6 +234,8 @@ If you were to minimize this cost function $J$ as a function of w and b, you sho
 
 $$ \text{min}_{w^{(j)}, b^{(j)}} J(w^{(j)}, b^{(j)}) = \frac{1}{2m^{(j)}} \sum_{i: r(i, j)=1}{[ w^{(j)} \cdot x^{(i)} + b^{(j)} - y^{(i, j)} ]^2} + \frac{\lambda}{2m^{(j)}} \sum_{k=1}^{n} [w_k^{(j)}]^2 $$
 
+![alt text](./img/image18_fix_equation.png)
+
 ### Eliminating $m^{(j)}$ from the cost function
 
 Now, before moving on, it turns out that for recommender systems it would be convenient to actually eliminate this division by $m^{(j)}$ term.
@@ -240,7 +244,9 @@ $m^{(j)}$ is just a constant in this expression and so, even if you take it out,
 
 $$ \text{min}_{w^{(j)}, b^{(j)}} J(w^{(j)}, b^{(j)}) = \frac{1}{2} \sum_{i: r(i, j)=1}{[ w^{(j)} \cdot x^{(i)} + b^{(j)} - y^{(i, j)} ]^2} + \frac{\lambda}{2} \sum_{k=1}^{n} [w_k^{(j)}]^2 $$
 
-Now let me take this cost function down here to the bottom and copy it to the next slide.
+![alt text](./img/image19_fix_equation.png)
+
+Now, let me take this cost function down here to the bottom and copy it to the next slide.
 
 ## Cost function
 
