@@ -23,7 +23,7 @@ Let's take a look at how this works. In the case of movie recommendations, here 
 
 You can also look at past behaviors of the user to construct this feature vector. For example, if you look at the top thousand movies in your catalog, you might construct a thousand features that tells you of the thousand most popular movies in the world which of these has the user watched. 
 
-In fact, you can also take ratings the user might have already given in order to construct new features, so, it turns out that if you have a set of movies and if you know what genre each movie $i$s in, then the average rating per genre that the user has given. So, of all the romance movies that the user has rated, what was the average rating? 
+In fact, you can also take ratings the user might have already given in order to construct new features, so, it turns out that if you have a set of movies and if you know what genre each movie *i*s in, then the average rating per genre that the user has given. So, of all the romance movies that the user has rated, what was the average rating? 
 
 Of all the action movies that the user has rated, what was the average rating? And so on for all the other genres. 
 
@@ -33,7 +33,7 @@ One interesting thing about this feature is that it actually depends on the rati
 
 So, with features like these you can then come up with a feature vector $x_u^{(j)}$ where *u* stands for *user* and *j* for user $j$. 
 
-Similarly, you can also come up with a set of features for each movie of each item, such as what was the year of the movie? What's the genre or genres of the movie $i$f known? If there are critic reviews of the movie, you can construct one or multiple features to capture something about what the critics are saying about the movie. Or once again, you can actually take user ratings of the movie to construct a feature of, say, the average rating of this movie. 
+Similarly, you can also come up with a set of features for each movie of each item, such as what was the year of the movie? What's the genre or genres of the movie *i* if known? If there are critic reviews of the movie, you can construct one or multiple features to capture something about what the critics are saying about the movie. Or once again, you can actually take user ratings of the movie to construct a feature of, say, the average rating of this movie. 
 
 This feature again depends on the ratings that users are given but again, does nothing wrong with that: You can construct a feature for a given movie that depends on the ratings that movie had received, such as the average rating of the movie. Or if you wish, you can also have average rating per country or average rating per user demographic as they want to construct other types of features of the movies as well. 
 
@@ -64,7 +64,7 @@ And instead of $x^{(i)}$, I'm going to compute
 
 $$ v_m^{(i)}  $$
 
-a separate vector where *m* to stand for the *movie* and for movie $i$s what a superscript stands for. 
+a separate vector where *m* stands for the *movie* and for movie *i*s what a superscript stands for. 
 
 So, $v_u^{(j)}$ is a vector as a list of numbers computed from the features of user $j$ and $v_m^{(i)}$ is a list of numbers computed from the features like the ones you saw on the previous slide of movie $i$. 
 
