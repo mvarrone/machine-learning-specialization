@@ -82,3 +82,4 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 2024-10-27 11:12:08 - Commit message: added content for c3 w2 06- and 07- | Branch name: master | Result: OK
 2024-10-27 11:28:39 - Commit message: fixing typo  | Branch name: master | Result: OK
 2024-10-27 11:31:04 - Commit message: fixing last typos | Branch name: master | Result: OK
+2024-10-27 12:27:10 - Commit message: fixing equations on c3 w2 01-. Replaced eq with pictures | Branch name: master | Result: OK
