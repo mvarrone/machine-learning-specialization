@@ -181,7 +181,7 @@ Then by telling TensorFlow how to compute the cost J and by doing it with the gr
 
 And this is needed to enable automatic differentiation. 
 
-- Next TensorFlow will have saved the sequence of operations in tape, in the gradient tape and with this syntax ($tape.gradient(costJ, [w])$), TensorFlow will automatically compute this derivative term, which I'm going to call dJdw. 
+- Next TensorFlow will have saved the sequence of operations in tape, in the gradient tape and with this syntax, $tape.gradient(costJ, [w])$, TensorFlow will automatically compute this derivative term, which I'm going to call dJdw. 
 
 And TensorFlow knows you want to take the derivative respect to $w$, that $w$ is the parameter you want to optimize because you had told it so up here and because we're also specifying it down here. 
 
