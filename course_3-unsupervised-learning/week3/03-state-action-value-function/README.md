@@ -183,7 +183,7 @@ And by doing so, I hope that will sharpen your intuition about how these differe
 
 After you play to the lab, we then be ready to come back and talk about what's probably the single most important equation in Reinforcement Learning, which is something called the **Bellman equation**. So, I hope you have fun playing with the optional lab and after that let's come back to talk about bellman equations.
 
-## [state-action value function (optional lab)](./state-action%20value%20function%20(optional%20lab)/)
+## [State-action value function optional lab](./State-action%20value%20function%20optional%20lab/)
 
 ## Bellman Equation
 
