@@ -1,1 +1,0 @@
-## State-action value function
