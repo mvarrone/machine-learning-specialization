@@ -1,15 +1,16 @@
 # Machine Learning Specialization
+
 [![Specialization image](./title_head_new.png)](https://www.coursera.org/specializations/machine-learning-introduction)
 
 This repository contains information about the Machine Learning [specialization](https://www.coursera.org/specializations/machine-learning-introduction) offered by Coursera.
 
 ## Courses
 
-[1. Supervised Machine Learning: Regression and Classification](https://github.com/mvarrone/machine-learning-specialization/tree/master/course_1-sup-ML-reg-classif)
+[1. Supervised Machine Learning: Regression and Classification](./course_1-sup-ML-reg-classif/)
 
-[2. Advanced Learning Algorithms](https://github.com/mvarrone/machine-learning-specialization/tree/master/course_2-advanced-learning-algorithms)
+[2. Advanced Learning Algorithms](./course_2-advanced-learning-algorithms/)
 
-[3. Unsupervised Learning, Recommenders and Reinforcement Learning](https://github.com/mvarrone/machine-learning-specialization/tree/master/course_3-unsupervised-learning)
+[3. Unsupervised Learning, Recommenders and Reinforcement Learning](./course_3-unsupervised-learning/)
 
 ## About the specialization
 
